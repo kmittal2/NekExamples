@@ -3,7 +3,7 @@
             3 DIMENSIONAL RUN
           103 PARAMETERS FOLLOW
        1.000000         p01 DENSITY
-      -1400.000         p02 VISCOS
+      -2500.000         p02 VISCOS
       0.0000000E+00
       0.0000000E+00
       0.0000000E+00
@@ -13,10 +13,10 @@
       0.0000000E+00
       0.0000000E+00     p10 FINTIME
        4000.000         p11 NSTEPS
-     -5.0000000E-03     p12 DT
+     -1.0000000E-03     p12 DT
       0.0000000E+00     p13 IOCOMM
       0.0000000E+00     p14 IOTIME
-       100.0000         p15 IOSTEP
+       1000.0000         p15 IOSTEP
       0.0000000E+00     p16 PSSOLVER
       0.0000000E+00
       0.0000000E+00
