@@ -160,13 +160,13 @@ c-----------------------------------------------------------------------
 c     ngeom - parameter controlling the number of iterations,
 c     set to ngeom=2 by default (no iterations) 
 c     One could change the number of iterations as
-      ngeom = 3
+cccc      ngeom = 3
 
 c     ninter - parameter controlling the order of interface extrapolation 
 c     for neknek,
 c     set to ninter=1 by default
 c     One could change it as
-      ninter = 2
+cccc      ninter = 2
 c     Caution: if ninter greater than 1 is chosen, ngeom greater than 2 
 c     should be used for stability
 
@@ -175,7 +175,8 @@ c     Set number of fields to interpolate
 c     nfld = 3 - u,v,w velocitites  
 c     nfld = 4 - u,v,w velocitites + temperature 
 
-      nfld=3
+      nfld_neknek=3
+      ifplan5 = .true.
 
       if (param(33) .eq. 0.0) param(33) = 1.0    !Default Frequency
       if (param(34) .eq. 0.0) param(34) = 1.0e-2 !Default Amplitude

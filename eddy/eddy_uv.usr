@@ -169,6 +169,22 @@ c-----------------------------------------------------------------------
 c
       common /exacu/ ue(lx1,ly1,lz1,lelt),ve(lx1,ly1,lz1,lelt)
       common /exacd/ ud(lx1,ly1,lz1,lelt),vd(lx1,ly1,lz1,lelt)
+      real tval,dtval,wrk1
+
+      dtval = 0.
+      if (istep.eq.0) then
+        open(50,file='dt.dat',status='old',err=100)
+        read(50,*,err=100) dtval
+        close(50)
+        dtval = glmax(dtval,1)
+        nsteps = 0.1/dtval
+        iostep = 0.01
+      goto 101
+ 100  ierr = 1
+      if (ierr.eq.1) call exitt
+ 101  continue
+      param(12) = -dtval
+      endif
 
 
       ifield = 1  ! for outpost
@@ -194,7 +210,13 @@ c
       if (nid.eq.0) then
           write(6,11) istep,time,udx,umx,uex,u0,'  X err'
           write(6,11) istep,time,vdx,vmx,vex,v0,'  Y err'
+          if (istep.eq.nsteps) then
+          write(6,12) istep,time,dt,udx,umx,uex,u0,' k10errx'
+          write(6,12) istep,time,dt,vdx,vmx,vex,v0,' k10erry'
+        endif
+
    11     format(i5,1p5e14.6,a7)
+   12     format(i5,1p6e14.6,a8)
       endif
 
 

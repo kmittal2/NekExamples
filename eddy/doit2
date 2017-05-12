@@ -1,0 +1,24 @@
+echo '0.0005' > dt.dat
+./makenek eddy_uv
+nek eddy_uv 2 > eddy_uvlog2
+grep -i k10err eddy_uvlog2 > errlist.out
+
+echo '0.00025' > dt.dat
+./makenek eddy_uv
+nek eddy_uv 2 > eddy_uvlog3
+grep -i k10err eddy_uvlog3 >> errlist.out
+
+echo '0.000125' > dt.dat
+./makenek eddy_uv
+nek eddy_uv 2 > eddy_uvlog4
+grep -i k10err eddy_uvlog4 >> errlist.out
+
+echo '0.0000625' > dt.dat
+./makenek eddy_uv
+nek eddy_uv 2 > eddy_uvlog5
+grep -i k10err eddy_uvlog5 >> errlist.out
+
+echo '0.00003125' > dt.dat
+./makenek eddy_uv
+nek eddy_uv 2 > eddy_uvlog6
+grep -i k10err eddy_uvlog6 >> errlist.out

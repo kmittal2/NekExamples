@@ -235,10 +235,10 @@ c     NOTE ::: This subroutine MAY NOT be called by every process
       ie = gllel(ieg)
 
       if (imask(ix,iy,iz,ie).eq.0) then
-      ux=0.0
-      uy=0.0
-      uz=0.0
-      temp=0.0
+       ux=0.0
+       uy=0.0
+       uz=0.0
+       temp=0.0
       else      
 
       if (igeom.le.2) then

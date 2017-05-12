@@ -1,0 +1,3 @@
+filetemplate: outside.fld%02d
+firsttimestep: 1
+numtimesteps:       30

@@ -317,7 +317,7 @@ c-----------------------------------------------------------------------
       return
       end
 c-----------------------------------------------------------------------
-      subroutine interp_v(uvw,xyz,n,ifpts)
+      subroutine interp_uvw(uvw,xyz,n,ifpts)
 c
 c     evaluate velocity for list of points xyz
 c
@@ -351,10 +351,10 @@ c     intpts to get rid off ' WARNING: point on boundary or ...'
       nxyz  = nx1*ny1*nz1
       ntot  = nxyz*nelt
 
-      if (n.gt.nmax) call exitti ('ABORT: interp_v() n > nmax!$',n)
+      if (n.gt.nmax) call exitti ('ABORT: interp_uvw() n > nmax!$',n)
       
       if (nelgt.ne.nelgv) call exitti
-     $   ('ABORT: interp_v() nelgt.ne.nelgv not yet supported!$',nelgv)
+     $  ('ABORT: interp_uvw() nelgt.ne.nelgv not yet supported!$',nelgv)
 
 cccc
 c     Setup interpolation at the beginning of the run
@@ -467,7 +467,7 @@ c     Lagrangian particle advection
 
       ifpts = .true.  !find points before interpolating at each iteration
                       !true for lagrangian tracking
-      call interp_v(u1,x,npart,ifpts)
+      call interp_uvw(u1,x,npart,ifpts)
 
       do i=1,npart
       do k=1,ndim

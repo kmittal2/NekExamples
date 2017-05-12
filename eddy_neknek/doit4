@@ -1,0 +1,29 @@
+echo '0.001' > dt.dat
+./makenek p4
+neknek p4in p4out 2 2 > p4log1
+grep -i k10err p4log1 >> errlist4.out
+
+echo '0.0005' > dt.dat
+./makenek p4
+neknek p4in p4out 2 2 > p4log2
+grep -i k10err p4log2 >> errlist4.out
+
+echo '0.00025' > dt.dat
+./makenek p4
+neknek p4in p4out 2 2 > p4log3
+grep -i k10err p4log3 >> errlist4.out
+
+echo '0.000125' > dt.dat
+./makenek p4
+neknek p4in p4out 2 2 > p4log4
+grep -i k10err p4log4 >> errlist4.out
+
+echo '0.0000625' > dt.dat
+./makenek p4
+neknek p4in p4out 2 2 > p4log5
+grep -i k10err p4log5 >> errlist4.out
+
+echo '0.00003125' > dt.dat
+./makenek p4
+neknek p4in p4out 2 2 > p4log6
+grep -i k10err p4log6 >> errlist4.out
