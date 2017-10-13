@@ -1,0 +1,2321 @@
+/----------------------------------------------------------\\
+|      _   __ ______ __ __  ______  ____   ____   ____     |
+|     / | / // ____// //_/ / ____/ / __ \\/ __ \\/ __ \\   |
+|    /  |/ // __/  / ,<   /___ \\ / / / // / / // / / /    |
+|   / /|  // /___ / /| | ____/ / / /_/ // /_/ // /_/ /     |
+|  /_/ |_//_____//_/ |_|/_____/  \\___/ \\___/ \\___/      |
+|                                                          |
+|----------------------------------------------------------|
+|                                                          |
+| NEK5000:  Open Source Spectral Element Solver            |
+| COPYRIGHT (c) 2008-2017 UCHICAGO ARGONNE, LLC            |
+| Version:  17.0.0-dev                                     |
+| Web:      http://nek5000.mcs.anl.gov                     |
+|                                                          |
+\\----------------------------------------------------------/
+                                                              
+
+ Number of processors:           2
+ REAL    wdsize      :           8
+ INTEGER wdsize      :           4
+ Timer accuracy      : 2.86E-07
+  
+ Reading /Users/K10/NekExamples/rayleigh/ray1.rea                                                                                            
+ mapping elements to processors
+ Reading /Users/K10/NekExamples/rayleigh/ray1.map                                                                                            
+           0           5           5          10          10  NELV
+           1           5           5          10          10  NELV
+ RANK     0 IEG       6       7       8       9      10
+  
+ element load imbalance:            0           5           5
+ done :: mapping   0.32091E-03 sec
+
+  
+           0  objects found
+ 103   Parameters from file:
+   1          1.000000         p01 DENSITY
+   2          1.000000         p02 VISCOS
+   7          1.000000         p07 RHOCP
+   8          1.000000         p08 CONDUCT
+  11          100.00         p11 NSTEPS
+  12        -2.0000000E-02     p12 DT
+  15          1000.000         p15 IOSTEP
+  24         1.0000000E-03     p24 TOLREL
+  25         1.0000000E-03     p25 TOLABS
+  26          2.010000         p26 COURANT/NTAU
+  27          2.000000         p27 TORDER
+  59         0.0000000E+00     p59 !=0 --> use std axhelm for all elem
+  66          6.000000         p66 write fmt:ONLY postx uses rea value
+  67          6.000000         p67 read fmt: same modes as p66
+  76           1750.           p76 Rayleigh number (in .usr)
+  93          40.00000         p93 Numbr of prev pressure solns saved
+  94          5.000000         p94 start projecting vel. after p94 step
+  95          5.000000         p95 start projecting pr after p95 step
+  99          3.000000         p99    dealiasing:if <0 disable
+  
+ done :: read .rea file   0.21489E-02 sec
+
+ nelgt/nelgv/lelt:          10          10          54
+ lx1  /lx2  /lx3 :          12          12          12
+ Reset the target Courant number to .5
+ setup mesh topology
+   Right-handed check complete for      10 elements. OK.
+   setvert2d:  12         320        1320         320         320
+ call usrsetvert
+ done :: usrsetvert
+
+gs_setup: 24 unique labels shared
+   pairwise times (avg, min, max): 7.51019e-07 6.91414e-07 8.10623e-07
+   crystal router                : 7.15256e-07 7.15256e-07 7.15256e-07
+   all reduce                    : 1.00136e-06 1.00136e-06 1.00136e-06
+   used all_to_all method: crystal router
+   handle bytes (avg, min, max): 3260 3260 3260
+   buffer bytes (avg, min, max): 768 768 768
+   setupds time 5.9891E-04 seconds   0 12         320          10
+           2  max multiplicity
+ done :: setup mesh topology
+  
+ call usrdat
+ done :: usrdat
+
+ generate geometry data
+ NOTE: All elements deformed , param(59) ^=0
+ done :: generate geometry data
+  
+ call usrdat2
+ done :: usrdat2
+
+ regenerate geometry data           1
+ NOTE: All elements deformed , param(59) ^=0
+ done :: regenerate geometry data           1
+  
+ verify mesh topology
+   0.0000000000000000        9.0000000000000018       Xrange
+   0.0000000000000000        1.0000000000000000       Yrange
+   0.0000000000000000        0.0000000000000000       Zrange
+ done :: verify mesh topology
+  
+ IFTRAN   = T
+ IFFLOW   = T
+ IFHEAT   = T
+ IFSPLIT  = T
+ IFLOMACH = F
+ IFUSERVP = F
+ IFUSERMV = F
+ IFSTRS   = F
+ IFCHAR   = F
+ IFCYCLIC = F
+ IFAXIS   = F
+ IFMVBD   = F
+ IFMELT   = F
+ IFMODEL  = F
+ IFKEPS   = F
+ IFMOAB   = F
+ IFNEKNEK = F
+ IFSYNC   = T
+   
+ IFVCOR   = T
+ IFINTQ   = F
+ IFCWUZ   = F
+ IFSWALL  = F
+ IFGEOM   = F
+ IFSURT   = F
+ IFWCNO   = F
+   
+ IFTMSH for field           1    =  F
+ IFADVC for field           1    =  T
+ IFNONL for field           1    =  F
+   
+ IFTMSH for field           2    =  T
+ IFADVC for field           2    =  T
+ IFNONL for field           2    =  F
+   
+ Dealiasing enabled, lxd=          18
+  
+ Estimated eigenvalues
+ EIGAA =    4.9957256845020206     
+ EIGGA =    8861.2012037678323     
+ EIGAE =   0.12184696791468339     
+ EIGAS =    3.0487804878048769E-003
+ EIGGE =    8861.2012037678323     
+ EIGGS =    2.0000000000000000     
+  
+ verify mesh topology
+   0.0000000000000000        9.0000000000000018       Xrange
+   0.0000000000000000        1.0000000000000000       Yrange
+   0.0000000000000000        0.0000000000000000       Zrange
+ done :: verify mesh topology
+  
+  E-solver strategy:  0 itr
+ mg_nx:           1           7          11
+ mg_ny:           1           7          11
+ mg_nz:           0           0           0
+ call usrsetvert
+ done :: usrsetvert
+
+gs_setup: 4 unique labels shared
+   pairwise times (avg, min, max): 5.48363e-07 5.00679e-07 5.96046e-07
+   crystal router                : 5.96046e-07 5.96046e-07 5.96046e-07
+   all reduce                    : 9.77516e-07 9.77516e-07 9.77516e-07
+   used all_to_all method: pairwise
+   handle bytes (avg, min, max): 516 516 516
+   buffer bytes (avg, min, max): 64 64 64
+   setupds time 2.1815E-04 seconds   1  2          20          10
+   setvert2d:   4          80         120          80          80
+ call usrsetvert
+ done :: usrsetvert
+
+gs_setup: 8 unique labels shared
+   pairwise times (avg, min, max): 6.4373e-07 5.96046e-07 6.91414e-07
+   crystal router                : 6.91414e-07 6.91414e-07 6.91414e-07
+   all reduce                    : 1.19209e-06 1.19209e-06 1.19209e-06
+   used all_to_all method: pairwise
+   handle bytes (avg, min, max): 804 804 804
+   buffer bytes (avg, min, max): 128 128 128
+   setupds time 2.7204E-04 seconds   2  4          80          10
+   setvert2d:   8         200         560         200         200
+ call usrsetvert
+ done :: usrsetvert
+
+gs_setup: 16 unique labels shared
+   pairwise times (avg, min, max): 6.91414e-07 6.91414e-07 6.91414e-07
+   crystal router                : 5.96046e-07 5.96046e-07 5.96046e-07
+   all reduce                    : 1.09673e-06 1.09673e-06 1.09673e-06
+   used all_to_all method: crystal router
+   handle bytes (avg, min, max): 2300 2300 2300
+   buffer bytes (avg, min, max): 512 512 512
+   setupds time 3.0279E-04 seconds   3  8         200          10
+   setvert2d:  10         260         900         260         260
+ call usrsetvert
+ done :: usrsetvert
+
+gs_setup: 20 unique labels shared
+   pairwise times (avg, min, max): 6.91414e-07 6.91414e-07 6.91414e-07
+   crystal router                : 6.91414e-07 6.91414e-07 6.91414e-07
+   all reduce                    : 1.12057e-06 1.12057e-06 1.12057e-06
+   used all_to_all method: pairwise
+   handle bytes (avg, min, max): 1668 1668 1668
+   buffer bytes (avg, min, max): 320 320 320
+   setupds time 3.2496E-04 seconds   4 10         260          10
+ regenerate geometry data           1
+ NOTE: All elements deformed , param(59) ^=0
+ done :: regenerate geometry data           1
+  
+ h1_mg_nx:           1           3          11
+ h1_mg_ny:           1           3          11
+ h1_mg_nz:           0           0           0
+ call usrsetvert
+ done :: usrsetvert
+
+gs_setup: 4 unique labels shared
+   pairwise times (avg, min, max): 6.19888e-07 6.19888e-07 6.19888e-07
+   crystal router                : 1.95503e-06 1.90735e-06 2.00272e-06
+   all reduce                    : 1.04904e-06 1.00136e-06 1.09673e-06
+   used all_to_all method: pairwise
+   handle bytes (avg, min, max): 516 516 516
+   buffer bytes (avg, min, max): 64 64 64
+   setupds time 2.5702E-04 seconds   5  2          20          10
+   setvert2d:   4          80         120          80          80
+ call usrsetvert
+ done :: usrsetvert
+
+gs_setup: 8 unique labels shared
+   pairwise times (avg, min, max): 7.15256e-07 7.15256e-07 7.15256e-07
+   crystal router                : 6.91414e-07 6.91414e-07 6.91414e-07
+   all reduce                    : 1.04904e-06 1.00136e-06 1.09673e-06
+   used all_to_all method: crystal router
+   handle bytes (avg, min, max): 1340 1340 1340
+   buffer bytes (avg, min, max): 256 256 256
+   setupds time 2.3818E-04 seconds   6  4          80          10
+   setvert2d:   4          80         120          80          80
+ call usrsetvert
+ done :: usrsetvert
+
+gs_setup: 8 unique labels shared
+   pairwise times (avg, min, max): 7.15256e-07 7.15256e-07 7.15256e-07
+   crystal router                : 2.19345e-06 2.19345e-06 2.19345e-06
+   all reduce                    : 1.09673e-06 1.09673e-06 1.09673e-06
+   used all_to_all method: pairwise
+   handle bytes (avg, min, max): 804 804 804
+   buffer bytes (avg, min, max): 128 128 128
+   setupds time 2.4199E-04 seconds   7  4          80          10
+   setvert2d:   6         140         300         140         140
+ call usrsetvert
+ done :: usrsetvert
+
+gs_setup: 12 unique labels shared
+   pairwise times (avg, min, max): 6.4373e-07 5.96046e-07 6.91414e-07
+   crystal router                : 5.96046e-07 5.96046e-07 5.96046e-07
+   all reduce                    : 1.00136e-06 1.00136e-06 1.00136e-06
+   used all_to_all method: crystal router
+   handle bytes (avg, min, max): 1820 1820 1820
+   buffer bytes (avg, min, max): 384 384 384
+   setupds time 2.7084E-04 seconds   8  6         140          10
+   setvert2d:  12         320        1320         320         320
+ call usrsetvert
+ done :: usrsetvert
+
+gs_setup: 24 unique labels shared
+   pairwise times (avg, min, max): 6.91414e-07 6.91414e-07 6.91414e-07
+   crystal router                : 7.15256e-07 7.15256e-07 7.15256e-07
+   all reduce                    : 1.21593e-06 1.21593e-06 1.21593e-06
+   used all_to_all method: pairwise
+   handle bytes (avg, min, max): 1956 1956 1956
+   buffer bytes (avg, min, max): 384 384 384
+   setupds time 3.1400E-04 seconds   9 12         320          10
+   setvert2d:  14         380        1820         380         380
+ call usrsetvert
+ done :: usrsetvert
+
+gs_setup: 28 unique labels shared
+   pairwise times (avg, min, max): 6.91414e-07 6.91414e-07 6.91414e-07
+   crystal router                : 7.39098e-07 6.91414e-07 7.86781e-07
+   all reduce                    : 1.14441e-06 1.09673e-06 1.19209e-06
+   used all_to_all method: pairwise
+   handle bytes (avg, min, max): 2244 2244 2244
+   buffer bytes (avg, min, max): 448 448 448
+   setupds time 3.3498E-04 seconds  10 14         380          10
+ setup h1 coarse grid, nx_crs=           2
+ call usrsetvert
+ done :: usrsetvert
+
+gs_setup: 4 unique labels shared
+   pairwise times (avg, min, max): 5.96046e-07 5.96046e-07 5.96046e-07
+   crystal router                : 6.19888e-07 6.19888e-07 6.19888e-07
+   all reduce                    : 1.00136e-06 1.00136e-06 1.00136e-06
+   used all_to_all method: pairwise
+   handle bytes (avg, min, max): 516 516 516
+   buffer bytes (avg, min, max): 64 64 64
+ done :: setup h1 coarse grid    7.0500373840332031E-004  sec
+  
+ call usrdat3
+ done :: usrdat3
+
+ set initial conditions
+ nekuic (1) for ifld            1
+ nekuic (1) for ifld            2
+ call nekuic for ifld            2
+ call nekuic for vel  
+ xyz min     0.0000       0.0000       0.0000    
+ uvwpt min   0.0000       0.0000       0.0000       0.0000       0.0000    
+ xyz max     9.0000       1.0000       0.0000    
+ uvwpt max   0.0000       0.0000       0.0000       0.0000       1.0000    
+ done :: set initial conditions
+  
+ call userchk
+
+        0  0.0000E+00 Write checkpoint
+       FILE:ray10.f00001                                                                                                                        
+
+        0  0.0000E+00 done :: Write checkpoint
+                              file size =     331.E-04MB
+                              avg data-throughput =    57.4MB/s
+                              io-nodes =     1
+
+        0  0.000000E+00  0.000000E+00  0.000000E+00 umax
+ done :: userchk
+
+gridpoints unique/tot:          1320         1440
+  dofs:                 1100                 1320
+  
+ Initialization successfully completed   0.14718E-01 sec
+
+Starting time loop ...
+
+     DT/DTCFL/DTFS/DTINIT   0.200E-01   0.223-313   0.221-313   0.200E-01
+Step      1, t= 2.0000000E-02, DT= 2.0000000E-02, C=  0.000 0.0000E+00 0.0000E+00
+             Solving for Hmholtz scalars
+  Temperature/Passive scalar solution
+          1  Hmholtz TEMP       1   2.7041E+00   1.0000E+00   2.2351E-03   5.0000E+01   F
+          1  Hmholtz TEMP       2   7.0133E-01   1.0000E+00   2.2351E-03   5.0000E+01   F
+          1  Hmholtz TEMP       3   2.8945E-01   1.0000E+00   2.2351E-03   5.0000E+01   F
+          1  Hmholtz TEMP       4   1.7730E-01   1.0000E+00   2.2351E-03   5.0000E+01   F
+          1  Hmholtz TEMP       5   1.0435E-01   1.0000E+00   2.2351E-03   5.0000E+01   F
+          1  Hmholtz TEMP       6   6.6413E-02   1.0000E+00   2.2351E-03   5.0000E+01   F
+          1  Hmholtz TEMP       7   4.8329E-02   1.0000E+00   2.2351E-03   5.0000E+01   F
+          1  Hmholtz TEMP       8   3.3491E-02   1.0000E+00   2.2351E-03   5.0000E+01   F
+          1  Hmholtz TEMP       9   2.3946E-02   1.0000E+00   2.2351E-03   5.0000E+01   F
+          1  Hmholtz TEMP      10   1.8187E-02   1.0000E+00   2.2351E-03   5.0000E+01   F
+          1  Hmholtz TEMP      11   1.4001E-02   1.0000E+00   2.2351E-03   5.0000E+01   F
+          1  Hmholtz TEMP      12   1.0651E-02   1.0000E+00   2.2351E-03   5.0000E+01   F
+          1  Hmholtz TEMP      13   8.1098E-03   1.0000E+00   2.2351E-03   5.0000E+01   F
+          1  Hmholtz TEMP      14   6.1130E-03   1.0000E+00   2.2351E-03   5.0000E+01   F
+          1  Hmholtz TEMP      15   5.0164E-03   1.0000E+00   2.2351E-03   5.0000E+01   F
+          1  Hmholtz TEMP      16   3.9362E-03   1.0000E+00   2.2351E-03   5.0000E+01   F
+          1  Hmholtz TEMP      17   3.0473E-03   1.0000E+00   2.2351E-03   5.0000E+01   F
+          1  Hmholtz TEMP      18   2.2574E-03   1.0000E+00   2.2351E-03   5.0000E+01   F
+          1  Hmholtz TEMP      19   1.6262E-03   1.0000E+00   2.2351E-03   5.0000E+01   F
+          1  Hmholtz TEMP      18   1.6262E-03   2.7041E+00   2.2351E-03
+          1  Scalars done  2.0000E-02  1.7409E-03
+             Solving for fluid
+ Relax the pressure tolerance    2.0030717918952119        6.2696419167618614E-008
+ New CG1-tolerance (RINIT*epsm) =    2.0030717918952119E-009   1.2539283833523724E-009
+ New CG1-tolerance (Neumann) =    2.0030717918952121E-008
+    1 2.00307E-08 2.59660E+02 5.70055E+02 4.55500E-01       1 Divergence
+    2 2.00307E-08 1.84532E+02 5.70055E+02 3.23709E-01       1 Divergence
+    3 2.00307E-08 2.14965E+01 5.70055E+02 3.77095E-02       1 Divergence
+    4 2.00307E-08 6.53061E+00 5.70055E+02 1.14561E-02       1 Divergence
+    5 2.00307E-08 1.74504E+00 5.70055E+02 3.06118E-03       1 Divergence
+    6 2.00307E-08 1.75793E-01 5.70055E+02 3.08380E-04       1 Divergence
+    7 2.00307E-08 1.09649E-02 5.70055E+02 1.92348E-05       1 Divergence
+    8 2.00307E-08 2.87047E-03 5.70055E+02 5.03542E-06       1 Divergence
+    9 2.00307E-08 1.09453E-03 5.70055E+02 1.92005E-06       1 Divergence
+   10 2.00307E-08 7.38872E-05 5.70055E+02 1.29614E-07       1 Divergence
+   11 2.00307E-08 2.45279E-05 5.70055E+02 4.30273E-08       1 Divergence
+   12 2.00307E-08 8.37318E-06 5.70055E+02 1.46884E-08       1 Divergence
+   13 2.00307E-08 9.41818E-07 5.70055E+02 1.65215E-09       1 Divergence
+   14 2.00307E-08 3.49684E-07 5.70055E+02 6.13421E-10       1 Divergence
+   15 2.00307E-08 7.63058E-08 5.70055E+02 1.33857E-10       1 Divergence
+   16 2.00307E-08 2.36075E-08 5.70055E+02 4.14127E-11       1 Divergence
+   17 2.00307E-08 3.23919E-09 5.70055E+02 5.68224E-12       1 Divergence
+          1  PRES gmres        17   3.2392E-09   5.7006E+02   2.0031E-08   1.9975E-03   3.9060E-03    F
+          1  Hmholtz velx       1   1.1327E+00   1.0000E+00   3.7252E-07   5.0000E+01   F
+          1  Hmholtz velx       2   8.1606E-01   1.0000E+00   3.7252E-07   5.0000E+01   F
+          1  Hmholtz velx       3   6.6393E-01   1.0000E+00   3.7252E-07   5.0000E+01   F
+          1  Hmholtz velx       4   4.8500E-01   1.0000E+00   3.7252E-07   5.0000E+01   F
+          1  Hmholtz velx       5   3.6581E-01   1.0000E+00   3.7252E-07   5.0000E+01   F
+          1  Hmholtz velx       6   2.7175E-01   1.0000E+00   3.7252E-07   5.0000E+01   F
+          1  Hmholtz velx       7   2.0710E-01   1.0000E+00   3.7252E-07   5.0000E+01   F
+          1  Hmholtz velx       8   1.6797E-01   1.0000E+00   3.7252E-07   5.0000E+01   F
+          1  Hmholtz velx       9   1.3602E-01   1.0000E+00   3.7252E-07   5.0000E+01   F
+          1  Hmholtz velx      10   9.6650E-02   1.0000E+00   3.7252E-07   5.0000E+01   F
+          1  Hmholtz velx      11   6.6349E-02   1.0000E+00   3.7252E-07   5.0000E+01   F
+          1  Hmholtz velx      12   4.7153E-02   1.0000E+00   3.7252E-07   5.0000E+01   F
+          1  Hmholtz velx      13   3.4549E-02   1.0000E+00   3.7252E-07   5.0000E+01   F
+          1  Hmholtz velx      14   2.5380E-02   1.0000E+00   3.7252E-07   5.0000E+01   F
+          1  Hmholtz velx      15   1.8895E-02   1.0000E+00   3.7252E-07   5.0000E+01   F
+          1  Hmholtz velx      16   1.4090E-02   1.0000E+00   3.7252E-07   5.0000E+01   F
+          1  Hmholtz velx      17   1.0546E-02   1.0000E+00   3.7252E-07   5.0000E+01   F
+          1  Hmholtz velx      18   8.1944E-03   1.0000E+00   3.7252E-07   5.0000E+01   F
+          1  Hmholtz velx      19   6.3605E-03   1.0000E+00   3.7252E-07   5.0000E+01   F
+          1  Hmholtz velx      20   4.6092E-03   1.0000E+00   3.7252E-07   5.0000E+01   F
+          1  Hmholtz velx      21   3.4721E-03   1.0000E+00   3.7252E-07   5.0000E+01   F
+          1  Hmholtz velx      22   2.5982E-03   1.0000E+00   3.7252E-07   5.0000E+01   F
+          1  Hmholtz velx      23   2.1121E-03   1.0000E+00   3.7252E-07   5.0000E+01   F
+          1  Hmholtz velx      24   1.7016E-03   1.0000E+00   3.7252E-07   5.0000E+01   F
+          1  Hmholtz velx      25   1.3171E-03   1.0000E+00   3.7252E-07   5.0000E+01   F
+          1  Hmholtz velx      26   1.0108E-03   1.0000E+00   3.7252E-07   5.0000E+01   F
+          1  Hmholtz velx      27   7.2670E-04   1.0000E+00   3.7252E-07   5.0000E+01   F
+          1  Hmholtz velx      28   5.8889E-04   1.0000E+00   3.7252E-07   5.0000E+01   F
+          1  Hmholtz velx      29   4.5224E-04   1.0000E+00   3.7252E-07   5.0000E+01   F
+          1  Hmholtz velx      30   3.4108E-04   1.0000E+00   3.7252E-07   5.0000E+01   F
+          1  Hmholtz velx      31   2.5813E-04   1.0000E+00   3.7252E-07   5.0000E+01   F
+          1  Hmholtz velx      32   1.8784E-04   1.0000E+00   3.7252E-07   5.0000E+01   F
+          1  Hmholtz velx      33   1.2839E-04   1.0000E+00   3.7252E-07   5.0000E+01   F
+          1  Hmholtz velx      34   8.9136E-05   1.0000E+00   3.7252E-07   5.0000E+01   F
+          1  Hmholtz velx      35   5.5281E-05   1.0000E+00   3.7252E-07   5.0000E+01   F
+          1  Hmholtz velx      36   3.6309E-05   1.0000E+00   3.7252E-07   5.0000E+01   F
+          1  Hmholtz velx      37   2.1557E-05   1.0000E+00   3.7252E-07   5.0000E+01   F
+          1  Hmholtz velx      38   1.4121E-05   1.0000E+00   3.7252E-07   5.0000E+01   F
+          1  Hmholtz velx      39   9.3627E-06   1.0000E+00   3.7252E-07   5.0000E+01   F
+          1  Hmholtz velx      40   6.7871E-06   1.0000E+00   3.7252E-07   5.0000E+01   F
+          1  Hmholtz velx      41   4.1417E-06   1.0000E+00   3.7252E-07   5.0000E+01   F
+          1  Hmholtz velx      42   2.7204E-06   1.0000E+00   3.7252E-07   5.0000E+01   F
+          1  Hmholtz velx      43   2.0966E-06   1.0000E+00   3.7252E-07   5.0000E+01   F
+          1  Hmholtz velx      44   1.6410E-06   1.0000E+00   3.7252E-07   5.0000E+01   F
+          1  Hmholtz velx      45   1.3140E-06   1.0000E+00   3.7252E-07   5.0000E+01   F
+          1  Hmholtz velx      46   1.0963E-06   1.0000E+00   3.7252E-07   5.0000E+01   F
+          1  Hmholtz velx      47   9.6971E-07   1.0000E+00   3.7252E-07   5.0000E+01   F
+          1  Hmholtz velx      48   7.5645E-07   1.0000E+00   3.7252E-07   5.0000E+01   F
+          1  Hmholtz velx      49   5.7994E-07   1.0000E+00   3.7252E-07   5.0000E+01   F
+          1  Hmholtz velx      50   4.1449E-07   1.0000E+00   3.7252E-07   5.0000E+01   F
+          1  Hmholtz velx      51   2.4513E-07   1.0000E+00   3.7252E-07   5.0000E+01   F
+          1  Hmholtz velx      50   2.4513E-07   1.1327E+00   3.7252E-07
+          1  Hmholtz vely       1   2.3597E+00   1.0000E+00   3.7252E-07   5.0000E+01   F
+          1  Hmholtz vely       2   1.5399E+00   1.0000E+00   3.7252E-07   5.0000E+01   F
+          1  Hmholtz vely       3   1.1946E+00   1.0000E+00   3.7252E-07   5.0000E+01   F
+          1  Hmholtz vely       4   8.3523E-01   1.0000E+00   3.7252E-07   5.0000E+01   F
+          1  Hmholtz vely       5   6.4450E-01   1.0000E+00   3.7252E-07   5.0000E+01   F
+          1  Hmholtz vely       6   5.0089E-01   1.0000E+00   3.7252E-07   5.0000E+01   F
+          1  Hmholtz vely       7   3.7451E-01   1.0000E+00   3.7252E-07   5.0000E+01   F
+          1  Hmholtz vely       8   2.8864E-01   1.0000E+00   3.7252E-07   5.0000E+01   F
+          1  Hmholtz vely       9   2.3718E-01   1.0000E+00   3.7252E-07   5.0000E+01   F
+          1  Hmholtz vely      10   2.0233E-01   1.0000E+00   3.7252E-07   5.0000E+01   F
+          1  Hmholtz vely      11   1.5091E-01   1.0000E+00   3.7252E-07   5.0000E+01   F
+          1  Hmholtz vely      12   1.1469E-01   1.0000E+00   3.7252E-07   5.0000E+01   F
+          1  Hmholtz vely      13   8.8384E-02   1.0000E+00   3.7252E-07   5.0000E+01   F
+          1  Hmholtz vely      14   5.8543E-02   1.0000E+00   3.7252E-07   5.0000E+01   F
+          1  Hmholtz vely      15   4.3416E-02   1.0000E+00   3.7252E-07   5.0000E+01   F
+          1  Hmholtz vely      16   3.0651E-02   1.0000E+00   3.7252E-07   5.0000E+01   F
+          1  Hmholtz vely      17   2.2560E-02   1.0000E+00   3.7252E-07   5.0000E+01   F
+          1  Hmholtz vely      18   1.6127E-02   1.0000E+00   3.7252E-07   5.0000E+01   F
+          1  Hmholtz vely      19   1.1560E-02   1.0000E+00   3.7252E-07   5.0000E+01   F
+          1  Hmholtz vely      20   8.4942E-03   1.0000E+00   3.7252E-07   5.0000E+01   F
+          1  Hmholtz vely      21   6.8822E-03   1.0000E+00   3.7252E-07   5.0000E+01   F
+          1  Hmholtz vely      22   5.6299E-03   1.0000E+00   3.7252E-07   5.0000E+01   F
+          1  Hmholtz vely      23   4.3647E-03   1.0000E+00   3.7252E-07   5.0000E+01   F
+          1  Hmholtz vely      24   3.0552E-03   1.0000E+00   3.7252E-07   5.0000E+01   F
+          1  Hmholtz vely      25   2.0462E-03   1.0000E+00   3.7252E-07   5.0000E+01   F
+          1  Hmholtz vely      26   1.3998E-03   1.0000E+00   3.7252E-07   5.0000E+01   F
+          1  Hmholtz vely      27   1.0252E-03   1.0000E+00   3.7252E-07   5.0000E+01   F
+          1  Hmholtz vely      28   7.8109E-04   1.0000E+00   3.7252E-07   5.0000E+01   F
+          1  Hmholtz vely      29   6.4865E-04   1.0000E+00   3.7252E-07   5.0000E+01   F
+          1  Hmholtz vely      30   4.9209E-04   1.0000E+00   3.7252E-07   5.0000E+01   F
+          1  Hmholtz vely      31   3.5783E-04   1.0000E+00   3.7252E-07   5.0000E+01   F
+          1  Hmholtz vely      32   2.5565E-04   1.0000E+00   3.7252E-07   5.0000E+01   F
+          1  Hmholtz vely      33   1.7244E-04   1.0000E+00   3.7252E-07   5.0000E+01   F
+          1  Hmholtz vely      34   1.1224E-04   1.0000E+00   3.7252E-07   5.0000E+01   F
+          1  Hmholtz vely      35   7.7450E-05   1.0000E+00   3.7252E-07   5.0000E+01   F
+          1  Hmholtz vely      36   5.5473E-05   1.0000E+00   3.7252E-07   5.0000E+01   F
+          1  Hmholtz vely      37   3.9977E-05   1.0000E+00   3.7252E-07   5.0000E+01   F
+          1  Hmholtz vely      38   2.7108E-05   1.0000E+00   3.7252E-07   5.0000E+01   F
+          1  Hmholtz vely      39   1.9891E-05   1.0000E+00   3.7252E-07   5.0000E+01   F
+          1  Hmholtz vely      40   1.6017E-05   1.0000E+00   3.7252E-07   5.0000E+01   F
+          1  Hmholtz vely      41   1.2553E-05   1.0000E+00   3.7252E-07   5.0000E+01   F
+          1  Hmholtz vely      42   9.2318E-06   1.0000E+00   3.7252E-07   5.0000E+01   F
+          1  Hmholtz vely      43   8.0735E-06   1.0000E+00   3.7252E-07   5.0000E+01   F
+          1  Hmholtz vely      44   7.2593E-06   1.0000E+00   3.7252E-07   5.0000E+01   F
+          1  Hmholtz vely      45   5.7170E-06   1.0000E+00   3.7252E-07   5.0000E+01   F
+          1  Hmholtz vely      46   4.5048E-06   1.0000E+00   3.7252E-07   5.0000E+01   F
+          1  Hmholtz vely      47   3.3093E-06   1.0000E+00   3.7252E-07   5.0000E+01   F
+          1  Hmholtz vely      48   2.2138E-06   1.0000E+00   3.7252E-07   5.0000E+01   F
+          1  Hmholtz vely      49   1.4258E-06   1.0000E+00   3.7252E-07   5.0000E+01   F
+          1  Hmholtz vely      50   9.1967E-07   1.0000E+00   3.7252E-07   5.0000E+01   F
+          1  Hmholtz vely      51   5.7176E-07   1.0000E+00   3.7252E-07   5.0000E+01   F
+          1  Hmholtz vely      52   3.7242E-07   1.0000E+00   3.7252E-07   5.0000E+01   F
+          1  Hmholtz vely      51   3.7242E-07   2.3597E+00   3.7252E-07
+             L1/L2 DIV(V)          -1.2824E-17   2.4322E-02
+             L1/L2 QTL              0.0000E+00   0.0000E+00
+             L1/L2 DIV(V)-QTL      -1.2824E-17   2.4322E-02
+          1  Fluid done  2.0000E-02  1.2690E-02
+
+        1  2.0000E-02 Write checkpoint
+       FILE:ray10.f00002                                                                                                                        
+
+        1  2.0000E-02 done :: Write checkpoint
+                              file size =     331.E-04MB
+                              avg data-throughput =    78.5MB/s
+                              io-nodes =     1
+
+        1  2.000000E-02  1.742028E-02  2.823915E-02 umax
+Step      2, t= 4.0000000E-02, DT= 2.0000000E-02, C=  0.009 1.6597E-02 1.6597E-02
+             Solving for Hmholtz scalars
+          2  Hmholtz TEMP      11   2.1656E-03   1.1681E-01   2.2351E-03
+          2  Scalars done  4.0000E-02  9.8109E-04
+             Solving for fluid
+ Relax the pressure tolerance    1.0132160478444853E-002   6.8641450294192413E-006
+          2  PRES gmres        15   1.2651E-07   8.9522E+00   1.3728E-07   1.5919E-03   2.8331E-03    F
+          2  Hmholtz velx      33   3.0116E-05   1.8358E+00   4.0784E-05
+          2  Hmholtz vely      34   3.5995E-05   3.9516E+00   4.0784E-05
+             L1/L2 DIV(V)           3.5779E-18   3.0884E-02
+             L1/L2 QTL              0.0000E+00   0.0000E+00
+             L1/L2 DIV(V)-QTL       3.5779E-18   3.0884E-02
+          2  Fluid done  4.0000E-02  8.3542E-03
+        2  4.000000E-02  1.082291E-02  1.993812E-02 umax
+Step      3, t= 6.0000000E-02, DT= 2.0000000E-02, C=  0.010 2.6877E-02 1.0280E-02
+             Solving for Hmholtz scalars
+          3  Hmholtz TEMP      10   2.1956E-03   3.0946E-02   2.2351E-03
+          3  Scalars done  6.0000E-02  9.1910E-04
+             Solving for fluid
+ Relax the pressure tolerance    1.2400736115945452E-002   4.3696148237138486E-006
+          3  PRES gmres        16   3.3922E-08   6.9143E+00   8.7392E-08   1.6909E-03   3.0131E-03    F
+          3  Hmholtz velx      32   2.5857E-05   1.7163E+00   2.5963E-05
+          3  Hmholtz vely      36   1.5829E-05   2.7367E+00   2.5963E-05
+             L1/L2 DIV(V)          -5.7583E-18   5.3664E-02
+             L1/L2 QTL              0.0000E+00   0.0000E+00
+             L1/L2 DIV(V)-QTL      -5.7583E-18   5.3664E-02
+          3  Fluid done  6.0000E-02  7.9951E-03
+        3  6.000000E-02  1.497401E-02  2.379613E-02 umax
+Step      4, t= 8.0000000E-02, DT= 2.0000000E-02, C=  0.012 3.6789E-02 9.9120E-03
+             Solving for Hmholtz scalars
+          4  Hmholtz TEMP      11   1.9282E-03   3.1828E-02   2.2351E-03
+          4  Scalars done  8.0000E-02  9.4986E-04
+             Solving for fluid
+ Relax the pressure tolerance    1.1251530965995829E-002   4.4443003275653055E-006
+          4  PRES gmres        16   2.6634E-08   4.1693E+00   8.8886E-08   1.7321E-03   3.0642E-03    F
+          4  Hmholtz velx      32   2.3052E-05   1.5119E+00   2.6406E-05
+          4  Hmholtz vely      35   1.9851E-05   1.8434E+00   2.6406E-05
+             L1/L2 DIV(V)          -4.0582E-19   4.1857E-02
+             L1/L2 QTL              0.0000E+00   0.0000E+00
+             L1/L2 DIV(V)-QTL      -4.0582E-19   4.1857E-02
+          4  Fluid done  8.0000E-02  8.1382E-03
+        4  8.000000E-02  1.269089E-02  2.441483E-02 umax
+Step      5, t= 1.0000000E-01, DT= 2.0000000E-02, C=  0.009 4.6829E-02 1.0040E-02
+             Solving for Hmholtz scalars
+          5  Hmholtz TEMP      11   1.7242E-03   2.6401E-02   2.2351E-03
+          5  Scalars done  1.0000E-01  1.0519E-03
+             Solving for fluid
+ Relax the pressure tolerance    7.0372875596846690E-003   3.1691297087403047E-006
+          5  PRES gmres        16   2.1242E-08   2.2961E+00   6.3383E-08   1.6961E-03   3.0720E-03    F
+          5  Hmholtz velx      31   1.7232E-05   8.1261E-01   1.8830E-05
+          5  Hmholtz vely      35   1.1488E-05   1.1219E+00   1.8830E-05
+             L1/L2 DIV(V)          -2.8129E-18   1.5119E-02
+             L1/L2 QTL              0.0000E+00   0.0000E+00
+             L1/L2 DIV(V)-QTL      -2.8129E-18   1.5119E-02
+          5  Fluid done  1.0000E-01  8.2200E-03
+        5  1.000000E-01  1.092533E-02  1.045490E-02 umax
+Step      6, t= 1.2000000E-01, DT= 2.0000000E-02, C=  0.007 5.7019E-02 1.0190E-02
+             Solving for Hmholtz scalars
+          6  Project TEMP           4.9253E-03   2.0423E-03   2.4117E+00   1   1
+          6  Hmholtz TEMP       6   2.1893E-03   6.8809E-03   2.2351E-03
+          6  Scalars done  1.2000E-01  9.4891E-04
+             Solving for fluid
+ Relax the pressure tolerance    2.5754734339595783E-003   2.1457156015912690E-006
+          6  Project PRES           2.5126E+00   2.1734E+00   1.1561E+00   1   1
+          6  PRES gmres        16   1.4650E-08   7.2445E-01   4.2914E-08   1.6572E-03   2.9681E-03    F
+          6  Project velx           9.9913E-02   9.6529E-02   1.0351E+00   1   1
+          6  Hmholtz velx      32   1.0559E-05   3.4289E-01   1.2749E-05
+          6  Project vely           1.4275E-01   1.1566E-01   1.2343E+00   1   1
+          6  Hmholtz vely      33   1.1834E-05   4.4533E-01   1.2749E-05
+             L1/L2 DIV(V)          -5.8426E-19   9.6918E-03
+             L1/L2 QTL              0.0000E+00   0.0000E+00
+             L1/L2 DIV(V)-QTL      -5.8426E-19   9.6918E-03
+          6  Fluid done  1.2000E-01  8.3699E-03
+        6  1.200000E-01  9.563344E-03  9.414880E-03 umax
+Step      7, t= 1.4000000E-01, DT= 2.0000000E-02, C=  0.007 6.7132E-02 1.0113E-02
+             Solving for Hmholtz scalars
+          7  Project TEMP           2.8874E-03   1.6735E-03   1.7254E+00   2   0
+          7  Hmholtz TEMP       7   2.0174E-03   5.7568E-03   2.2351E-03
+          7  Scalars done  1.4000E-01  8.6808E-04
+             Solving for fluid
+ Relax the pressure tolerance    1.6045741169714411E-003   1.6921249667771752E-006
+          7  Project PRES           2.3706E+00   1.7510E+00   1.3539E+00   2   0
+          7  PRES gmres        16   9.9233E-09   5.8365E-01   3.3842E-08   1.6525E-03   2.9590E-03    F
+          7  Project velx           8.4808E-02   6.9529E-02   1.2198E+00   2   0
+          7  Hmholtz velx      32   7.1170E-06   2.6870E-01   1.0054E-05
+          7  Project vely           1.1327E-01   9.4843E-02   1.1943E+00   2   0
+          7  Hmholtz vely      33   8.1907E-06   3.5242E-01   1.0054E-05
+             L1/L2 DIV(V)          -2.6503E-19   8.8368E-03
+             L1/L2 QTL              0.0000E+00   0.0000E+00
+             L1/L2 DIV(V)-QTL      -2.6503E-19   8.8368E-03
+          7  Fluid done  1.4000E-01  8.2541E-03
+        7  1.400000E-01  9.297146E-03  6.713365E-03 umax
+Step      8, t= 1.6000000E-01, DT= 2.0000000E-02, C=  0.007 7.7217E-02 1.0085E-02
+             Solving for Hmholtz scalars
+          8  Project TEMP           2.6355E-03   1.6152E-03   1.6317E+00   3   0
+          8  Hmholtz TEMP       6   2.0097E-03   5.4207E-03   2.2351E-03
+          8  Scalars done  1.6000E-01  8.4209E-04
+             Solving for fluid
+ Relax the pressure tolerance    1.2758489179962894E-003   1.6947881885315458E-006
+          8  Project PRES           1.7781E+00   1.0137E+00   1.7541E+00   3   0
+          8  PRES gmres        15   1.9445E-08   3.3790E-01   3.3896E-08   1.5726E-03   2.7821E-03    F
+          8  Project velx           5.0250E-02   4.7513E-02   1.0576E+00   3   0
+          8  Hmholtz velx      30   9.9747E-06   1.8348E-01   1.0070E-05
+          8  Project vely           9.1068E-02   5.4494E-02   1.6711E+00   3   0
+          8  Hmholtz vely      32   8.6948E-06   2.2448E-01   1.0070E-05
+             L1/L2 DIV(V)          -1.4456E-19   6.3452E-03
+             L1/L2 QTL              0.0000E+00   0.0000E+00
+             L1/L2 DIV(V)-QTL      -1.4456E-19   6.3452E-03
+          8  Fluid done  1.6000E-01  7.9632E-03
+        8  1.600000E-01  8.141128E-03  6.726839E-03 umax
+Step      9, t= 1.8000000E-01, DT= 2.0000000E-02, C=  0.006 8.6966E-02 9.7492E-03
+             Solving for Hmholtz scalars
+          9  Project TEMP           2.0756E-03   9.8975E-04   2.0971E+00   4   0
+          9  Hmholtz TEMP       4   2.0234E-03   3.6079E-03   2.2351E-03
+          9  Scalars done  1.8000E-01  8.1205E-04
+             Solving for fluid
+ Relax the pressure tolerance    1.0019435177575427E-003   1.3919352873360942E-006
+          9  Project PRES           9.8803E-01   6.6521E-01   1.4853E+00   4   0
+          9  PRES gmres        15   1.2544E-08   2.2174E-01   2.7839E-08   1.5604E-03   2.7781E-03    F
+          9  Project velx           6.4146E-02   2.9064E-02   2.2071E+00   4   0
+          9  Hmholtz velx      29   7.6744E-06   9.8591E-02   8.2704E-06
+          9  Project vely           6.9811E-02   3.3516E-02   2.0829E+00   4   0
+          9  Hmholtz vely      31   7.4239E-06   1.2538E-01   8.2704E-06
+             L1/L2 DIV(V)          -1.0902E-18   4.6636E-03
+             L1/L2 QTL              0.0000E+00   0.0000E+00
+             L1/L2 DIV(V)-QTL      -1.0902E-18   4.6636E-03
+          9  Fluid done  1.8000E-01  7.9620E-03
+        9  1.800000E-01  6.657442E-03  6.173992E-03 umax
+Step     10, t= 2.0000000E-01, DT= 2.0000000E-02, C=  0.005 9.6656E-02 9.6898E-03
+             Solving for Hmholtz scalars
+         10  Project TEMP           1.5651E-03   6.1358E-04   2.5508E+00   5   0
+         10  Hmholtz TEMP       2   1.8971E-03   2.5351E-03   2.2351E-03
+         10  Scalars done  2.0000E-01  7.9298E-04
+             Solving for fluid
+ Relax the pressure tolerance    7.3929704315063766E-004   1.3972668768045522E-006
+         10  Project PRES           7.1185E-01   5.3368E-01   1.3338E+00   5   0
+         10  PRES gmres        15   1.1416E-08   1.7789E-01   2.7945E-08   1.5781E-03   2.7890E-03    F
+         10  Project velx           4.0638E-02   2.6928E-02   1.5092E+00   5   0
+         10  Hmholtz velx      30   6.4668E-06   1.0011E-01   8.3020E-06
+         10  Project vely           7.3181E-02   2.7688E-02   2.6431E+00   5   0
+         10  Hmholtz vely      30   7.0438E-06   1.0075E-01   8.3020E-06
+             L1/L2 DIV(V)          -9.5771E-19   6.9497E-03
+             L1/L2 QTL              0.0000E+00   0.0000E+00
+             L1/L2 DIV(V)-QTL      -9.5771E-19   6.9497E-03
+         10  Fluid done  2.0000E-01  8.0469E-03
+       10  2.000000E-01  6.652526E-03  6.608439E-03 umax
+Step     11, t= 2.2000000E-01, DT= 2.0000000E-02, C=  0.006 1.0628E-01 9.6252E-03
+             Solving for Hmholtz scalars
+         11  Project TEMP           1.7752E-03   6.6783E-04   2.6581E+00   6   0
+         11  Hmholtz TEMP       2   1.9292E-03   2.4046E-03   2.2351E-03
+         11  Scalars done  2.2000E-01  8.2707E-04
+             Solving for fluid
+ Relax the pressure tolerance    8.1992167480191328E-004   1.2610855032553350E-006
+         11  Project PRES           6.6234E-01   2.8052E-01   2.3611E+00   6   0
+         11  PRES gmres        14   1.9276E-08   9.3506E-02   2.5222E-08   1.5213E-03   2.6598E-03    F
+         11  Project velx           3.2206E-02   1.5284E-02   2.1072E+00   6   0
+         11  Hmholtz velx      28   7.0194E-06   6.0001E-02   7.4929E-06
+         11  Project vely           7.2425E-02   1.9204E-02   3.7715E+00   6   0
+         11  Hmholtz vely      30   5.9692E-06   7.1534E-02   7.4929E-06
+             L1/L2 DIV(V)          -2.7406E-19   5.1274E-03
+             L1/L2 QTL              0.0000E+00   0.0000E+00
+             L1/L2 DIV(V)-QTL      -2.7406E-19   5.1274E-03
+         11  Fluid done  2.2000E-01  7.9620E-03
+       11  2.200000E-01  6.922637E-03  5.340328E-03 umax
+Step     12, t= 2.4000000E-01, DT= 2.0000000E-02, C=  0.005 1.1587E-01 9.5859E-03
+             Solving for Hmholtz scalars
+         12  Project TEMP           1.7161E-03   4.9818E-04   3.4448E+00   7   0
+         12  Hmholtz TEMP       2   1.6859E-03   2.0050E-03   2.2351E-03
+         12  Scalars done  2.4000E-01  8.2207E-04
+             Solving for fluid
+ Relax the pressure tolerance    7.2903247628094742E-004   1.2929323388323267E-006
+         12  Project PRES           5.3226E-01   2.0195E-01   2.6356E+00   7   0
+         12  PRES gmres        14   1.6795E-08   6.7316E-02   2.5859E-08   1.4775E-03   2.6021E-03    F
+         12  Project velx           3.5485E-02   1.1681E-02   3.0378E+00   7   0
+         12  Hmholtz velx      28   6.6484E-06   4.6711E-02   7.6821E-06
+         12  Project vely           5.9524E-02   1.3633E-02   4.3661E+00   7   0
+         12  Hmholtz vely      28   5.5002E-06   5.0081E-02   7.6821E-06
+             L1/L2 DIV(V)           5.4210E-20   3.7540E-03
+             L1/L2 QTL              0.0000E+00   0.0000E+00
+             L1/L2 DIV(V)-QTL       5.4210E-20   3.7540E-03
+         12  Fluid done  2.4000E-01  7.9570E-03
+       12  2.400000E-01  6.862310E-03  5.468924E-03 umax
+Step     13, t= 2.6000000E-01, DT= 2.0000000E-02, C=  0.005 1.2557E-01 9.7070E-03
+             Solving for Hmholtz scalars
+         13  Project TEMP           1.3825E-03   4.4908E-04   3.0786E+00   8   0
+         13  Hmholtz TEMP       1   1.7032E-03   2.1590E-03   2.2351E-03
+         13  Scalars done  2.6000E-01  7.3886E-04
+             Solving for fluid
+ Relax the pressure tolerance    5.7014289832910830E-004   1.1341491712317277E-006
+         13  Project PRES           4.3982E-01   1.5765E-01   2.7898E+00   8   0
+         13  PRES gmres        14   1.1581E-08   5.2551E-02   2.2683E-08   1.4629E-03   2.5890E-03    F
+         13  Project velx           3.4734E-02   7.0345E-03   4.9376E+00   8   0
+         13  Hmholtz velx      26   6.1142E-06   2.6105E-02   6.7387E-06
+         13  Project vely           4.8899E-02   7.7881E-03   6.2787E+00   8   0
+         13  Hmholtz vely      27   6.4928E-06   3.1713E-02   6.7387E-06
+             L1/L2 DIV(V)          -4.5495E-19   4.3534E-03
+             L1/L2 QTL              0.0000E+00   0.0000E+00
+             L1/L2 DIV(V)-QTL      -4.5495E-19   4.3534E-03
+         13  Fluid done  2.6000E-01  7.8290E-03
+       13  2.600000E-01  5.442275E-03  5.265035E-03 umax
+Step     14, t= 2.8000000E-01, DT= 2.0000000E-02, C=  0.004 1.3506E-01 9.4900E-03
+             Solving for Hmholtz scalars
+         14  Project TEMP           1.2208E-03   3.7312E-04   3.2720E+00   8   0
+         14  Hmholtz TEMP       1   1.3295E-03   1.7002E-03   2.2351E-03
+         14  Scalars done  2.8000E-01  7.3695E-04
+             Solving for fluid
+ Relax the pressure tolerance    6.0670434209898164E-004   1.1900598961159040E-006
+         14  Project PRES           5.0450E-01   1.4696E-01   3.4329E+00   8   0
+         14  PRES gmres        14   9.8772E-09   4.8987E-02   2.3801E-08   1.4303E-03   2.5542E-03    F
+         14  Project velx           2.5280E-02   5.6976E-03   4.4370E+00   8   0
+         14  Hmholtz velx      26   5.4260E-06   2.0810E-02   7.0709E-06
+         14  Project vely           5.7901E-02   7.2894E-03   7.9432E+00   8   0
+         14  Hmholtz vely      27   7.0294E-06   2.9007E-02   7.0709E-06
+             L1/L2 DIV(V)          -8.9447E-19   4.2938E-03
+             L1/L2 QTL              0.0000E+00   0.0000E+00
+             L1/L2 DIV(V)-QTL      -8.9447E-19   4.2938E-03
+         14  Fluid done  2.8000E-01  7.6818E-03
+       14  2.800000E-01  5.561740E-03  5.447620E-03 umax
+Step     15, t= 3.0000000E-01, DT= 2.0000000E-02, C=  0.005 1.4443E-01 9.3701E-03
+             Solving for Hmholtz scalars
+         15  Project TEMP           1.3762E-03   4.9008E-04   2.8081E+00   8   0
+         15  Hmholtz TEMP       1   1.6024E-03   2.2108E-03   2.2351E-03
+         15  Scalars done  3.0000E-01  7.3195E-04
+             Solving for fluid
+ Relax the pressure tolerance    5.3712314399389117E-004   1.0617286328528028E-006
+         15  Project PRES           3.9411E-01   1.0988E-01   3.5867E+00   8   0
+         15  PRES gmres        14   7.3360E-09   3.6627E-02   2.1235E-08   1.4768E-03   2.5961E-03    F
+         15  Project velx           1.8516E-02   3.3081E-03   5.5972E+00   8   0
+         15  Hmholtz velx      25   4.4210E-06   1.2933E-02   6.3084E-06
+         15  Project vely           4.9548E-02   5.0649E-03   9.7826E+00   8   0
+         15  Hmholtz vely      26   6.1433E-06   1.8888E-02   6.3084E-06
+             L1/L2 DIV(V)          -6.0685E-19   3.4232E-03
+             L1/L2 QTL              0.0000E+00   0.0000E+00
+             L1/L2 DIV(V)-QTL      -6.0685E-19   3.4232E-03
+         15  Fluid done  3.0000E-01  7.6952E-03
+       15  3.000000E-01  5.459477E-03  4.841924E-03 umax
+Step     16, t= 3.2000000E-01, DT= 2.0000000E-02, C=  0.005 1.5379E-01 9.3529E-03
+             Solving for Hmholtz scalars
+         16  Project TEMP           1.1876E-03   3.3757E-04   3.5182E+00   8   0
+         16  Hmholtz TEMP       1   1.3355E-03   1.5822E-03   2.2351E-03
+         16  Scalars done  3.2000E-01  8.3399E-04
+             Solving for fluid
+ Relax the pressure tolerance    4.8229208973031432E-004   1.1255202174562334E-006
+         16  Project PRES           3.2911E-01   8.6702E-02   3.7959E+00   8   0
+         16  PRES gmres        13   1.8054E-08   2.8901E-02   2.2510E-08   1.4019E-03   2.4569E-03    F
+         16  Project velx           2.6322E-02   3.1876E-03   8.2576E+00   8   0
+         16  Hmholtz velx      24   6.4180E-06   1.3247E-02   6.6874E-06
+         16  Project vely           4.1766E-02   5.2340E-03   7.9797E+00   8   0
+         16  Hmholtz vely      26   5.1973E-06   1.9609E-02   6.6874E-06
+             L1/L2 DIV(V)          -1.4004E-19   2.6284E-03
+             L1/L2 QTL              0.0000E+00   0.0000E+00
+             L1/L2 DIV(V)-QTL      -1.4004E-19   2.6284E-03
+         16  Fluid done  3.2000E-01  7.5932E-03
+       16  3.200000E-01  6.054251E-03  4.948567E-03 umax
+Step     17, t= 3.4000000E-01, DT= 2.0000000E-02, C=  0.004 1.6303E-01 9.2402E-03
+             Solving for Hmholtz scalars
+         17  Project TEMP           1.0463E-03   2.6204E-04   3.9929E+00   8   0
+         17  Hmholtz TEMP       1   1.4392E-03   1.2219E-03   2.2351E-03
+         17  Scalars done  3.4000E-01  8.2302E-04
+             Solving for fluid
+ Relax the pressure tolerance    4.7877769478228428E-004   1.0033066797211223E-006
+         17  Project PRES           3.5843E-01   7.9784E-02   4.4925E+00   8   0
+         17  PRES gmres        13   1.0564E-08   2.6595E-02   2.0066E-08   1.4281E-03   2.4781E-03    F
+         17  Project velx           2.0778E-02   2.3510E-03   8.8379E+00   8   0
+         17  Hmholtz velx      24   4.8480E-06   8.9291E-03   5.9613E-06
+         17  Project vely           4.2827E-02   4.3382E-03   9.8721E+00   8   0
+         17  Hmholtz vely      25   5.1926E-06   1.4581E-02   5.9613E-06
+             L1/L2 DIV(V)           4.2916E-20   3.3026E-03
+             L1/L2 QTL              0.0000E+00   0.0000E+00
+             L1/L2 DIV(V)-QTL       4.2916E-20   3.3026E-03
+         17  Fluid done  3.4000E-01  7.4961E-03
+       17  3.400000E-01  5.206776E-03  4.863451E-03 umax
+Step     18, t= 3.6000000E-01, DT= 2.0000000E-02, C=  0.004 1.7227E-01 9.2478E-03
+             Solving for Hmholtz scalars
+         18  Project TEMP           1.0362E-03   3.0923E-04   3.3509E+00   8   0
+         18  Hmholtz TEMP       1   1.1123E-03   1.3391E-03   2.2351E-03
+         18  Scalars done  3.6000E-01  8.2517E-04
+             Solving for fluid
+ Relax the pressure tolerance    4.1381742557474902E-004   1.0519212284687884E-006
+         18  Project PRES           3.0681E-01   7.8151E-02   3.9259E+00   8   0
+         18  PRES gmres        13   1.2007E-08   2.6050E-02   2.1038E-08   1.3728E-03   2.5511E-03    F
+         18  Project velx           1.3090E-02   2.3977E-03   5.4596E+00   8   0
+         18  Hmholtz velx      24   5.0483E-06   1.0340E-02   6.2501E-06
+         18  Project vely           4.2907E-02   3.2054E-03   1.3386E+01   8   0
+         18  Hmholtz vely      24   5.8152E-06   1.1883E-02   6.2501E-06
+             L1/L2 DIV(V)          -2.1115E-19   2.9307E-03
+             L1/L2 QTL              0.0000E+00   0.0000E+00
+             L1/L2 DIV(V)-QTL      -2.1115E-19   2.9307E-03
+         18  Fluid done  3.6000E-01  7.4821E-03
+       18  3.600000E-01  4.705646E-03  4.853310E-03 umax
+Step     19, t= 3.8000000E-01, DT= 2.0000000E-02, C=  0.004 1.8149E-01 9.2120E-03
+             Solving for Hmholtz scalars
+         19  Project TEMP           1.0546E-03   3.1371E-04   3.3619E+00   8   0
+         19  Hmholtz TEMP       1   1.2443E-03   1.4630E-03   2.2351E-03
+         19  Scalars done  3.8000E-01  7.5293E-04
+             Solving for fluid
+ Relax the pressure tolerance    4.1635720862682340E-004   9.5884201271408813E-007
+         19  Project PRES           2.7131E-01   9.2498E-02   2.9332E+00   8   0
+         19  PRES gmres        13   1.0986E-08   3.0833E-02   1.9177E-08   1.4215E-03   2.6119E-03    F
+         19  Project velx           1.6338E-02   2.2842E-03   7.1527E+00   8   0
+         19  Hmholtz velx      24   4.8952E-06   1.0132E-02   5.6971E-06
+         19  Project vely           3.5272E-02   3.4865E-03   1.0117E+01   8   0
+         19  Hmholtz vely      25   4.4826E-06   1.3864E-02   5.6971E-06
+             L1/L2 DIV(V)          -4.8036E-19   1.9143E-03
+             L1/L2 QTL              0.0000E+00   0.0000E+00
+             L1/L2 DIV(V)-QTL      -4.8036E-19   1.9143E-03
+         19  Fluid done  3.8000E-01  7.7410E-03
+       19  3.800000E-01  4.722568E-03  4.656512E-03 umax
+Step     20, t= 4.0000000E-01, DT= 2.0000000E-02, C=  0.004 1.9090E-01 9.4092E-03
+             Solving for Hmholtz scalars
+         20  Project TEMP           8.7886E-04   2.7474E-04   3.1989E+00   8   0
+         20  Hmholtz TEMP       1   9.6473E-04   1.1876E-03   2.2351E-03
+         20  Scalars done  4.0000E-01  7.9799E-04
+             Solving for fluid
+ Relax the pressure tolerance    3.5011067709624847E-004   1.0085944705162812E-006
+         20  Project PRES           2.5146E-01   7.3728E-02   3.4106E+00   8   0
+         20  PRES gmres        13   9.4621E-09   2.4576E-02   2.0172E-08   1.5268E-03   2.6131E-03    F
+         20  Project velx           1.7335E-02   2.0301E-03   8.5390E+00   8   0
+         20  Hmholtz velx      23   5.8585E-06   8.5820E-03   5.9927E-06
+         20  Project vely           3.4997E-02   3.2446E-03   1.0786E+01   8   0
+         20  Hmholtz vely      24   5.1302E-06   1.1602E-02   5.9927E-06
+             L1/L2 DIV(V)          -4.3707E-19   2.3593E-03
+             L1/L2 QTL              0.0000E+00   0.0000E+00
+             L1/L2 DIV(V)-QTL      -4.3707E-19   2.3593E-03
+         20  Fluid done  4.0000E-01  7.6499E-03
+       20  4.000000E-01  4.923328E-03  4.508832E-03 umax
+Step     21, t= 4.2000000E-01, DT= 2.0000000E-02, C=  0.004 2.0028E-01 9.3849E-03
+             Solving for Hmholtz scalars
+         21  Project TEMP           8.7464E-04   2.3562E-04   3.7121E+00   8   0
+         21  Hmholtz TEMP       1   7.6377E-04   1.0999E-03   2.2351E-03
+         21  Scalars done  4.2000E-01  8.8191E-04
+             Solving for fluid
+ Relax the pressure tolerance    3.7412338261004317E-004   9.2967414700110294E-007
+         21  Project PRES           2.4674E-01   6.8954E-02   3.5783E+00   8   0
+         21  PRES gmres        13   7.9257E-09   2.2985E-02   1.8593E-08   1.4341E-03   2.5229E-03    F
+         21  Project velx           1.0879E-02   1.4654E-03   7.4236E+00   8   0
+         21  Hmholtz velx      22   5.3664E-06   6.4211E-03   5.5238E-06
+         21  Project vely           3.4235E-02   3.2360E-03   1.0579E+01   8   0
+         21  Hmholtz vely      23   4.6301E-06   1.1397E-02   5.5238E-06
+             L1/L2 DIV(V)          -1.9350E-19   2.3510E-03
+             L1/L2 QTL              0.0000E+00   0.0000E+00
+             L1/L2 DIV(V)-QTL      -1.9350E-19   2.3510E-03
+         21  Fluid done  4.2000E-01  7.5090E-03
+       21  4.200000E-01  4.812196E-03  4.524655E-03 umax
+Step     22, t= 4.4000000E-01, DT= 2.0000000E-02, C=  0.004 2.0964E-01 9.3551E-03
+             Solving for Hmholtz scalars
+         22  Project TEMP           8.3116E-04   1.8354E-04   4.5286E+00   8   0
+         22  Hmholtz TEMP       1   6.9697E-04   7.2816E-04   2.2351E-03
+         22  Scalars done  4.4000E-01  7.4387E-04
+             Solving for fluid
+ Relax the pressure tolerance    3.4318064700407071E-004   9.5962276987173243E-007
+         22  Project PRES           2.2039E-01   8.1633E-02   2.6998E+00   8   0
+         22  PRES gmres        13   8.4444E-09   2.7211E-02   1.9192E-08   1.3773E-03   2.4111E-03    F
+         22  Project velx           1.1431E-02   1.9379E-03   5.8987E+00   8   0
+         22  Hmholtz velx      23   4.4795E-06   8.9109E-03   5.7017E-06
+         22  Project vely           3.2347E-02   3.6956E-03   8.7530E+00   8   0
+         22  Hmholtz vely      24   4.4848E-06   1.3592E-02   5.7017E-06
+             L1/L2 DIV(V)          -9.2044E-20   1.7236E-03
+             L1/L2 QTL              0.0000E+00   0.0000E+00
+             L1/L2 DIV(V)-QTL      -9.2044E-20   1.7236E-03
+         22  Fluid done  4.4000E-01  7.3001E-03
+       22  4.400000E-01  4.674214E-03  4.429336E-03 umax
+Step     23, t= 4.6000000E-01, DT= 2.0000000E-02, C=  0.004 2.1859E-01 8.9569E-03
+             Solving for Hmholtz scalars
+         23  Project TEMP           8.0935E-04   2.2047E-04   3.6711E+00   8   0
+         23  Hmholtz TEMP       1   6.7542E-04   9.7003E-04   2.2351E-03
+         23  Scalars done  4.6000E-01  7.8988E-04
+             Solving for fluid
+ Relax the pressure tolerance    3.0969279278406314E-004   8.8592579135124542E-007
+         23  Project PRES           1.8575E-01   5.0852E-02   3.6528E+00   8   0
+         23  PRES gmres        13   8.0345E-09   1.6951E-02   1.7719E-08   1.3881E-03   2.4161E-03    F
+         23  Project velx           1.2077E-02   2.0059E-03   6.0210E+00   8   0
+         23  Hmholtz velx      23   5.2412E-06   9.0068E-03   5.2638E-06
+         23  Project vely           2.7776E-02   3.4806E-03   7.9801E+00   8   0
+         23  Hmholtz vely      24   4.5943E-06   1.3396E-02   5.2638E-06
+             L1/L2 DIV(V)          -3.8352E-19   1.6547E-03
+             L1/L2 QTL              0.0000E+00   0.0000E+00
+             L1/L2 DIV(V)-QTL      -3.8352E-19   1.6547E-03
+         23  Fluid done  4.6000E-01  7.2281E-03
+       23  4.600000E-01  4.492834E-03  4.432824E-03 umax
+Step     24, t= 4.8000000E-01, DT= 2.0000000E-02, C=  0.004 2.2745E-01 8.8611E-03
+             Solving for Hmholtz scalars
+         24  Project TEMP           6.9460E-04   1.7052E-04   4.0734E+00   8   0
+         24  Hmholtz TEMP       1   5.7609E-04   8.1459E-04   2.2351E-03
+         24  Scalars done  4.8000E-01  7.9989E-04
+             Solving for fluid
+ Relax the pressure tolerance    2.9794078435967742E-004   9.2632600546166707E-007
+         24  Project PRES           1.9030E-01   5.9697E-02   3.1878E+00   8   0
+         24  PRES gmres        13   8.3250E-09   1.9899E-02   1.8527E-08   1.4162E-03   2.4891E-03    F
+         24  Project velx           1.0549E-02   2.1732E-03   4.8541E+00   8   0
+         24  Hmholtz velx      23   4.7362E-06   1.0058E-02   5.5039E-06
+         24  Project vely           2.9426E-02   2.7867E-03   1.0559E+01   8   0
+         24  Hmholtz vely      24   4.4747E-06   1.1037E-02   5.5039E-06
+             L1/L2 DIV(V)          -7.0699E-19   1.8215E-03
+             L1/L2 QTL              0.0000E+00   0.0000E+00
+             L1/L2 DIV(V)-QTL      -7.0699E-19   1.8215E-03
+         24  Fluid done  4.8000E-01  7.2899E-03
+       24  4.800000E-01  4.335144E-03  4.326111E-03 umax
+Step     25, t= 5.0000000E-01, DT= 2.0000000E-02, C=  0.003 2.3644E-01 8.9891E-03
+             Solving for Hmholtz scalars
+         25  Project TEMP           7.3248E-04   1.8007E-04   4.0677E+00   8   0
+         25  Hmholtz TEMP       1   7.2605E-04   8.3332E-04   2.2351E-03
+         25  Scalars done  5.0000E-01  4.2510E-04
+             Solving for fluid
+ Relax the pressure tolerance    3.1491494129530978E-004   8.6244942819430294E-007
+         25  Project PRES           1.8152E-01   4.5663E-02   3.9753E+00   8   0
+         25  PRES gmres        13   6.3147E-09   1.5221E-02   1.7249E-08   1.3092E-03   2.3680E-03    F
+         25  Project velx           7.6676E-03   1.6131E-03   4.7533E+00   8   0
+         25  Hmholtz velx      22   4.4449E-06   7.3965E-03   5.1244E-06
+         25  Project vely           2.6888E-02   2.9512E-03   9.1108E+00   8   0
+         25  Hmholtz vely      24   3.7519E-06   1.0945E-02   5.1244E-06
+             L1/L2 DIV(V)          -4.0594E-19   1.5718E-03
+             L1/L2 QTL              0.0000E+00   0.0000E+00
+             L1/L2 DIV(V)-QTL      -4.0594E-19   1.5718E-03
+         25  Fluid done  5.0000E-01  6.9711E-03
+       25  5.000000E-01  4.267188E-03  4.326737E-03 umax
+Step     26, t= 5.2000000E-01, DT= 2.0000000E-02, C=  0.003 2.4446E-01 8.0149E-03
+             Solving for Hmholtz scalars
+         26  Project TEMP           6.6818E-04   1.5953E-04   4.1884E+00   8   0
+         26  Hmholtz TEMP       1   6.4878E-04   6.9181E-04   2.2351E-03
+         26  Scalars done  5.2000E-01  7.4005E-04
+             Solving for fluid
+ Relax the pressure tolerance    2.6609523184692598E-004   8.8102334490254970E-007
+         26  Project PRES           1.4999E-01   2.8989E-02   5.1739E+00   8   0
+         26  PRES gmres        13   5.1941E-09   9.6629E-03   1.7620E-08   1.3590E-03   2.8658E-03    F
+         26  Project velx           9.4429E-03   1.2584E-03   7.5040E+00   8   0
+         26  Hmholtz velx      22   3.6022E-06   5.8304E-03   5.2347E-06
+         26  Project vely           2.5138E-02   2.0047E-03   1.2539E+01   8   0
+         26  Hmholtz vely      23   4.3719E-06   7.8049E-03   5.2347E-06
+             L1/L2 DIV(V)          -4.5401E-19   1.2661E-03
+             L1/L2 QTL              0.0000E+00   0.0000E+00
+             L1/L2 DIV(V)-QTL      -4.5401E-19   1.2661E-03
+         26  Fluid done  5.2000E-01  7.5829E-03
+       26  5.200000E-01  4.350971E-03  4.263224E-03 umax
+Step     27, t= 5.4000000E-01, DT= 2.0000000E-02, C=  0.003 2.5370E-01 9.2390E-03
+             Solving for Hmholtz scalars
+         27  Project TEMP           6.4310E-04   1.8227E-04   3.5283E+00   8   0
+         27  Hmholtz TEMP       1   6.7909E-04   8.4524E-04   2.2351E-03
+         27  Scalars done  5.4000E-01  8.6594E-04
+             Solving for fluid
+ Relax the pressure tolerance    2.7045486865231045E-004   8.2722881576017958E-007
+         27  Project PRES           1.4954E-01   3.1536E-02   4.7419E+00   8   0
+         27  PRES gmres        13   4.4665E-09   1.0512E-02   1.6545E-08   1.3871E-03   2.4910E-03    F
+         27  Project velx           8.4455E-03   1.1641E-03   7.2547E+00   8   0
+         27  Hmholtz velx      22   4.0177E-06   5.3284E-03   4.9151E-06
+         27  Project vely           2.3560E-02   1.7378E-03   1.3558E+01   8   0
+         27  Hmholtz vely      23   3.6869E-06   6.9911E-03   4.9151E-06
+             L1/L2 DIV(V)          -2.5825E-19   1.3909E-03
+             L1/L2 QTL              0.0000E+00   0.0000E+00
+             L1/L2 DIV(V)-QTL      -2.5825E-19   1.3909E-03
+         27  Fluid done  5.4000E-01  7.3969E-03
+       27  5.400000E-01  4.240815E-03  4.251962E-03 umax
+Step     28, t= 5.6000000E-01, DT= 2.0000000E-02, C=  0.003 2.6289E-01 9.1980E-03
+             Solving for Hmholtz scalars
+         28  Project TEMP           5.9239E-04   1.6006E-04   3.7011E+00   8   0
+         28  Hmholtz TEMP       1   5.4129E-04   6.8988E-04   2.2351E-03
+         28  Scalars done  5.6000E-01  8.0299E-04
+             Solving for fluid
+ Relax the pressure tolerance    2.6362484447927471E-004   8.6062486979620331E-007
+         28  Project PRES           1.4653E-01   2.8737E-02   5.0991E+00   8   0
+         28  PRES gmres        12   1.2837E-08   9.5788E-03   1.7212E-08   1.2751E-03   2.2168E-03    F
+         28  Project velx           6.6499E-03   9.3054E-04   7.1463E+00   8   0
+         28  Hmholtz velx      20   4.3174E-06   3.9523E-03   5.1135E-06
+         28  Project vely           2.3894E-02   1.4432E-03   1.6556E+01   8   0
+         28  Hmholtz vely      22   4.3940E-06   5.1352E-03   5.1135E-06
+             L1/L2 DIV(V)          -6.4299E-19   1.3687E-03
+             L1/L2 QTL              0.0000E+00   0.0000E+00
+             L1/L2 DIV(V)-QTL      -6.4299E-19   1.3687E-03
+         28  Fluid done  5.6000E-01  6.7778E-03
+       28  5.600000E-01  4.146365E-03  4.205849E-03 umax
+Step     29, t= 5.8000000E-01, DT= 2.0000000E-02, C=  0.003 2.7141E-01 8.5180E-03
+             Solving for Hmholtz scalars
+         29  Project TEMP           6.0458E-04   1.8428E-04   3.2808E+00   8   0
+         29  Hmholtz TEMP       1   5.3267E-04   9.3544E-04   2.2351E-03
+         29  Scalars done  5.8000E-01  7.2503E-04
+             Solving for fluid
+ Relax the pressure tolerance    2.7021149137075422E-004   8.1918149837341441E-007
+         29  Project PRES           1.2897E-01   2.2444E-02   5.7466E+00   8   0
+         29  PRES gmres        12   1.3399E-08   7.4812E-03   1.6384E-08   1.2798E-03   2.2640E-03    F
+         29  Project velx           6.3737E-03   8.6747E-04   7.3475E+00   8   0
+         29  Hmholtz velx      21   4.6459E-06   3.5482E-03   4.8673E-06
+         29  Project vely           2.1238E-02   1.3573E-03   1.5648E+01   8   0
+         29  Hmholtz vely      22   4.1551E-06   4.9464E-03   4.8673E-06
+             L1/L2 DIV(V)          -4.8413E-19   1.0719E-03
+             L1/L2 QTL              0.0000E+00   0.0000E+00
+             L1/L2 DIV(V)-QTL      -4.8413E-19   1.0719E-03
+         29  Fluid done  5.8000E-01  6.9480E-03
+       29  5.800000E-01  4.092609E-03  4.128540E-03 umax
+Step     30, t= 6.0000000E-01, DT= 2.0000000E-02, C=  0.003 2.8001E-01 8.5990E-03
+             Solving for Hmholtz scalars
+         30  Project TEMP           5.3026E-04   1.5402E-04   3.4428E+00   8   0
+         30  Hmholtz TEMP       1   4.9010E-04   7.7867E-04   2.2351E-03
+         30  Scalars done  6.0000E-01  7.2503E-04
+             Solving for fluid
+ Relax the pressure tolerance    2.4044842793779695E-004   8.3702678181900531E-007
+         30  Project PRES           1.2062E-01   2.4801E-02   4.8634E+00   8   0
+         30  PRES gmres        12   1.4024E-08   8.2669E-03   1.6741E-08   1.2829E-03   2.2380E-03    F
+         30  Project velx           7.5003E-03   8.5806E-04   8.7410E+00   8   0
+         30  Hmholtz velx      22   3.2953E-06   3.6210E-03   4.9733E-06
+         30  Project vely           2.0722E-02   1.6287E-03   1.2723E+01   8   0
+         30  Hmholtz vely      23   3.5903E-06   6.0355E-03   4.9733E-06
+             L1/L2 DIV(V)          -4.0309E-19   1.0721E-03
+             L1/L2 QTL              0.0000E+00   0.0000E+00
+             L1/L2 DIV(V)-QTL      -4.0309E-19   1.0721E-03
+         30  Fluid done  6.0000E-01  6.8989E-03
+       30  6.000000E-01  3.970926E-03  4.147832E-03 umax
+Step     31, t= 6.2000000E-01, DT= 2.0000000E-02, C=  0.003 2.8856E-01 8.5471E-03
+             Solving for Hmholtz scalars
+         31  Project TEMP           5.3027E-04   1.5058E-04   3.5215E+00   8   0
+         31  Hmholtz TEMP       1   4.4193E-04   6.5467E-04   2.2351E-03
+         31  Scalars done  6.2000E-01  7.2002E-04
+             Solving for fluid
+ Relax the pressure tolerance    2.5118171922376540E-004   7.9452679693921669E-007
+         31  Project PRES           1.1888E-01   1.5597E-02   7.6219E+00   8   0
+         31  PRES gmres        12   9.3031E-09   5.1990E-03   1.5891E-08   1.2579E-03   2.1961E-03    F
+         31  Project velx           5.3531E-03   9.0509E-04   5.9144E+00   8   0
+         31  Hmholtz velx      20   3.6937E-06   4.0636E-03   4.7208E-06
+         31  Project vely           1.9629E-02   1.1273E-03   1.7412E+01   8   0
+         31  Hmholtz vely      21   4.3908E-06   4.3398E-03   4.7208E-06
+             L1/L2 DIV(V)          -4.5100E-19   1.1326E-03
+             L1/L2 QTL              0.0000E+00   0.0000E+00
+             L1/L2 DIV(V)-QTL      -4.5100E-19   1.1326E-03
+         31  Fluid done  6.2000E-01  6.8221E-03
+       31  6.200000E-01  4.000783E-03  4.045120E-03 umax
+Step     32, t= 6.4000000E-01, DT= 2.0000000E-02, C=  0.003 2.9704E-01 8.4829E-03
+             Solving for Hmholtz scalars
+         32  Project TEMP           4.9057E-04   1.2493E-04   3.9269E+00   8   0
+         32  Hmholtz TEMP       1   5.6967E-04   5.7142E-04   2.2351E-03
+         32  Scalars done  6.4000E-01  1.7741E-03
+             Solving for fluid
+ Relax the pressure tolerance    2.3633687912187634E-004   8.1631506114511244E-007
+         32  Project PRES           1.1101E-01   1.9035E-02   5.8319E+00   8   0
+         32  PRES gmres        12   1.2914E-08   6.3451E-03   1.6326E-08   1.2784E-03   2.3551E-03    F
+         32  Project velx           5.3868E-03   8.9293E-04   6.0327E+00   8   0
+         32  Hmholtz velx      20   4.6229E-06   3.8989E-03   4.8502E-06
+         32  Project vely           1.9279E-02   1.3302E-03   1.4493E+01   8   0
+         32  Hmholtz vely      22   4.8000E-06   5.1043E-03   4.8502E-06
+             L1/L2 DIV(V)          -4.7076E-19   9.6662E-04
+             L1/L2 QTL              0.0000E+00   0.0000E+00
+             L1/L2 DIV(V)-QTL      -4.7076E-19   9.6662E-04
+         32  Fluid done  6.4000E-01  7.0269E-03
+       32  6.400000E-01  3.935280E-03  4.085309E-03 umax
+Step     33, t= 6.6000000E-01, DT= 2.0000000E-02, C=  0.003 3.0681E-01 9.7640E-03
+             Solving for Hmholtz scalars
+         33  Project TEMP           4.9850E-04   1.5414E-04   3.2341E+00   8   0
+         33  Hmholtz TEMP       1   5.0454E-04   6.4664E-04   2.2351E-03
+         33  Scalars done  6.6000E-01  7.4220E-04
+             Solving for fluid
+ Relax the pressure tolerance    2.4334950749101863E-004   7.8370621202382597E-007
+         33  Project PRES           1.0011E-01   1.6429E-02   6.0935E+00   8   0
+         33  PRES gmres        12   9.5611E-09   5.4762E-03   1.5674E-08   1.3340E-03   2.2860E-03    F
+         33  Project velx           5.2627E-03   6.6694E-04   7.8908E+00   8   0
+         33  Hmholtz velx      20   4.5990E-06   2.8437E-03   4.6565E-06
+         33  Project vely           1.7298E-02   1.0958E-03   1.5786E+01   8   0
+         33  Hmholtz vely      22   3.6968E-06   4.0559E-03   4.6565E-06
+             L1/L2 DIV(V)          -5.7222E-19   8.6495E-04
+             L1/L2 QTL              0.0000E+00   0.0000E+00
+             L1/L2 DIV(V)-QTL      -5.7222E-19   8.6495E-04
+         33  Fluid done  6.6000E-01  7.5090E-03
+       33  6.600000E-01  3.904118E-03  3.894872E-03 umax
+Step     34, t= 6.8000000E-01, DT= 2.0000000E-02, C=  0.003 3.1598E-01 9.1701E-03
+             Solving for Hmholtz scalars
+         34  Project TEMP           4.4101E-04   1.0910E-04   4.0423E+00   8   0
+         34  Hmholtz TEMP       1   5.1148E-04   5.0427E-04   2.2351E-03
+         34  Scalars done  6.8000E-01  7.7200E-04
+             Solving for fluid
+ Relax the pressure tolerance    2.2906867085713088E-004   8.0161662656601414E-007
+         34  Project PRES           9.8432E-02   1.6855E-02   5.8400E+00   8   0
+         34  PRES gmres        12   8.5881E-09   5.6182E-03   1.6032E-08   1.2357E-03   2.2111E-03    F
+         34  Project velx           5.5500E-03   6.3863E-04   8.6905E+00   8   0
+         34  Hmholtz velx      20   4.1203E-06   2.9003E-03   4.7629E-06
+         34  Project vely           1.7313E-02   1.0308E-03   1.6796E+01   8   0
+         34  Hmholtz vely      21   4.6731E-06   3.9585E-03   4.7629E-06
+             L1/L2 DIV(V)          -7.7551E-19   9.1142E-04
+             L1/L2 QTL              0.0000E+00   0.0000E+00
+             L1/L2 DIV(V)-QTL      -7.7551E-19   9.1142E-04
+         34  Fluid done  6.8000E-01  6.8512E-03
+       34  6.800000E-01  3.785599E-03  4.033473E-03 umax
+Step     35, t= 7.0000000E-01, DT= 2.0000000E-02, C=  0.003 3.2452E-01 8.5471E-03
+             Solving for Hmholtz scalars
+         35  Project TEMP           4.4905E-04   1.2101E-04   3.7109E+00   8   0
+         35  Hmholtz TEMP       1   4.3198E-04   5.1032E-04   2.2351E-03
+         35  Scalars done  7.0000E-01  7.5793E-04
+             Solving for fluid
+ Relax the pressure tolerance    2.3769591271119968E-004   7.6911920409006244E-007
+         35  Project PRES           9.4568E-02   1.6482E-02   5.7376E+00   8   0
+         35  PRES gmres        12   1.1691E-08   5.4940E-03   1.5382E-08   1.3380E-03   2.3060E-03    F
+         35  Project velx           3.8431E-03   7.0989E-04   5.4137E+00   8   0
+         35  Hmholtz velx      21   3.7186E-06   3.1213E-03   4.5698E-06
+         35  Project vely           1.6170E-02   1.1394E-03   1.4192E+01   8   0
+         35  Hmholtz vely      21   4.5436E-06   4.2626E-03   4.5698E-06
+             L1/L2 DIV(V)          -7.0379E-19   8.6492E-04
+             L1/L2 QTL              0.0000E+00   0.0000E+00
+             L1/L2 DIV(V)-QTL      -7.0379E-19   8.6492E-04
+         35  Fluid done  7.0000E-01  6.9070E-03
+       35  7.000000E-01  3.777276E-03  3.770927E-03 umax
+Step     36, t= 7.2000000E-01, DT= 2.0000000E-02, C=  0.003 3.3319E-01 8.6679E-03
+             Solving for Hmholtz scalars
+         36  Project TEMP           4.0596E-04   1.0327E-04   3.9312E+00   8   0
+         36  Hmholtz TEMP       1   2.8978E-04   5.1042E-04   2.2351E-03
+         36  Scalars done  7.2000E-01  8.3017E-04
+             Solving for fluid
+ Relax the pressure tolerance    2.1989206104826065E-004   7.8298940492559171E-007
+         36  Project PRES           8.7623E-02   1.5671E-02   5.5916E+00   8   0
+         36  PRES gmres        12   7.5968E-09   5.2235E-03   1.5660E-08   1.2832E-03   2.2230E-03    F
+         36  Project velx           4.6604E-03   6.0399E-04   7.7160E+00   8   0
+         36  Hmholtz velx      20   3.7838E-06   2.8300E-03   4.6522E-06
+         36  Project vely           1.5656E-02   9.8542E-04   1.5888E+01   8   0
+         36  Hmholtz vely      21   3.7241E-06   3.7825E-03   4.6522E-06
+             L1/L2 DIV(V)          -7.7024E-19   7.3978E-04
+             L1/L2 QTL              0.0000E+00   0.0000E+00
+             L1/L2 DIV(V)-QTL      -7.7024E-19   7.3978E-04
+         36  Fluid done  7.2000E-01  6.6931E-03
+       36  7.200000E-01  3.778787E-03  3.981028E-03 umax
+Step     37, t= 7.4000000E-01, DT= 2.0000000E-02, C=  0.003 3.4151E-01 8.3141E-03
+             Solving for Hmholtz scalars
+         37  Project TEMP           4.0137E-04   8.5290E-05   4.7059E+00   8   0
+         37  Hmholtz TEMP       1   4.5513E-04   3.9771E-04   2.2351E-03
+         37  Scalars done  7.4000E-01  7.3719E-04
+             Solving for fluid
+ Relax the pressure tolerance    2.2784512274661583E-004   7.5653359121485453E-007
+         37  Project PRES           8.2579E-02   1.5191E-02   5.4362E+00   8   0
+         37  PRES gmres        12   1.0334E-08   5.0635E-03   1.5131E-08   1.2774E-03   2.2380E-03    F
+         37  Project velx           4.1211E-03   6.8623E-04   6.0053E+00   8   0
+         37  Hmholtz velx      21   3.4797E-06   3.0380E-03   4.4950E-06
+         37  Project vely           1.4346E-02   1.0041E-03   1.4288E+01   8   0
+         37  Hmholtz vely      21   4.0623E-06   3.6091E-03   4.4950E-06
+             L1/L2 DIV(V)          -5.0154E-19   7.3625E-04
+             L1/L2 QTL              0.0000E+00   0.0000E+00
+             L1/L2 DIV(V)-QTL      -5.0154E-19   7.3625E-04
+         37  Fluid done  7.4000E-01  6.8238E-03
+       37  7.400000E-01  3.698742E-03  3.671815E-03 umax
+Step     38, t= 7.6000000E-01, DT= 2.0000000E-02, C=  0.003 3.4999E-01 8.4889E-03
+             Solving for Hmholtz scalars
+         38  Project TEMP           3.6455E-04   9.4449E-05   3.8598E+00   8   0
+         38  Hmholtz TEMP       1   3.1047E-04   4.2454E-04   2.2351E-03
+         38  Scalars done  7.6000E-01  7.5316E-04
+             Solving for fluid
+ Relax the pressure tolerance    2.1729186527695945E-004   7.6936541316914348E-007
+         38  Project PRES           8.0215E-02   9.3750E-03   8.5562E+00   8   0
+         38  PRES gmres        12   7.3525E-09   3.1250E-03   1.5387E-08   1.3359E-03   2.3179E-03    F
+         38  Project velx           4.1337E-03   4.5677E-04   9.0500E+00   8   0
+         38  Hmholtz velx      19   3.8038E-06   1.9742E-03   4.5713E-06
+         38  Project vely           1.4457E-02   6.6825E-04   2.1634E+01   8   0
+         38  Hmholtz vely      20   4.3608E-06   2.5140E-03   4.5713E-06
+             L1/L2 DIV(V)          -7.1452E-19   7.4652E-04
+             L1/L2 QTL              0.0000E+00   0.0000E+00
+             L1/L2 DIV(V)-QTL      -7.1452E-19   7.4652E-04
+         38  Fluid done  7.6000E-01  6.9251E-03
+       38  7.600000E-01  3.629646E-03  3.898061E-03 umax
+Step     39, t= 7.8000000E-01, DT= 2.0000000E-02, C=  0.003 3.5894E-01 8.9419E-03
+             Solving for Hmholtz scalars
+         39  Project TEMP           3.7365E-04   1.1640E-04   3.2102E+00   8   0
+         39  Hmholtz TEMP       1   2.7681E-04   5.9329E-04   2.2351E-03
+         39  Scalars done  7.8000E-01  7.6199E-04
+             Solving for fluid
+ Relax the pressure tolerance    2.2333167746670495E-004   7.4378585510053118E-007
+         39  Project PRES           7.5565E-02   1.1723E-02   6.4456E+00   8   0
+         39  PRES gmres        12   5.6410E-09   3.9078E-03   1.4876E-08   1.2732E-03   2.2180E-03    F
+         39  Project velx           3.1797E-03   3.8384E-04   8.2838E+00   8   0
+         39  Hmholtz velx      19   3.7275E-06   1.6680E-03   4.4193E-06
+         39  Project vely           1.3174E-02   6.9280E-04   1.9015E+01   8   0
+         39  Hmholtz vely      20   4.0885E-06   2.5340E-03   4.4193E-06
+             L1/L2 DIV(V)          -7.2845E-19   6.5894E-04
+             L1/L2 QTL              0.0000E+00   0.0000E+00
+             L1/L2 DIV(V)-QTL      -7.2845E-19   6.5894E-04
+         39  Fluid done  7.8000E-01  6.7270E-03
+       39  7.800000E-01  3.551772E-03  3.590439E-03 umax
+Step     40, t= 8.0000000E-01, DT= 2.0000000E-02, C=  0.003 3.6740E-01 8.4610E-03
+             Solving for Hmholtz scalars
+         40  Project TEMP           3.2538E-04   6.5510E-05   4.9668E+00   8   0
+         40  Hmholtz TEMP       1   2.7488E-04   3.0973E-04   2.2351E-03
+         40  Scalars done  8.0000E-01  7.6914E-04
+             Solving for fluid
+ Relax the pressure tolerance    2.0791068464517319E-004   7.5267893463148883E-007
+         40  Project PRES           7.0052E-02   1.1956E-02   5.8591E+00   8   0
+         40  PRES gmres        12   6.8145E-09   3.9854E-03   1.5054E-08   1.3046E-03   2.2490E-03    F
+         40  Project velx           4.0916E-03   4.0599E-04   1.0078E+01   8   0
+         40  Hmholtz velx      20   3.4653E-06   1.7655E-03   4.4721E-06
+         40  Project vely           1.2999E-02   7.0425E-04   1.8458E+01   8   0
+         40  Hmholtz vely      21   4.0297E-06   2.6610E-03   4.4721E-06
+             L1/L2 DIV(V)          -8.8186E-19   6.1536E-04
+             L1/L2 QTL              0.0000E+00   0.0000E+00
+             L1/L2 DIV(V)-QTL      -8.8186E-19   6.1536E-04
+         40  Fluid done  8.0000E-01  6.7911E-03
+       40  8.000000E-01  3.636632E-03  3.832176E-03 umax
+Step     41, t= 8.2000000E-01, DT= 2.0000000E-02, C=  0.003 3.7587E-01 8.4701E-03
+             Solving for Hmholtz scalars
+         41  Project TEMP           3.3918E-04   6.5301E-05   5.1940E+00   8   0
+         41  Hmholtz TEMP       1   3.0720E-04   2.9420E-04   2.2351E-03
+         41  Scalars done  8.2000E-01  8.1706E-04
+             Solving for fluid
+ Relax the pressure tolerance    2.1467485033757746E-004   7.3008528187408938E-007
+         41  Project PRES           6.7548E-02   1.0381E-02   6.5067E+00   8   0
+         41  PRES gmres        12   6.3131E-09   3.4604E-03   1.4602E-08   1.3289E-03   2.2850E-03    F
+         41  Project velx           3.0901E-03   3.8849E-04   7.9541E+00   8   0
+         41  Hmholtz velx      19   3.8009E-06   1.8182E-03   4.3379E-06
+         41  Project vely           1.1887E-02   4.8338E-04   2.4592E+01   8   0
+         41  Hmholtz vely      20   3.3588E-06   1.8796E-03   4.3379E-06
+             L1/L2 DIV(V)          -6.8817E-19   6.2905E-04
+             L1/L2 QTL              0.0000E+00   0.0000E+00
+             L1/L2 DIV(V)-QTL      -6.8817E-19   6.2905E-04
+         41  Fluid done  8.2000E-01  5.2888E-03
+       41  8.200000E-01  3.548666E-03  3.518217E-03 umax
+Step     42, t= 8.4000000E-01, DT= 2.0000000E-02, C=  0.003 3.8271E-01 6.8450E-03
+             Solving for Hmholtz scalars
+         42  Project TEMP           2.9760E-04   5.7932E-05   5.1370E+00   8   0
+         42  Hmholtz TEMP       1   2.2677E-04   2.5073E-04   2.2351E-03
+         42  Scalars done  8.4000E-01  4.2295E-04
+             Solving for fluid
+ Relax the pressure tolerance    2.0364717334190991E-004   7.3812057856210671E-007
+         42  Project PRES           6.5208E-02   1.0924E-02   5.9691E+00   8   0
+         42  PRES gmres        11   1.2486E-08   3.6414E-03   1.4762E-08   6.7019E-04   1.1761E-03    F
+         42  Project velx           3.3730E-03   4.4691E-04   7.5474E+00   8   0
+         42  Hmholtz velx      19   3.9787E-06   1.9797E-03   4.3856E-06
+         42  Project vely           1.2118E-02   7.3135E-04   1.6569E+01   8   0
+         42  Hmholtz vely      20   3.8000E-06   2.5274E-03   4.3856E-06
+             L1/L2 DIV(V)          -8.2616E-19   5.9178E-04
+             L1/L2 QTL              0.0000E+00   0.0000E+00
+             L1/L2 DIV(V)-QTL      -8.2616E-19   5.9178E-04
+         42  Fluid done  8.4000E-01  3.7401E-03
+       42  8.400000E-01  3.559968E-03  3.765434E-03 umax
+Step     43, t= 8.6000000E-01, DT= 2.0000000E-02, C=  0.003 3.8744E-01 4.7271E-03
+             Solving for Hmholtz scalars
+         43  Project TEMP           3.1495E-04   5.3627E-05   5.8730E+00   8   0
+         43  Hmholtz TEMP       1   2.6302E-04   2.3111E-04   2.2351E-03
+         43  Scalars done  8.6000E-01  7.5793E-04
+             Solving for fluid
+ Relax the pressure tolerance    2.0878207227581190E-004   7.1713845843826876E-007
+         43  Project PRES           6.0662E-02   8.4520E-03   7.1773E+00   8   0
+         43  PRES gmres        12   4.4483E-09   2.8173E-03   1.4343E-08   1.3783E-03   2.3570E-03    F
+         43  Project velx           2.7950E-03   2.6354E-04   1.0606E+01   8   0
+         43  Hmholtz velx      18   3.6728E-06   1.1709E-03   4.2610E-06
+         43  Project vely           1.0776E-02   4.6956E-04   2.2950E+01   8   0
+         43  Hmholtz vely      19   4.0459E-06   1.6887E-03   4.2610E-06
+             L1/L2 DIV(V)          -8.3725E-19   5.3415E-04
+             L1/L2 QTL              0.0000E+00   0.0000E+00
+             L1/L2 DIV(V)-QTL      -8.3725E-19   5.3415E-04
+         43  Fluid done  8.6000E-01  6.9430E-03
+       43  8.600000E-01  3.448178E-03  3.472300E-03 umax
+Step     44, t= 8.8000000E-01, DT= 2.0000000E-02, C=  0.003 3.9616E-01 8.7240E-03
+             Solving for Hmholtz scalars
+         44  Project TEMP           2.6894E-04   5.0653E-05   5.3095E+00   8   0
+         44  Hmholtz TEMP       1   2.3405E-04   2.2376E-04   2.2351E-03
+         44  Scalars done  8.8000E-01  7.9799E-04
+             Solving for fluid
+ Relax the pressure tolerance    1.9683908690582092E-004   7.2211206971883217E-007
+         44  Project PRES           5.8038E-02   9.9647E-03   5.8244E+00   8   0
+         44  PRES gmres        11   1.4233E-08   3.3216E-03   1.4442E-08   1.2102E-03   2.0931E-03    F
+         44  Project velx           3.4494E-03   3.0853E-04   1.1180E+01   8   0
+         44  Hmholtz velx      19   3.3203E-06   1.3729E-03   4.2905E-06
+         44  Project vely           1.0979E-02   5.7743E-04   1.9013E+01   8   0
+         44  Hmholtz vely      20   3.2834E-06   2.1139E-03   4.2905E-06
+             L1/L2 DIV(V)          -8.3866E-19   5.2849E-04
+             L1/L2 QTL              0.0000E+00   0.0000E+00
+             L1/L2 DIV(V)-QTL      -8.3866E-19   5.2849E-04
+         44  Fluid done  8.8000E-01  6.4740E-03
+       44  8.800000E-01  3.491565E-03  3.706343E-03 umax
+Step     45, t= 9.0000000E-01, DT= 2.0000000E-02, C=  0.003 4.0442E-01 8.2529E-03
+             Solving for Hmholtz scalars
+         45  Project TEMP           2.8660E-04   5.6829E-05   5.0433E+00   8   0
+         45  Hmholtz TEMP       1   1.7624E-04   2.3140E-04   2.2351E-03
+         45  Scalars done  9.0000E-01  5.6195E-04
+             Solving for fluid
+ Relax the pressure tolerance    2.0222978786104304E-004   7.0313247305193852E-007
+         45  Project PRES           5.6587E-02   6.6592E-03   8.4976E+00   8   0
+         45  PRES gmres        11   1.2573E-08   2.2197E-03   1.4063E-08   7.5150E-04   1.2729E-03    F
+         45  Project velx           2.3852E-03   2.2964E-04   1.0387E+01   8   0
+         45  Hmholtz velx      18   3.0813E-06   9.5057E-04   4.1778E-06
+         45  Project vely           9.9231E-03   3.8283E-04   2.5920E+01   8   0
+         45  Hmholtz vely      19   3.0323E-06   1.3101E-03   4.1778E-06
+             L1/L2 DIV(V)          -9.0454E-19   5.2141E-04
+             L1/L2 QTL              0.0000E+00   0.0000E+00
+             L1/L2 DIV(V)-QTL      -9.0454E-19   5.2141E-04
+         45  Fluid done  9.0000E-01  3.7949E-03
+       45  9.000000E-01  3.428598E-03  3.436169E-03 umax
+Step     46, t= 9.2000000E-01, DT= 2.0000000E-02, C=  0.003 4.0964E-01 5.2240E-03
+             Solving for Hmholtz scalars
+         46  Project TEMP           2.4518E-04   4.9727E-05   4.9306E+00   8   0
+         46  Hmholtz TEMP       1   1.9369E-04   2.2117E-04   2.2351E-03
+         46  Scalars done  9.2000E-01  7.8392E-04
+             Solving for fluid
+ Relax the pressure tolerance    1.9150679481008920E-004   7.0787438970982344E-007
+         46  Project PRES           5.4009E-02   7.7193E-03   6.9967E+00   8   0
+         46  PRES gmres        11   1.2049E-08   2.5731E-03   1.4157E-08   1.2643E-03   2.1541E-03    F
+         46  Project velx           2.9124E-03   2.4529E-04   1.1873E+01   8   0
+         46  Hmholtz velx      18   3.8542E-06   9.9110E-04   4.2059E-06
+         46  Project vely           1.0128E-02   4.0920E-04   2.4750E+01   8   0
+         46  Hmholtz vely      19   3.4289E-06   1.5154E-03   4.2059E-06
+             L1/L2 DIV(V)          -8.3706E-19   4.7472E-04
+             L1/L2 QTL              0.0000E+00   0.0000E+00
+             L1/L2 DIV(V)-QTL      -8.3706E-19   4.7472E-04
+         46  Fluid done  9.2000E-01  6.6020E-03
+       46  9.200000E-01  3.478182E-03  3.643582E-03 umax
+Step     47, t= 9.4000000E-01, DT= 2.0000000E-02, C=  0.003 4.2538E-01 1.5745E-02
+             Solving for Hmholtz scalars
+         47  Project TEMP           2.6326E-04   4.7637E-05   5.5264E+00   8   0
+         47  Hmholtz TEMP       1   1.6579E-04   2.0931E-04   2.2351E-03
+         47  Scalars done  9.4000E-01  7.4196E-04
+             Solving for fluid
+ Relax the pressure tolerance    1.9644316833257084E-004   6.9214587338547164E-007
+         47  Project PRES           5.0229E-02   6.1289E-03   8.1954E+00   8   0
+         47  PRES gmres        11   1.2225E-08   2.0430E-03   1.3843E-08   1.2090E-03   2.1269E-03    F
+         47  Project velx           2.2957E-03   2.2246E-04   1.0320E+01   8   0
+         47  Hmholtz velx      19   2.4282E-06   9.0030E-04   4.1125E-06
+         47  Project vely           8.9439E-03   3.4419E-04   2.5986E+01   8   0
+         47  Hmholtz vely      19   3.2398E-06   1.2526E-03   4.1125E-06
+             L1/L2 DIV(V)          -8.4393E-19   4.5105E-04
+             L1/L2 QTL              0.0000E+00   0.0000E+00
+             L1/L2 DIV(V)-QTL      -8.4393E-19   4.5105E-04
+         47  Fluid done  9.4000E-01  6.6502E-03
+       47  9.400000E-01  3.380096E-03  3.399487E-03 umax
+Step     48, t= 9.6000000E-01, DT= 2.0000000E-02, C=  0.002 4.3372E-01 8.3330E-03
+             Solving for Hmholtz scalars
+         48  Project TEMP           2.2158E-04   4.2606E-05   5.2007E+00   8   0
+         48  Hmholtz TEMP       1   1.8406E-04   1.7897E-04   2.2351E-03
+         48  Scalars done  9.6000E-01  8.1897E-04
+             Solving for fluid
+ Relax the pressure tolerance    1.8693763241347649E-004   6.9609396292305416E-007
+         48  Project PRES           4.8957E-02   5.4809E-03   8.9323E+00   8   0
+         48  PRES gmres        11   8.3015E-09   1.8270E-03   1.3922E-08   1.2212E-03   2.1019E-03    F
+         48  Project velx           2.7994E-03   1.8543E-04   1.5097E+01   8   0
+         48  Hmholtz velx      17   3.0598E-06   8.0016E-04   4.1359E-06
+         48  Project vely           9.2737E-03   3.2793E-04   2.8279E+01   8   0
+         48  Hmholtz vely      18   4.1010E-06   1.2208E-03   4.1359E-06
+             L1/L2 DIV(V)          -9.7682E-19   4.4847E-04
+             L1/L2 QTL              0.0000E+00   0.0000E+00
+             L1/L2 DIV(V)-QTL      -9.7682E-19   4.4847E-04
+         48  Fluid done  9.6000E-01  7.1220E-03
+       48  9.600000E-01  3.432337E-03  3.588087E-03 umax
+Step     49, t= 9.8000000E-01, DT= 2.0000000E-02, C=  0.002 4.4262E-01 8.8980E-03
+             Solving for Hmholtz scalars
+         49  Project TEMP           2.4251E-04   4.7811E-05   5.0724E+00   8   0
+         49  Hmholtz TEMP       1   1.3537E-04   2.1813E-04   2.2351E-03
+         49  Scalars done  9.8000E-01  7.9513E-04
+             Solving for fluid
+ Relax the pressure tolerance    1.9170548386776825E-004   6.8227182264803958E-007
+         49  Project PRES           4.6886E-02   6.2228E-03   7.5345E+00   8   0
+         49  PRES gmres        11   1.0810E-08   2.0743E-03   1.3645E-08   1.3819E-03   2.2478E-03    F
+         49  Project velx           1.9230E-03   2.2768E-04   8.4461E+00   8   0
+         49  Hmholtz velx      17   3.7413E-06   9.7153E-04   4.0538E-06
+         49  Project vely           8.2518E-03   4.2816E-04   1.9273E+01   8   0
+         49  Hmholtz vely      19   3.0508E-06   1.5052E-03   4.0538E-06
+             L1/L2 DIV(V)          -9.6190E-19   4.2338E-04
+             L1/L2 QTL              0.0000E+00   0.0000E+00
+             L1/L2 DIV(V)-QTL      -9.6190E-19   4.2338E-04
+         49  Fluid done  9.8000E-01  6.0439E-03
+       49  9.800000E-01  3.367077E-03  3.368921E-03 umax
+Step     50, t= 1.0000000E+00, DT= 2.0000000E-02, C=  0.002 4.5036E-01 7.7438E-03
+             Solving for Hmholtz scalars
+         50  Project TEMP           2.0253E-04   3.1304E-05   6.4699E+00   8   0
+         50  Hmholtz TEMP       1   1.6971E-04   1.3148E-04   2.2351E-03
+         50  Scalars done  1.0000E+00  4.2486E-04
+             Solving for fluid
+ Relax the pressure tolerance    1.8208167503874041E-004   6.8526238308862257E-007
+         50  Project PRES           4.4210E-02   5.5595E-03   7.9523E+00   8   0
+         50  PRES gmres        11   7.4630E-09   1.8532E-03   1.3705E-08   6.9880E-04   1.1890E-03    F
+         50  Project velx           2.5563E-03   1.4749E-04   1.7332E+01   8   0
+         50  Hmholtz velx      16   3.6286E-06   6.7594E-04   4.0716E-06
+         50  Project vely           8.4675E-03   2.8834E-04   2.9366E+01   8   0
+         50  Hmholtz vely      18   3.6929E-06   1.0451E-03   4.0716E-06
+             L1/L2 DIV(V)          -9.0218E-19   3.9336E-04
+             L1/L2 QTL              0.0000E+00   0.0000E+00
+             L1/L2 DIV(V)-QTL      -9.0218E-19   3.9336E-04
+         50  Fluid done  1.0000E+00  4.9601E-03
+       50  1.000000E+00  3.429188E-03  3.532941E-03 umax
+Step     51, t= 1.0200000E+00, DT= 2.0000000E-02, C=  0.002 4.5635E-01 5.9872E-03
+             Solving for Hmholtz scalars
+         51  Project TEMP           2.2224E-04   3.6056E-05   6.1638E+00   8   0
+         51  Hmholtz TEMP       1   1.3543E-04   1.6375E-04   2.2351E-03
+         51  Scalars done  1.0200E+00  7.7105E-04
+             Solving for fluid
+ Relax the pressure tolerance    1.8670537997094480E-004   6.7386546262668028E-007
+         51  Project PRES           4.2086E-02   5.2075E-03   8.0817E+00   8   0
+         51  PRES gmres        11   9.7195E-09   1.7358E-03   1.3477E-08   1.1675E-03   2.0940E-03    F
+         51  Project velx           1.8603E-03   1.8663E-04   9.9677E+00   8   0
+         51  Hmholtz velx      16   3.6999E-06   7.7831E-04   4.0039E-06
+         51  Project vely           7.4710E-03   3.3657E-04   2.2197E+01   8   0
+         51  Hmholtz vely      19   2.7077E-06   1.1674E-03   4.0039E-06
+             L1/L2 DIV(V)          -9.1169E-19   3.8503E-04
+             L1/L2 QTL              0.0000E+00   0.0000E+00
+             L1/L2 DIV(V)-QTL      -9.1169E-19   3.8503E-04
+         51  Fluid done  1.0200E+00  6.3221E-03
+       51  1.020000E+00  3.348654E-03  3.332331E-03 umax
+Step     52, t= 1.0400000E+00, DT= 2.0000000E-02, C=  0.002 4.6435E-01 8.0080E-03
+             Solving for Hmholtz scalars
+         52  Project TEMP           1.8412E-04   3.1560E-05   5.8340E+00   8   0
+         52  Hmholtz TEMP       1   9.4350E-05   1.4280E-04   2.2351E-03
+         52  Scalars done  1.0400E+00  4.2701E-04
+             Solving for fluid
+ Relax the pressure tolerance    1.7854961166190148E-004   6.7621611793338478E-007
+         52  Project PRES           4.0969E-02   4.9504E-03   8.2758E+00   8   0
+         52  PRES gmres        11   4.8049E-09   1.6501E-03   1.3524E-08   8.1038E-04   1.3740E-03    F
+         52  Project velx           2.2996E-03   1.2429E-04   1.8502E+01   8   0
+         52  Hmholtz velx      15   3.6435E-06   5.3277E-04   4.0178E-06
+         52  Project vely           7.7921E-03   2.9023E-04   2.6848E+01   8   0
+         52  Hmholtz vely      18   2.7430E-06   9.5320E-04   4.0178E-06
+             L1/L2 DIV(V)          -9.8331E-19   3.7179E-04
+             L1/L2 QTL              0.0000E+00   0.0000E+00
+             L1/L2 DIV(V)-QTL      -9.8331E-19   3.7179E-04
+         52  Fluid done  1.0400E+00  3.8350E-03
+       52  1.040000E+00  3.386390E-03  3.485139E-03 umax
+Step     53, t= 1.0600000E+00, DT= 2.0000000E-02, C=  0.002 4.6924E-01 4.8859E-03
+             Solving for Hmholtz scalars
+         53  Project TEMP           2.0187E-04   3.1469E-05   6.4151E+00   8   0
+         53  Hmholtz TEMP       1   1.2942E-04   1.4656E-04   2.2351E-03
+         53  Scalars done  1.0600E+00  7.4911E-04
+             Solving for fluid
+ Relax the pressure tolerance    1.8270308442493695E-004   6.6655162864232157E-007
+         53  Project PRES           3.8710E-02   5.1157E-03   7.5668E+00   8   0
+         53  PRES gmres        11   5.9845E-09   1.7052E-03   1.3331E-08   1.1592E-03   2.0380E-03    F
+         53  Project velx           1.6536E-03   1.3419E-04   1.2323E+01   8   0
+         53  Hmholtz velx      15   3.4185E-06   5.8650E-04   3.9604E-06
+         53  Project vely           6.8618E-03   2.1225E-04   3.2329E+01   8   0
+         53  Hmholtz vely      18   2.7937E-06   8.2127E-04   3.9604E-06
+             L1/L2 DIV(V)          -9.1009E-19   3.4837E-04
+             L1/L2 QTL              0.0000E+00   0.0000E+00
+             L1/L2 DIV(V)-QTL      -9.1009E-19   3.4837E-04
+         53  Fluid done  1.0600E+00  6.0470E-03
+       53  1.060000E+00  3.312667E-03  3.289654E-03 umax
+Step     54, t= 1.0800000E+00, DT= 2.0000000E-02, C=  0.002 4.7697E-01 7.7319E-03
+             Solving for Hmholtz scalars
+         54  Project TEMP           1.6944E-04   2.3094E-05   7.3372E+00   8   0
+         54  Hmholtz TEMP       1   1.0655E-04   1.0218E-04   2.2351E-03
+         54  Scalars done  1.0800E+00  7.9393E-04
+             Solving for fluid
+ Relax the pressure tolerance    1.7484218710845336E-004   6.6806961184125035E-007
+         54  Project PRES           3.7058E-02   3.2223E-03   1.1501E+01   8   0
+         54  PRES gmres        11   5.4001E-09   1.0741E-03   1.3361E-08   1.1230E-03   1.9748E-03    F
+         54  Project velx           2.1586E-03   1.2579E-04   1.7160E+01   8   0
+         54  Hmholtz velx      16   2.9419E-06   5.3458E-04   3.9694E-06
+         54  Project vely           7.0986E-03   2.0903E-04   3.3960E+01   8   0
+         54  Hmholtz vely      18   2.7944E-06   8.0092E-04   3.9694E-06
+             L1/L2 DIV(V)          -1.0353E-18   3.3339E-04
+             L1/L2 QTL              0.0000E+00   0.0000E+00
+             L1/L2 DIV(V)-QTL      -1.0353E-18   3.3339E-04
+         54  Fluid done  1.0800E+00  6.0151E-03
+       54  1.080000E+00  3.359683E-03  3.438655E-03 umax
+Step     55, t= 1.1000000E+00, DT= 2.0000000E-02, C=  0.002 4.8473E-01 7.7562E-03
+             Solving for Hmholtz scalars
+         55  Project TEMP           1.8402E-04   3.7350E-05   4.9268E+00   8   0
+         55  Hmholtz TEMP       1   1.1616E-04   1.7389E-04   2.2351E-03
+         55  Scalars done  1.1000E+00  7.2289E-04
+             Solving for fluid
+ Relax the pressure tolerance    1.7886350451598118E-004   6.6002425658641895E-007
+         55  Project PRES           3.5539E-02   3.5705E-03   9.9535E+00   8   0
+         55  PRES gmres        11   4.7949E-09   1.1902E-03   1.3200E-08   7.0310E-04   1.1950E-03    F
+         55  Project velx           1.5229E-03   1.0214E-04   1.4910E+01   8   0
+         55  Hmholtz velx      15   3.1506E-06   4.3119E-04   3.9216E-06
+         55  Project vely           6.2975E-03   1.9643E-04   3.2060E+01   8   0
+         55  Hmholtz vely      17   3.1610E-06   6.4409E-04   3.9216E-06
+             L1/L2 DIV(V)          -9.4345E-19   3.2495E-04
+             L1/L2 QTL              0.0000E+00   0.0000E+00
+             L1/L2 DIV(V)-QTL      -9.4345E-19   3.2495E-04
+         55  Fluid done  1.1000E+00  3.7820E-03
+       55  1.100000E+00  3.298838E-03  3.242326E-03 umax
+Step     56, t= 1.1200000E+00, DT= 2.0000000E-02, C=  0.002 4.9016E-01 5.4338E-03
+             Solving for Hmholtz scalars
+         56  Project TEMP           1.5570E-04   2.2634E-05   6.8792E+00   8   0
+         56  Hmholtz TEMP       1   9.3451E-05   9.5287E-05   2.2351E-03
+         56  Scalars done  1.1200E+00  7.7701E-04
+             Solving for fluid
+ Relax the pressure tolerance    1.7178627326119950E-004   6.6122624083343904E-007
+         56  Project PRES           3.4114E-02   3.2248E-03   1.0578E+01   8   0
+         56  PRES gmres        11   5.1820E-09   1.0749E-03   1.3225E-08   1.2152E-03   2.0721E-03    F
+         56  Project velx           1.9095E-03   8.9991E-05   2.1219E+01   8   0
+         56  Hmholtz velx      14   3.1694E-06   3.7636E-04   3.9288E-06
+         56  Project vely           6.5354E-03   1.7607E-04   3.7118E+01   8   0
+         56  Hmholtz vely      16   3.7450E-06   6.6197E-04   3.9288E-06
+             L1/L2 DIV(V)          -9.7155E-19   3.0777E-04
+             L1/L2 QTL              0.0000E+00   0.0000E+00
+             L1/L2 DIV(V)-QTL      -9.7155E-19   3.0777E-04
+         56  Fluid done  1.1200E+00  5.9960E-03
+       56  1.120000E+00  3.336392E-03  3.393068E-03 umax
+Step     57, t= 1.1400000E+00, DT= 2.0000000E-02, C=  0.002 4.9788E-01 7.7190E-03
+             Solving for Hmholtz scalars
+         57  Project TEMP           1.6918E-04   3.0331E-05   5.5778E+00   8   0
+         57  Hmholtz TEMP       1   1.1073E-04   1.3767E-04   2.2351E-03
+         57  Scalars done  1.1400E+00  8.1778E-04
+             Solving for fluid
+ Relax the pressure tolerance    1.7550516705024623E-004   6.5453909310016194E-007
+         57  Project PRES           3.2222E-02   3.2209E-03   1.0004E+01   8   0
+         57  PRES gmres        10   1.2060E-08   1.0736E-03   1.3091E-08   1.0211E-03   1.7991E-03    F
+         57  Project velx           1.4015E-03   8.5846E-05   1.6325E+01   8   0
+         57  Hmholtz velx      13   3.4780E-06   3.6119E-04   3.8890E-06
+         57  Project vely           5.7548E-03   1.7223E-04   3.3413E+01   8   0
+         57  Hmholtz vely      17   2.9323E-06   5.8479E-04   3.8890E-06
+             L1/L2 DIV(V)          -1.0193E-18   2.9215E-04
+             L1/L2 QTL              0.0000E+00   0.0000E+00
+             L1/L2 DIV(V)-QTL      -1.0193E-18   2.9215E-04
+         57  Fluid done  1.1400E+00  5.6980E-03
+       57  1.140000E+00  3.273376E-03  3.196641E-03 umax
+Step     58, t= 1.1600000E+00, DT= 2.0000000E-02, C=  0.002 5.0519E-01 7.3102E-03
+             Solving for Hmholtz scalars
+         58  Project TEMP           1.4209E-04   2.0627E-05   6.8886E+00   8   0
+         58  Hmholtz TEMP       1   6.7140E-05   8.4757E-05   2.2351E-03
+         58  Scalars done  1.1600E+00  7.3504E-04
+             Solving for fluid
+ Relax the pressure tolerance    1.6891444138356608E-004   6.5529336501228501E-007
+         58  Project PRES           3.1089E-02   3.5905E-03   8.6585E+00   8   0
+         58  PRES gmres        11   6.8954E-09   1.1968E-03   1.3106E-08   1.1690E-03   2.0571E-03    F
+         58  Project velx           1.7982E-03   1.3211E-04   1.3611E+01   8   0
+         58  Hmholtz velx      15   2.7053E-06   5.6901E-04   3.8935E-06
+         58  Project vely           6.0008E-03   2.5908E-04   2.3162E+01   8   0
+         58  Hmholtz vely      17   3.1722E-06   8.7458E-04   3.8935E-06
+             L1/L2 DIV(V)          -1.1260E-18   2.8353E-04
+             L1/L2 QTL              0.0000E+00   0.0000E+00
+             L1/L2 DIV(V)-QTL      -1.1260E-18   2.8353E-04
+         58  Fluid done  1.1600E+00  5.2090E-03
+       58  1.160000E+00  3.307186E-03  3.347954E-03 umax
+Step     59, t= 1.1800000E+00, DT= 2.0000000E-02, C=  0.002 5.1201E-01 6.8150E-03
+             Solving for Hmholtz scalars
+         59  Project TEMP           1.5556E-04   2.6495E-05   5.8713E+00   8   0
+         59  Hmholtz TEMP       1   1.0422E-04   1.1537E-04   2.2351E-03
+         59  Scalars done  1.1800E+00  4.2510E-04
+             Solving for fluid
+ Relax the pressure tolerance    1.7237623869871947E-004   6.4953079356843247E-007
+         59  Project PRES           2.9804E-02   2.6823E-03   1.1111E+01   8   0
+         59  PRES gmres        11   3.7357E-09   8.9410E-04   1.2991E-08   6.8831E-04   1.1809E-03    F
+         59  Project velx           1.2459E-03   6.7393E-05   1.8487E+01   8   0
+         59  Hmholtz velx      13   3.4833E-06   2.7112E-04   3.8593E-06
+         59  Project vely           5.2956E-03   1.4931E-04   3.5467E+01   8   0
+         59  Hmholtz vely      16   3.3418E-06   5.4772E-04   3.8593E-06
+             L1/L2 DIV(V)          -9.7094E-19   2.7240E-04
+             L1/L2 QTL              0.0000E+00   0.0000E+00
+             L1/L2 DIV(V)-QTL      -9.7094E-19   2.7240E-04
+         59  Fluid done  1.1800E+00  8.7211E-03
+       59  1.180000E+00  3.252910E-03  3.154102E-03 umax
+Step     60, t= 1.2000000E+00, DT= 2.0000000E-02, C=  0.002 5.2177E-01 9.7640E-03
+             Solving for Hmholtz scalars
+         60  Project TEMP           1.3011E-04   1.9503E-05   6.6714E+00   8   0
+         60  Hmholtz TEMP       1   7.2152E-05   8.1814E-05   2.2351E-03
+         60  Scalars done  1.2000E+00  7.8392E-04
+             Solving for fluid
+ Relax the pressure tolerance    1.6617689398184209E-004   6.4995856224096706E-007
+         60  Project PRES           2.8505E-02   2.5973E-03   1.0975E+01   8   0
+         60  PRES gmres        11   4.3629E-09   8.6578E-04   1.2999E-08   1.2083E-03   2.1350E-03    F
+         60  Project velx           1.6424E-03   8.5272E-05   1.9261E+01   8   0
+         60  Hmholtz velx      15   3.3663E-06   3.2749E-04   3.8618E-06
+         60  Project vely           5.5312E-03   1.7340E-04   3.1898E+01   8   0
+         60  Hmholtz vely      16   3.2134E-06   5.9896E-04   3.8618E-06
+             L1/L2 DIV(V)          -9.7613E-19   2.5788E-04
+             L1/L2 QTL              0.0000E+00   0.0000E+00
+             L1/L2 DIV(V)-QTL      -9.7613E-19   2.5788E-04
+         60  Fluid done  1.2000E+00  6.2530E-03
+       60  1.200000E+00  3.286164E-03  3.306819E-03 umax
+Step     61, t= 1.2200000E+00, DT= 2.0000000E-02, C=  0.002 5.2979E-01 8.0149E-03
+             Solving for Hmholtz scalars
+         61  Project TEMP           1.4399E-04   2.8424E-05   5.0657E+00   8   0
+         61  Hmholtz TEMP       1   8.4623E-05   1.1745E-04   2.2351E-03
+         61  Scalars done  1.2200E+00  8.1801E-04
+             Solving for fluid
+ Relax the pressure tolerance    1.6944375234038191E-004   6.4511948946396542E-007
+         61  Project PRES           2.7184E-02   2.0013E-03   1.3583E+01   8   0
+         61  PRES gmres        10   8.5107E-09   6.6709E-04   1.2902E-08   1.0815E-03   1.8780E-03    F
+         61  Project velx           1.1542E-03   5.8272E-05   1.9807E+01   8   0
+         61  Hmholtz velx      13   3.3151E-06   2.3525E-04   3.8331E-06
+         61  Project vely           4.8450E-03   1.1769E-04   4.1167E+01   8   0
+         61  Hmholtz vely      15   3.5633E-06   4.0344E-04   3.8331E-06
+             L1/L2 DIV(V)          -1.0750E-18   2.4846E-04
+             L1/L2 QTL              0.0000E+00   0.0000E+00
+             L1/L2 DIV(V)-QTL      -1.0750E-18   2.4846E-04
+         61  Fluid done  1.2200E+00  5.8169E-03
+       61  1.220000E+00  3.234458E-03  3.117016E-03 umax
+Step     62, t= 1.2400000E+00, DT= 2.0000000E-02, C=  0.002 5.3840E-01 8.6160E-03
+             Solving for Hmholtz scalars
+         62  Project TEMP           1.1814E-04   1.7492E-05   6.7541E+00   8   0
+         62  Hmholtz TEMP       1   7.4670E-05   7.8628E-05   2.2351E-03
+         62  Scalars done  1.2400E+00  4.4608E-04
+             Solving for fluid
+ Relax the pressure tolerance    1.6382585806629964E-004   6.4538884717840947E-007
+         62  Project PRES           2.6328E-02   2.6717E-03   9.8542E+00   8   0
+         62  PRES gmres        10   1.1715E-08   8.9058E-04   1.2908E-08   6.4278E-04   1.0870E-03    F
+         62  Project velx           1.5160E-03   6.6534E-05   2.2785E+01   8   0
+         62  Hmholtz velx      14   3.6593E-06   2.7475E-04   3.8347E-06
+         62  Project vely           5.1099E-03   1.3297E-04   3.8428E+01   8   0
+         62  Hmholtz vely      16   2.8247E-06   4.7629E-04   3.8347E-06
+             L1/L2 DIV(V)          -1.0880E-18   2.3992E-04
+             L1/L2 QTL              0.0000E+00   0.0000E+00
+             L1/L2 DIV(V)-QTL      -1.0880E-18   2.3992E-04
+         62  Fluid done  1.2400E+00  1.0671E-02
+       62  1.240000E+00  3.260093E-03  3.271155E-03 umax
+Step     63, t= 1.2600000E+00, DT= 2.0000000E-02, C=  0.002 5.5028E-01 1.1879E-02
+             Solving for Hmholtz scalars
+         63  Project TEMP           1.3344E-04   2.1876E-05   6.0997E+00   8   0
+         63  Hmholtz TEMP       1   1.0451E-04   1.0363E-04   2.2351E-03
+         63  Scalars done  1.2600E+00  8.4710E-04
+             Solving for fluid
+ Relax the pressure tolerance    1.6686567652005624E-004   6.4128212966730693E-007
+         63  Project PRES           2.5098E-02   2.3450E-03   1.0703E+01   8   0
+         63  PRES gmres        10   8.5069E-09   7.8168E-04   1.2826E-08   1.0312E-03   1.8010E-03    F
+         63  Project velx           1.0298E-03   6.0765E-05   1.6947E+01   8   0
+         63  Hmholtz velx      13   3.6916E-06   2.4798E-04   3.8103E-06
+         63  Project vely           4.4575E-03   1.2514E-04   3.5619E+01   8   0
+         63  Hmholtz vely      15   3.6239E-06   4.2610E-04   3.8103E-06
+             L1/L2 DIV(V)          -9.9983E-19   2.2851E-04
+             L1/L2 QTL              0.0000E+00   0.0000E+00
+             L1/L2 DIV(V)-QTL      -9.9983E-19   2.2851E-04
+         63  Fluid done  1.2600E+00  5.6100E-03
+       63  1.260000E+00  3.211377E-03  3.087998E-03 umax
+Step     64, t= 1.2800000E+00, DT= 2.0000000E-02, C=  0.002 5.5792E-01 7.6349E-03
+             Solving for Hmholtz scalars
+         64  Project TEMP           1.0921E-04   1.4171E-05   7.7064E+00   8   0
+         64  Hmholtz TEMP       1   6.7849E-05   6.3065E-05   2.2351E-03
+         64  Scalars done  1.2800E+00  7.5293E-04
+             Solving for fluid
+ Relax the pressure tolerance    1.6155104346941886E-004   6.4130877152166298E-007
+         64  Project PRES           2.4081E-02   2.3409E-03   1.0287E+01   8   0
+         64  PRES gmres        10   8.2458E-09   7.8031E-04   1.2826E-08   1.4744E-03   2.4040E-03    F
+         64  Project velx           1.4161E-03   4.6498E-05   3.0456E+01   8   0
+         64  Hmholtz velx      12   3.8007E-06   2.1146E-04   3.8104E-06
+         64  Project vely           4.7097E-03   1.2240E-04   3.8478E+01   8   0
+         64  Hmholtz vely      16   2.8818E-06   4.1191E-04   3.8104E-06
+             L1/L2 DIV(V)          -1.1309E-18   2.1825E-04
+             L1/L2 QTL              0.0000E+00   0.0000E+00
+             L1/L2 DIV(V)-QTL      -1.1309E-18   2.1825E-04
+         64  Fluid done  1.2800E+00  6.3119E-03
+       64  1.280000E+00  3.234746E-03  3.238064E-03 umax
+Step     65, t= 1.3000000E+00, DT= 2.0000000E-02, C=  0.002 5.6589E-01 7.9789E-03
+             Solving for Hmholtz scalars
+         65  Project TEMP           1.2300E-04   2.6256E-05   4.6845E+00   8   0
+         65  Hmholtz TEMP       1   6.7825E-05   1.1492E-04   2.2351E-03
+         65  Scalars done  1.3000E+00  8.1205E-04
+             Solving for fluid
+ Relax the pressure tolerance    1.6435198971688245E-004   6.3787975932631851E-007
+         65  Project PRES           2.3125E-02   2.4107E-03   9.5923E+00   8   0
+         65  PRES gmres        10   1.1229E-08   8.0358E-04   1.2758E-08   6.3634E-04   1.0810E-03    F
+         65  Project velx           9.5473E-04   9.3091E-05   1.0256E+01   8   0
+         65  Hmholtz velx      14   3.7247E-06   4.1361E-04   3.7900E-06
+         65  Project vely           4.0949E-03   1.5093E-04   2.7132E+01   8   0
+         65  Hmholtz vely      16   3.5462E-06   5.3774E-04   3.7900E-06
+             L1/L2 DIV(V)          -1.1198E-18   2.1138E-04
+             L1/L2 QTL              0.0000E+00   0.0000E+00
+             L1/L2 DIV(V)-QTL      -1.1198E-18   2.1138E-04
+         65  Fluid done  1.3000E+00  3.8271E-03
+       65  1.300000E+00  3.190440E-03  3.071792E-03 umax
+Step     66, t= 1.3200000E+00, DT= 2.0000000E-02, C=  0.002 5.7148E-01 5.5852E-03
+             Solving for Hmholtz scalars
+         66  Project TEMP           1.0000E-04   1.4423E-05   6.9335E+00   8   0
+         66  Hmholtz TEMP       1   6.9763E-05   6.2422E-05   2.2351E-03
+         66  Scalars done  1.3200E+00  4.6051E-03
+             Solving for fluid
+ Relax the pressure tolerance    1.5951347830258996E-004   6.3771825180980096E-007
+         66  Project PRES           2.2390E-02   2.8891E-03   7.7497E+00   8   0
+         66  PRES gmres        10   1.1462E-08   9.6303E-04   1.2754E-08   1.0240E-03   1.8010E-03    F
+         66  Project velx           1.2977E-03   6.7623E-05   1.9190E+01   8   0
+         66  Hmholtz velx      14   3.2922E-06   3.0502E-04   3.7891E-06
+         66  Project vely           4.3617E-03   1.3973E-04   3.1216E+01   8   0
+         66  Hmholtz vely      16   2.9846E-06   4.8002E-04   3.7891E-06
+             L1/L2 DIV(V)          -1.0895E-18   2.0222E-04
+             L1/L2 QTL              0.0000E+00   0.0000E+00
+             L1/L2 DIV(V)-QTL      -1.0895E-18   2.0222E-04
+         66  Fluid done  1.3200E+00  6.1982E-03
+       66  1.320000E+00  3.208589E-03  3.208006E-03 umax
+Step     67, t= 1.3400000E+00, DT= 2.0000000E-02, C=  0.002 5.8313E-01 1.1653E-02
+             Solving for Hmholtz scalars
+         67  Project TEMP           1.1399E-04   2.5059E-05   4.5488E+00   8   0
+         67  Hmholtz TEMP       1   5.9285E-05   1.1432E-04   2.2351E-03
+         67  Scalars done  1.3400E+00  7.2503E-04
+             Solving for fluid
+ Relax the pressure tolerance    1.6204371358410720E-004   6.3484834235628976E-007
+         67  Project PRES           2.1294E-02   2.5987E-03   8.1941E+00   8   0
+         67  PRES gmres        10   1.1967E-08   8.6622E-04   1.2697E-08   1.1001E-03   1.8780E-03    F
+         67  Project velx           8.8061E-04   7.3643E-05   1.1958E+01   8   0
+         67  Hmholtz velx      15   2.8492E-06   3.1242E-04   3.7720E-06
+         67  Project vely           3.7675E-03   1.5345E-04   2.4552E+01   8   0
+         67  Hmholtz vely      16   3.7592E-06   5.2323E-04   3.7720E-06
+             L1/L2 DIV(V)          -1.1353E-18   1.9308E-04
+             L1/L2 QTL              0.0000E+00   0.0000E+00
+             L1/L2 DIV(V)-QTL      -1.1353E-18   1.9308E-04
+         67  Fluid done  1.3400E+00  5.9140E-03
+       67  1.340000E+00  3.166397E-03  3.056001E-03 umax
+Step     68, t= 1.3600000E+00, DT= 2.0000000E-02, C=  0.002 5.9073E-01 7.5951E-03
+             Solving for Hmholtz scalars
+         68  Project TEMP           9.1995E-05   1.3338E-05   6.8972E+00   8   0
+         68  Hmholtz TEMP       1   4.4364E-05   6.3249E-05   2.2351E-03
+         68  Scalars done  1.3600E+00  7.4410E-04
+             Solving for fluid
+ Relax the pressure tolerance    1.5746579460358237E-004   6.3448365619077345E-007
+         68  Project PRES           2.0574E-02   2.3962E-03   8.5862E+00   8   0
+         68  PRES gmres        10   1.0376E-08   7.9873E-04   1.2690E-08   1.0574E-03   1.8330E-03    F
+         68  Project velx           1.2215E-03   6.5416E-05   1.8673E+01   8   0
+         68  Hmholtz velx      13   2.7713E-06   2.7241E-04   3.7699E-06
+         68  Project vely           4.0323E-03   1.1152E-04   3.6158E+01   8   0
+         68  Hmholtz vely      16   3.3237E-06   3.9802E-04   3.7699E-06
+             L1/L2 DIV(V)          -1.1752E-18   1.8582E-04
+             L1/L2 QTL              0.0000E+00   0.0000E+00
+             L1/L2 DIV(V)-QTL      -1.1752E-18   1.8582E-04
+         68  Fluid done  1.3600E+00  5.5001E-03
+       68  1.360000E+00  3.179339E-03  3.178594E-03 umax
+Step     69, t= 1.3800000E+00, DT= 2.0000000E-02, C=  0.002 5.9788E-01 7.1499E-03
+             Solving for Hmholtz scalars
+         69  Project TEMP           1.0472E-04   2.1000E-05   4.9864E+00   8   0
+         69  Hmholtz TEMP       1   5.4121E-05   9.1857E-05   2.2351E-03
+         69  Scalars done  1.3800E+00  4.2796E-04
+             Solving for fluid
+ Relax the pressure tolerance    1.5974490195761279E-004   6.3209643854932209E-007
+         69  Project PRES           1.9697E-02   2.4133E-03   8.1616E+00   8   0
+         69  PRES gmres        10   9.8258E-09   8.0444E-04   1.2642E-08   8.7047E-04   1.4930E-03    F
+         69  Project velx           8.1034E-04   6.7896E-05   1.1935E+01   8   0
+         69  Hmholtz velx      13   3.4096E-06   3.0149E-04   3.7557E-06
+         69  Project vely           3.4723E-03   9.7139E-05   3.5746E+01   8   0
+         69  Hmholtz vely      14   3.5164E-06   3.7143E-04   3.7557E-06
+             L1/L2 DIV(V)          -1.1482E-18   1.7896E-04
+             L1/L2 QTL              0.0000E+00   0.0000E+00
+             L1/L2 DIV(V)-QTL      -1.1482E-18   1.7896E-04
+         69  Fluid done  1.3800E+00  5.1401E-03
+       69  1.380000E+00  3.139459E-03  3.039913E-03 umax
+Step     70, t= 1.4000000E+00, DT= 2.0000000E-02, C=  0.002 6.0405E-01 6.1729E-03
+             Solving for Hmholtz scalars
+         70  Project TEMP           8.4611E-05   1.5563E-05   5.4369E+00   8   0
+         70  Hmholtz TEMP       1   4.6030E-05   7.6292E-05   2.2351E-03
+         70  Scalars done  1.4000E+00  7.9393E-04
+             Solving for fluid
+ Relax the pressure tolerance    1.5548738450710229E-004   6.3163312183376268E-007
+         70  Project PRES           1.8960E-02   1.9796E-03   9.5776E+00   8   0
+         70  PRES gmres        10   5.8086E-09   6.5986E-04   1.2633E-08   1.1623E-03   1.9829E-03    F
+         70  Project velx           1.1321E-03   4.5820E-05   2.4707E+01   8   0
+         70  Hmholtz velx      12   3.3437E-06   1.9474E-04   3.7529E-06
+         70  Project vely           3.7343E-03   8.5534E-05   4.3659E+01   8   0
+         70  Hmholtz vely      14   3.3709E-06   2.9633E-04   3.7529E-06
+             L1/L2 DIV(V)          -1.1099E-18   1.7096E-04
+             L1/L2 QTL              0.0000E+00   0.0000E+00
+             L1/L2 DIV(V)-QTL      -1.1099E-18   1.7096E-04
+         70  Fluid done  1.4000E+00  6.0971E-03
+       70  1.400000E+00  3.149827E-03  3.151330E-03 umax
+Step     71, t= 1.4200000E+00, DT= 2.0000000E-02, C=  0.002 6.1190E-01 7.8461E-03
+             Solving for Hmholtz scalars
+         71  Project TEMP           9.7088E-05   1.7126E-05   5.6691E+00   8   0
+         71  Hmholtz TEMP       1   5.0072E-05   7.8252E-05   2.2351E-03
+         71  Scalars done  1.4200E+00  8.0395E-04
+             Solving for fluid
+ Relax the pressure tolerance    1.5756774315657377E-004   6.2971449550635909E-007
+         71  Project PRES           1.8063E-02   1.3671E-03   1.3213E+01   8   0
+         71  PRES gmres        10   6.3904E-09   4.5570E-04   1.2594E-08   1.1480E-03   1.9510E-03    F
+         71  Project velx           7.4879E-04   4.4090E-05   1.6983E+01   8   0
+         71  Hmholtz velx      12   3.1966E-06   1.8041E-04   3.7415E-06
+         71  Project vely           3.1944E-03   8.0880E-05   3.9495E+01   8   0
+         71  Hmholtz vely      15   2.9416E-06   2.7970E-04   3.7415E-06
+             L1/L2 DIV(V)          -1.1795E-18   1.6422E-04
+             L1/L2 QTL              0.0000E+00   0.0000E+00
+             L1/L2 DIV(V)-QTL      -1.1795E-18   1.6422E-04
+         71  Fluid done  1.4200E+00  5.8081E-03
+       71  1.420000E+00  3.113115E-03  3.026348E-03 umax
+Step     72, t= 1.4400000E+00, DT= 2.0000000E-02, C=  0.002 6.1942E-01 7.5219E-03
+             Solving for Hmholtz scalars
+         72  Project TEMP           7.7716E-05   8.6329E-06   9.0023E+00   8   0
+         72  Hmholtz TEMP       1   5.5506E-05   4.0461E-05   2.2351E-03
+         72  Scalars done  1.4400E+00  8.1110E-04
+             Solving for fluid
+ Relax the pressure tolerance    1.5360940934592892E-004   6.2916806090848923E-007
+         72  Project PRES           1.7445E-02   1.8539E-03   9.4100E+00   8   0
+         72  PRES gmres        10   9.6000E-09   6.1797E-04   1.2583E-08   1.0552E-03   1.8611E-03    F
+         72  Project velx           1.0529E-03   6.7152E-05   1.5679E+01   8   0
+         72  Hmholtz velx      13   3.5886E-06   2.9368E-04   3.7383E-06
+         72  Project vely           3.4598E-03   1.1231E-04   3.0805E+01   8   0
+         72  Hmholtz vely      16   3.5340E-06   4.1221E-04   3.7383E-06
+             L1/L2 DIV(V)          -1.2461E-18   1.5839E-04
+             L1/L2 QTL              0.0000E+00   0.0000E+00
+             L1/L2 DIV(V)-QTL      -1.2461E-18   1.5839E-04
+         72  Fluid done  1.4400E+00  5.7871E-03
+       72  1.440000E+00  3.122474E-03  3.130939E-03 umax
+Step     73, t= 1.4600000E+00, DT= 2.0000000E-02, C=  0.002 6.2739E-01 7.9741E-03
+             Solving for Hmholtz scalars
+         73  Project TEMP           9.0353E-05   1.5826E-05   5.7092E+00   8   0
+         73  Hmholtz TEMP       1   5.9837E-05   7.0292E-05   2.2351E-03
+         73  Scalars done  1.4600E+00  7.8607E-04
+             Solving for fluid
+ Relax the pressure tolerance    1.5561335967462250E-004   6.2768537965569831E-007
+         73  Project PRES           1.6683E-02   1.7696E-03   9.4274E+00   8   0
+         73  PRES gmres        10   7.4029E-09   5.8987E-04   1.2554E-08   1.1535E-03   3.8371E-03    F
+         73  Project velx           6.7715E-04   4.9617E-05   1.3648E+01   8   0
+         73  Hmholtz velx      13   2.4928E-06   2.0296E-04   3.7295E-06
+         73  Project vely           2.9544E-03   1.0766E-04   2.7441E+01   8   0
+         73  Hmholtz vely      15   3.4820E-06   3.5791E-04   3.7295E-06
+             L1/L2 DIV(V)          -1.1881E-18   1.5253E-04
+             L1/L2 QTL              0.0000E+00   0.0000E+00
+             L1/L2 DIV(V)-QTL      -1.1881E-18   1.5253E-04
+         73  Fluid done  1.4600E+00  7.7319E-03
+       73  1.460000E+00  3.089529E-03  3.017152E-03 umax
+Step     74, t= 1.4800000E+00, DT= 2.0000000E-02, C=  0.002 6.3684E-01 9.4519E-03
+             Solving for Hmholtz scalars
+         74  Project TEMP           7.2215E-05   1.3070E-05   5.5252E+00   8   0
+         74  Hmholtz TEMP       1   3.0859E-05   5.9905E-05   2.2351E-03
+         74  Scalars done  1.4800E+00  7.7605E-04
+             Solving for fluid
+ Relax the pressure tolerance    1.5188054042072736E-004   6.2719540419797707E-007
+         74  Project PRES           1.6108E-02   1.4624E-03   1.1014E+01   8   0
+         74  PRES gmres        10   4.9516E-09   4.8748E-04   1.2544E-08   1.0993E-03   1.8861E-03    F
+         74  Project velx           9.7773E-04   3.5078E-05   2.7873E+01   8   0
+         74  Hmholtz velx      11   3.6691E-06   1.5538E-04   3.7266E-06
+         74  Project vely           3.2081E-03   8.5048E-05   3.7721E+01   8   0
+         74  Hmholtz vely      14   3.2632E-06   2.9668E-04   3.7266E-06
+             L1/L2 DIV(V)          -1.2165E-18   1.4577E-04
+             L1/L2 QTL              0.0000E+00   0.0000E+00
+             L1/L2 DIV(V)-QTL      -1.2165E-18   1.4577E-04
+         74  Fluid done  1.4800E+00  5.9330E-03
+       74  1.480000E+00  3.097910E-03  3.112960E-03 umax
+Step     75, t= 1.5000000E+00, DT= 2.0000000E-02, C=  0.002 6.4451E-01 7.6602E-03
+             Solving for Hmholtz scalars
+         75  Project TEMP           8.3359E-05   1.6615E-05   5.0172E+00   8   0
+         75  Hmholtz TEMP       1   4.8905E-05   7.7059E-05   2.2351E-03
+         75  Scalars done  1.5000E+00  8.0705E-04
+             Solving for fluid
+ Relax the pressure tolerance    1.5380968925931879E-004   6.2612457806617554E-007
+         75  Project PRES           1.5482E-02   1.2454E-03   1.2431E+01   8   0
+         75  PRES gmres        10   8.8297E-09   4.1513E-04   1.2522E-08   1.0374E-03   1.8151E-03    F
+         75  Project velx           6.2760E-04   4.5772E-05   1.3712E+01   8   0
+         75  Hmholtz velx      11   2.9706E-06   2.1164E-04   3.7202E-06
+         75  Project vely           2.7278E-03   7.4202E-05   3.6762E+01   8   0
+         75  Hmholtz vely      13   3.4927E-06   2.8139E-04   3.7202E-06
+             L1/L2 DIV(V)          -1.1501E-18   1.4067E-04
+             L1/L2 QTL              0.0000E+00   0.0000E+00
+             L1/L2 DIV(V)-QTL      -1.1501E-18   1.4067E-04
+         75  Fluid done  1.5000E+00  5.4431E-03
+       75  1.500000E+00  3.068402E-03  3.009684E-03 umax
+Step     76, t= 1.5200000E+00, DT= 2.0000000E-02, C=  0.002 6.5173E-01 7.2210E-03
+             Solving for Hmholtz scalars
+         76  Project TEMP           6.6492E-05   9.8130E-06   6.7758E+00   8   0
+         76  Hmholtz TEMP       1   4.1880E-05   4.2108E-05   2.2351E-03
+         76  Scalars done  1.5200E+00  1.8120E-03
+             Solving for fluid
+ Relax the pressure tolerance    1.5033130899284877E-004   6.2562514959765930E-007
+         76  Project PRES           1.4972E-02   1.5721E-03   9.5233E+00   8   0
+         76  PRES gmres        10   8.6469E-09   5.2404E-04   1.2513E-08   1.1003E-03   1.9162E-03    F
+         76  Project velx           9.1437E-04   4.0014E-05   2.2852E+01   8   0
+         76  Hmholtz velx      12   3.0878E-06   1.7466E-04   3.7172E-06
+         76  Project vely           2.9791E-03   7.8179E-05   3.8105E+01   8   0
+         76  Hmholtz vely      15   3.2852E-06   2.9335E-04   3.7172E-06
+             L1/L2 DIV(V)          -1.2089E-18   1.3539E-04
+             L1/L2 QTL              0.0000E+00   0.0000E+00
+             L1/L2 DIV(V)-QTL      -1.2089E-18   1.3539E-04
+         76  Fluid done  1.5200E+00  5.7268E-03
+       76  1.520000E+00  3.077189E-03  3.099502E-03 umax
+Step     77, t= 1.5400000E+00, DT= 2.0000000E-02, C=  0.002 6.6019E-01 8.4610E-03
+             Solving for Hmholtz scalars
+         77  Project TEMP           7.7806E-05   1.3804E-05   5.6364E+00   8   0
+         77  Hmholtz TEMP       1   3.5958E-05   6.7483E-05   2.2351E-03
+         77  Scalars done  1.5400E+00  7.3290E-04
+             Solving for fluid
+ Relax the pressure tolerance    1.5217463907154716E-004   6.2495778853272562E-007
+         77  Project PRES           1.4305E-02   1.2528E-03   1.1418E+01   8   0
+         77  PRES gmres        10   6.1006E-09   4.1761E-04   1.2499E-08   1.1868E-03   1.9650E-03    F
+         77  Project velx           5.6777E-04   2.9772E-05   1.9071E+01   8   0
+         77  Hmholtz velx      11   3.6815E-06   1.1828E-04   3.7133E-06
+         77  Project vely           2.5198E-03   7.0459E-05   3.5763E+01   8   0
+         77  Hmholtz vely      14   3.2221E-06   2.3687E-04   3.7133E-06
+             L1/L2 DIV(V)          -1.1541E-18   1.2992E-04
+             L1/L2 QTL              0.0000E+00   0.0000E+00
+             L1/L2 DIV(V)-QTL      -1.1541E-18   1.2992E-04
+         77  Fluid done  1.5400E+00  5.6579E-03
+       77  1.540000E+00  3.051974E-03  3.004229E-03 umax
+Step     78, t= 1.5600000E+00, DT= 2.0000000E-02, C=  0.002 6.6753E-01 7.3380E-03
+             Solving for Hmholtz scalars
+         78  Project TEMP           6.0983E-05   1.0076E-05   6.0521E+00   8   0
+         78  Hmholtz TEMP       1   3.3343E-05   4.5604E-05   2.2351E-03
+         78  Scalars done  1.5600E+00  8.1277E-04
+             Solving for fluid
+ Relax the pressure tolerance    1.4897225674764781E-004   6.2451777043222841E-007
+         78  Project PRES           1.3784E-02   1.5766E-03   8.7429E+00   8   0
+         78  PRES gmres        10   8.4220E-09   5.2553E-04   1.2490E-08   1.0922E-03   1.8971E-03    F
+         78  Project velx           8.6618E-04   4.6561E-05   1.8603E+01   8   0
+         78  Hmholtz velx      12   2.9193E-06   1.9805E-04   3.7107E-06
+         78  Project vely           2.7758E-03   7.4408E-05   3.7305E+01   8   0
+         78  Hmholtz vely      14   3.0702E-06   2.8699E-04   3.7107E-06
+             L1/L2 DIV(V)          -1.3705E-18   1.2527E-04
+             L1/L2 QTL              0.0000E+00   0.0000E+00
+             L1/L2 DIV(V)-QTL      -1.3705E-18   1.2527E-04
+         78  Fluid done  1.5600E+00  6.0251E-03
+       78  1.560000E+00  3.059630E-03  3.088297E-03 umax
+Step     79, t= 1.5800000E+00, DT= 2.0000000E-02, C=  0.002 6.7531E-01 7.7808E-03
+             Solving for Hmholtz scalars
+         79  Project TEMP           7.2516E-05   1.0169E-05   7.1312E+00   8   0
+         79  Hmholtz TEMP       1   4.6160E-05   4.8534E-05   2.2351E-03
+         79  Scalars done  1.5800E+00  7.6103E-04
+             Solving for fluid
+ Relax the pressure tolerance    1.5069528174470459E-004   6.2418372257947781E-007
+         79  Project PRES           1.3239E-02   1.2341E-03   1.0727E+01   8   0
+         79  PRES gmres        10   5.5619E-09   4.1137E-04   1.2484E-08   1.0622E-03   1.8361E-03    F
+         79  Project velx           5.2078E-04   3.1458E-05   1.6555E+01   8   0
+         79  Hmholtz velx      11   3.5301E-06   1.2887E-04   3.7087E-06
+         79  Project vely           2.3314E-03   6.6405E-05   3.5109E+01   8   0
+         79  Hmholtz vely      14   2.8440E-06   2.3652E-04   3.7087E-06
+             L1/L2 DIV(V)          -1.3835E-18   1.2092E-04
+             L1/L2 QTL              0.0000E+00   0.0000E+00
+             L1/L2 DIV(V)-QTL      -1.3835E-18   1.2092E-04
+         79  Fluid done  1.5800E+00  5.5120E-03
+       79  1.580000E+00  3.035702E-03  3.001051E-03 umax
+Step     80, t= 1.6000000E+00, DT= 2.0000000E-02, C=  0.002 6.8250E-01 7.1962E-03
+             Solving for Hmholtz scalars
+         80  Project TEMP           5.6472E-05   1.0441E-05   5.4087E+00   8   0
+         80  Hmholtz TEMP       1   3.4681E-05   5.1086E-05   2.2351E-03
+         80  Scalars done  1.6000E+00  7.6485E-04
+             Solving for fluid
+ Relax the pressure tolerance    1.4764581406384003E-004   6.2371206462638583E-007
+         80  Project PRES           1.2792E-02   1.1850E-03   1.0795E+01   8   0
+         80  PRES gmres         9   1.1242E-08   3.9500E-04   1.2474E-08   1.1020E-03   2.2039E-03    F
+         80  Project velx           8.0897E-04   2.8135E-05   2.8753E+01   8   0
+         80  Hmholtz velx      11   2.8682E-06   1.1664E-04   3.7059E-06
+         80  Project vely           2.5875E-03   7.0308E-05   3.6802E+01   8   0
+         80  Hmholtz vely      14   2.5841E-06   2.3399E-04   3.7059E-06
+             L1/L2 DIV(V)          -1.2074E-18   1.1587E-04
+             L1/L2 QTL              0.0000E+00   0.0000E+00
+             L1/L2 DIV(V)-QTL      -1.2074E-18   1.1587E-04
+         80  Fluid done  1.6000E+00  5.8651E-03
+       80  1.600000E+00  3.042271E-03  3.079309E-03 umax
+Step     81, t= 1.6200000E+00, DT= 2.0000000E-02, C=  0.002 6.9012E-01 7.6170E-03
+             Solving for Hmholtz scalars
+         81  Project TEMP           6.7757E-05   8.9921E-06   7.5352E+00   8   0
+         81  Hmholtz TEMP       1   4.1255E-05   4.3109E-05   2.2351E-03
+         81  Scalars done  1.6200E+00  7.7796E-04
+             Solving for fluid
+ Relax the pressure tolerance    1.4928672408590771E-004   6.2360701849853659E-007
+         81  Project PRES           1.2236E-02   9.3502E-04   1.3087E+01   8   0
+         81  PRES gmres        10   3.8825E-09   3.1167E-04   1.2472E-08   1.1213E-03   1.9128E-03    F
+         81  Project velx           4.7333E-04   2.4284E-05   1.9492E+01   8   0
+         81  Hmholtz velx      10   3.4597E-06   1.0367E-04   3.7052E-06
+         81  Project vely           2.1593E-03   4.3528E-05   4.9607E+01   8   0
+         81  Hmholtz vely      12   3.4937E-06   1.6131E-04   3.7052E-06
+             L1/L2 DIV(V)          -1.2107E-18   1.1201E-04
+             L1/L2 QTL              0.0000E+00   0.0000E+00
+             L1/L2 DIV(V)-QTL      -1.2107E-18   1.1201E-04
+         81  Fluid done  1.6200E+00  6.2199E-03
+       81  1.620000E+00  3.021055E-03  2.999166E-03 umax
+Step     82, t= 1.6400000E+00, DT= 2.0000000E-02, C=  0.002 6.9809E-01 7.9699E-03
+             Solving for Hmholtz scalars
+         82  Project TEMP           5.2187E-05   8.5762E-06   6.0851E+00   8   0
+         82  Hmholtz TEMP       1   3.1709E-05   3.9368E-05   2.2351E-03
+         82  Scalars done  1.6400E+00  7.5912E-04
+             Solving for fluid
+ Relax the pressure tolerance    1.4646292870434762E-004   6.2313054635057589E-007
+         82  Project PRES           1.1927E-02   1.1509E-03   1.0363E+01   8   0
+         82  PRES gmres        10   4.9728E-09   3.8364E-04   1.2463E-08   1.1370E-03   1.9379E-03    F
+         82  Project velx           7.5786E-04   2.8565E-05   2.6531E+01   8   0
+         82  Hmholtz velx      11   3.0286E-06   1.2058E-04   3.7024E-06
+         82  Project vely           2.4155E-03   6.5072E-05   3.7120E+01   8   0
+         82  Hmholtz vely      13   3.2750E-06   2.2471E-04   3.7024E-06
+             L1/L2 DIV(V)          -1.2247E-18   1.0805E-04
+             L1/L2 QTL              0.0000E+00   0.0000E+00
+             L1/L2 DIV(V)-QTL      -1.2247E-18   1.0805E-04
+         82  Fluid done  1.6400E+00  5.7611E-03
+       82  1.640000E+00  3.027007E-03  3.070768E-03 umax
+Step     83, t= 1.6600000E+00, DT= 2.0000000E-02, C=  0.002 7.0556E-01 7.4739E-03
+             Solving for Hmholtz scalars
+         83  Project TEMP           6.3301E-05   1.0758E-05   5.8840E+00   8   0
+         83  Hmholtz TEMP       1   2.6895E-05   4.7654E-05   2.2351E-03
+         83  Scalars done  1.6600E+00  8.3899E-04
+             Solving for fluid
+ Relax the pressure tolerance    1.4804254716543306E-004   6.2325496463869993E-007
+         83  Project PRES           1.1431E-02   1.1042E-03   1.0352E+01   8   0
+         83  PRES gmres        10   4.5172E-09   3.6807E-04   1.2465E-08   1.0731E-03   1.8442E-03    F
+         83  Project velx           4.3417E-04   2.4864E-05   1.7462E+01   8   0
+         83  Hmholtz velx      10   3.4690E-06   1.0855E-04   3.7031E-06
+         83  Project vely           2.0044E-03   5.0679E-05   3.9551E+01   8   0
+         83  Hmholtz vely      12   3.2405E-06   1.8224E-04   3.7031E-06
+             L1/L2 DIV(V)          -1.3328E-18   1.0402E-04
+             L1/L2 QTL              0.0000E+00   0.0000E+00
+             L1/L2 DIV(V)-QTL      -1.3328E-18   1.0402E-04
+         83  Fluid done  1.6600E+00  5.3821E-03
+       83  1.660000E+00  3.007755E-03  2.996510E-03 umax
+Step     84, t= 1.6800000E+00, DT= 2.0000000E-02, C=  0.002 7.1272E-01 7.1611E-03
+             Solving for Hmholtz scalars
+         84  Project TEMP           4.8112E-05   7.3362E-06   6.5582E+00   8   0
+         84  Hmholtz TEMP       1   2.8503E-05   3.3174E-05   2.2351E-03
+         84  Scalars done  1.6800E+00  7.6914E-04
+             Solving for fluid
+ Relax the pressure tolerance    1.4536633595472003E-004   6.2275616832979717E-007
+         84  Project PRES           1.1116E-02   1.0815E-03   1.0279E+01   8   0
+         84  PRES gmres        10   4.3357E-09   3.6049E-04   1.2455E-08   1.1885E-03   4.1249E-03    F
+         84  Project velx           7.1677E-04   2.5222E-05   2.8419E+01   8   0
+         84  Hmholtz velx      10   3.0419E-06   1.0289E-04   3.7002E-06
+         84  Project vely           2.2530E-03   4.3797E-05   5.1442E+01   8   0
+         84  Hmholtz vely      13   3.4154E-06   1.6346E-04   3.7002E-06
+             L1/L2 DIV(V)          -1.2877E-18   9.9956E-05
+             L1/L2 QTL              0.0000E+00   0.0000E+00
+             L1/L2 DIV(V)-QTL      -1.2877E-18   9.9956E-05
+         84  Fluid done  1.6800E+00  7.6969E-03
+       84  1.680000E+00  3.013057E-03  3.062900E-03 umax
+Step     85, t= 1.7000000E+00, DT= 2.0000000E-02, C=  0.002 7.2237E-01 9.6431E-03
+             Solving for Hmholtz scalars
+         85  Project TEMP           5.9007E-05   7.3415E-06   8.0374E+00   8   0
+         85  Hmholtz TEMP       1   2.7980E-05   3.3612E-05   2.2351E-03
+         85  Scalars done  1.7000E+00  8.1491E-04
+             Solving for fluid
+ Relax the pressure tolerance    1.4681952715433843E-004   6.2309993685463538E-007
+         85  Project PRES           1.0646E-02   7.9628E-04   1.3370E+01   8   0
+         85  PRES gmres         9   9.6906E-09   2.6543E-04   1.2462E-08   1.0004E-03   1.7221E-03    F
+         85  Project velx           3.9755E-04   2.3702E-05   1.6773E+01   8   0
+         85  Hmholtz velx      11   2.7607E-06   9.9106E-05   3.7022E-06
+         85  Project vely           1.8597E-03   5.3668E-05   3.4651E+01   8   0
+         85  Hmholtz vely      13   3.4124E-06   1.9588E-04   3.7022E-06
+             L1/L2 DIV(V)          -1.2693E-18   9.6766E-05
+             L1/L2 QTL              0.0000E+00   0.0000E+00
+             L1/L2 DIV(V)-QTL      -1.2693E-18   9.6766E-05
+         85  Fluid done  1.7000E+00  7.8111E-03
+       85  1.700000E+00  2.996465E-03  2.994804E-03 umax
+Step     86, t= 1.7200000E+00, DT= 2.0000000E-02, C=  0.002 7.3194E-01 9.5758E-03
+             Solving for Hmholtz scalars
+         86  Project TEMP           4.4644E-05   6.7718E-06   6.5926E+00   8   0
+         86  Hmholtz TEMP       1   2.6278E-05   3.0882E-05   2.2351E-03
+         86  Scalars done  1.7200E+00  7.7915E-04
+             Solving for fluid
+ Relax the pressure tolerance    1.4438026599581053E-004   6.2265502071600667E-007
+         86  Project PRES           1.0338E-02   8.7858E-04   1.1766E+01   8   0
+         86  PRES gmres        10   3.9058E-09   2.9286E-04   1.2453E-08   1.1792E-03   1.9991E-03    F
+         86  Project velx           6.7008E-04   2.7241E-05   2.4598E+01   8   0
+         86  Hmholtz velx      11   2.5582E-06   1.2431E-04   3.6996E-06
+         86  Project vely           2.1058E-03   4.6721E-05   4.5071E+01   8   0
+         86  Hmholtz vely      12   3.6014E-06   1.6514E-04   3.6996E-06
+             L1/L2 DIV(V)          -1.2400E-18   9.3339E-05
+             L1/L2 QTL              0.0000E+00   0.0000E+00
+             L1/L2 DIV(V)-QTL      -1.2400E-18   9.3339E-05
+         86  Fluid done  1.7200E+00  6.2249E-03
+       86  1.720000E+00  3.001739E-03  3.056424E-03 umax
+Step     87, t= 1.7400000E+00, DT= 2.0000000E-02, C=  0.002 7.3991E-01 7.9629E-03
+             Solving for Hmholtz scalars
+         87  Project TEMP           5.5179E-05   6.3596E-06   8.6765E+00   8   0
+         87  Hmholtz TEMP       1   2.4678E-05   2.9327E-05   2.2351E-03
+         87  Scalars done  1.7400E+00  7.4100E-04
+             Solving for fluid
+ Relax the pressure tolerance    1.4578372770007446E-004   6.2319411205892580E-007
+         87  Project PRES           9.8832E-03   7.7784E-04   1.2706E+01   8   0
+         87  PRES gmres         9   8.7735E-09   2.5928E-04   1.2464E-08   9.9373E-04   1.7259E-03    F
+         87  Project velx           3.5914E-04   1.8204E-05   1.9729E+01   8   0
+         87  Hmholtz velx      10   2.4432E-06   7.9252E-05   3.7028E-06
+         87  Project vely           1.7301E-03   4.1721E-05   4.1468E+01   8   0
+         87  Hmholtz vely      12   3.3629E-06   1.4433E-04   3.7028E-06
+             L1/L2 DIV(V)          -1.3154E-18   8.9985E-05
+             L1/L2 QTL              0.0000E+00   0.0000E+00
+             L1/L2 DIV(V)-QTL      -1.3154E-18   8.9985E-05
+         87  Fluid done  1.7400E+00  5.1570E-03
+       87  1.740000E+00  2.986746E-03  2.994085E-03 umax
+Step     88, t= 1.7600000E+00, DT= 2.0000000E-02, C=  0.002 7.4676E-01 6.8521E-03
+             Solving for Hmholtz scalars
+         88  Project TEMP           4.1336E-05   6.1399E-06   6.7324E+00   8   0
+         88  Hmholtz TEMP       1   2.5756E-05   2.9657E-05   2.2351E-03
+         88  Scalars done  1.7600E+00  8.0609E-04
+             Solving for fluid
+ Relax the pressure tolerance    1.4349618946312318E-004   6.2274080837057320E-007
+         88  Project PRES           9.6057E-03   5.5359E-04   1.7352E+01   8   0
+         88  PRES gmres         9   8.0294E-09   1.8453E-04   1.2455E-08   1.5368E-03   2.2440E-03    F
+         88  Project velx           6.2973E-04   1.7069E-05   3.6894E+01   8   0
+         88  Hmholtz velx      10   2.7842E-06   7.4194E-05   3.7001E-06
+         88  Project vely           1.9657E-03   3.1582E-05   6.2240E+01   8   0
+         88  Hmholtz vely      12   2.9269E-06   1.0959E-04   3.7001E-06
+             L1/L2 DIV(V)          -1.2869E-18   8.6593E-05
+             L1/L2 QTL              0.0000E+00   0.0000E+00
+             L1/L2 DIV(V)-QTL      -1.2869E-18   8.6593E-05
+         88  Fluid done  1.7600E+00  5.9900E-03
+       88  1.760000E+00  2.991222E-03  3.050922E-03 umax
+Step     89, t= 1.7800000E+00, DT= 2.0000000E-02, C=  0.002 7.5448E-01 7.7200E-03
+             Solving for Hmholtz scalars
+         89  Project TEMP           5.1575E-05   5.4310E-06   9.4964E+00   8   0
+         89  Hmholtz TEMP       1   2.4385E-05   2.4760E-05   2.2351E-03
+         89  Scalars done  1.7800E+00  7.6604E-04
+             Solving for fluid
+ Relax the pressure tolerance    1.4482548435025726E-004   6.2340653776922951E-007
+         89  Project PRES           9.2054E-03   7.5560E-04   1.2183E+01   8   0
+         89  PRES gmres         9   5.9387E-09   2.5187E-04   1.2468E-08   9.8634E-04   1.7080E-03    F
+         89  Project velx           3.2844E-04   1.7085E-05   1.9224E+01   8   0
+         89  Hmholtz velx      10   2.4353E-06   7.4712E-05   3.7040E-06
+         89  Project vely           1.6111E-03   3.4544E-05   4.6641E+01   8   0
+         89  Hmholtz vely      12   2.4128E-06   1.2521E-04   3.7040E-06
+             L1/L2 DIV(V)          -1.3688E-18   8.4031E-05
+             L1/L2 QTL              0.0000E+00   0.0000E+00
+             L1/L2 DIV(V)-QTL      -1.3688E-18   8.4031E-05
+         89  Fluid done  1.7800E+00  5.4400E-03
+       89  1.780000E+00  2.977571E-03  2.993519E-03 umax
+Step     90, t= 1.8000000E+00, DT= 2.0000000E-02, C=  0.002 7.6163E-01 7.1530E-03
+             Solving for Hmholtz scalars
+         90  Project TEMP           3.8417E-05   5.5120E-06   6.9698E+00   8   0
+         90  Hmholtz TEMP       1   2.1676E-05   2.6799E-05   2.2351E-03
+         90  Scalars done  1.8000E+00  7.7105E-04
+             Solving for fluid
+ Relax the pressure tolerance    1.4268623252161700E-004   6.2295119950904500E-007
+         90  Project PRES           8.9521E-03   5.7578E-04   1.5548E+01   8   0
+         90  PRES gmres         9   7.3755E-09   1.9193E-04   1.2459E-08   1.1513E-03   1.8508E-03    F
+         90  Project velx           5.8628E-04   1.3566E-05   4.3217E+01   8   0
+         90  Hmholtz velx       9   3.2076E-06   5.8864E-05   3.7013E-06
+         90  Project vely           1.8377E-03   2.9935E-05   6.1389E+01   8   0
+         90  Hmholtz vely      11   3.4242E-06   1.0715E-04   3.7013E-06
+             L1/L2 DIV(V)          -1.4037E-18   8.0897E-05
+             L1/L2 QTL              0.0000E+00   0.0000E+00
+             L1/L2 DIV(V)-QTL      -1.4037E-18   8.0897E-05
+         90  Fluid done  1.8000E+00  8.7519E-03
+       90  1.800000E+00  3.002005E-03  3.046461E-03 umax
+Step     91, t= 1.8200000E+00, DT= 2.0000000E-02, C=  0.002 7.7213E-01 1.0496E-02
+             Solving for Hmholtz scalars
+         91  Project TEMP           4.8249E-05   6.4950E-06   7.4286E+00   8   0
+         91  Hmholtz TEMP       1   2.0735E-05   2.9104E-05   2.2351E-03
+         91  Scalars done  1.8200E+00  7.7796E-04
+             Solving for fluid
+ Relax the pressure tolerance    1.4396874906584927E-004   6.2373747035459598E-007
+         91  Project PRES           8.5630E-03   5.4865E-04   1.5607E+01   8   0
+         91  PRES gmres         9   6.5313E-09   1.8288E-04   1.2475E-08   1.0626E-03   1.7588E-03    F
+         91  Project velx           3.0055E-04   1.6219E-05   1.8531E+01   8   0
+         91  Hmholtz velx      10   2.2284E-06   6.9424E-05   3.7060E-06
+         91  Project vely           1.5031E-03   2.4668E-05   6.0932E+01   8   0
+         91  Hmholtz vely      11   3.3550E-06   9.5504E-05   3.7060E-06
+             L1/L2 DIV(V)          -1.3498E-18   7.8227E-05
+             L1/L2 QTL              0.0000E+00   0.0000E+00
+             L1/L2 DIV(V)-QTL      -1.3498E-18   7.8227E-05
+         91  Fluid done  1.8200E+00  5.2390E-03
+       91  1.820000E+00  2.991470E-03  2.993233E-03 umax
+Step     92, t= 1.8400000E+00, DT= 2.0000000E-02, C=  0.002 7.7910E-01 6.9771E-03
+             Solving for Hmholtz scalars
+         92  Project TEMP           3.5690E-05   4.6813E-06   7.6239E+00   8   0
+         92  Hmholtz TEMP       1   2.3152E-05   2.1455E-05   2.2351E-03
+         92  Scalars done  1.8400E+00  1.1261E-03
+             Solving for fluid
+ Relax the pressure tolerance    1.4196573125011279E-004   6.2328341258228221E-007
+         92  Project PRES           8.3501E-03   4.0760E-04   2.0486E+01   8   0
+         92  PRES gmres         9   6.0798E-09   1.3587E-04   1.2466E-08   9.5415E-04   1.6670E-03    F
+         92  Project velx           5.5002E-04   1.1230E-05   4.8977E+01   8   0
+         92  Hmholtz velx       9   3.1174E-06   4.8967E-05   3.7033E-06
+         92  Project vely           1.7180E-03   2.5135E-05   6.8350E+01   8   0
+         92  Hmholtz vely      11   3.3330E-06   9.3216E-05   3.7033E-06
+             L1/L2 DIV(V)          -1.3481E-18   7.5475E-05
+             L1/L2 QTL              0.0000E+00   0.0000E+00
+             L1/L2 DIV(V)-QTL      -1.3481E-18   7.5475E-05
+         92  Fluid done  1.8400E+00  5.1000E-03
+       92  1.840000E+00  3.021459E-03  3.042193E-03 umax
+Step     93, t= 1.8600000E+00, DT= 2.0000000E-02, C=  0.002 7.8753E-01 8.4310E-03
+             Solving for Hmholtz scalars
+         93  Project TEMP           4.5202E-05   7.0724E-06   6.3913E+00   8   0
+         93  Hmholtz TEMP       1   1.9653E-05   3.2118E-05   2.2351E-03
+         93  Scalars done  1.8600E+00  7.3600E-04
+             Solving for fluid
+ Relax the pressure tolerance    1.4318057919949248E-004   6.2414567359713458E-007
+         93  Project PRES           8.0141E-03   5.3392E-04   1.5010E+01   8   0
+         93  PRES gmres         9   6.9108E-09   1.7797E-04   1.2483E-08   1.0231E-03   2.4989E-03    F
+         93  Project velx           2.7769E-04   1.2624E-05   2.1996E+01   8   0
+         93  Hmholtz velx       9   3.1022E-06   5.0713E-05   3.7084E-06
+         93  Project vely           1.4026E-03   3.3566E-05   4.1786E+01   8   0
+         93  Hmholtz vely      12   2.7496E-06   1.1473E-04   3.7084E-06
+             L1/L2 DIV(V)          -1.3402E-18   7.3014E-05
+             L1/L2 QTL              0.0000E+00   0.0000E+00
+             L1/L2 DIV(V)-QTL      -1.3402E-18   7.3014E-05
+         93  Fluid done  1.8600E+00  5.9979E-03
+       93  1.860000E+00  3.011620E-03  2.993080E-03 umax
+Step     94, t= 1.8800000E+00, DT= 2.0000000E-02, C=  0.002 7.9523E-01 7.6990E-03
+             Solving for Hmholtz scalars
+         94  Project TEMP           3.3293E-05   4.7476E-06   7.0127E+00   8   0
+         94  Hmholtz TEMP       1   2.1246E-05   2.0992E-05   2.2351E-03
+         94  Scalars done  1.8800E+00  7.6103E-04
+             Solving for fluid
+ Relax the pressure tolerance    1.4131928052353080E-004   6.2373275974516092E-007
+         94  Project PRES           7.8166E-03   4.0595E-04   1.9255E+01   8   0
+         94  PRES gmres         9   4.1530E-09   1.3532E-04   1.2475E-08   9.4891E-04   1.6460E-03    F
+         94  Project velx           5.1713E-04   1.0295E-05   5.0230E+01   8   0
+         94  Hmholtz velx       8   3.3016E-06   4.5392E-05   3.7060E-06
+         94  Project vely           1.6060E-03   2.6090E-05   6.1555E+01   8   0
+         94  Hmholtz vely      11   3.1460E-06   9.0291E-05   3.7060E-06
+             L1/L2 DIV(V)          -1.3002E-18   7.0277E-05
+             L1/L2 QTL              0.0000E+00   0.0000E+00
+             L1/L2 DIV(V)-QTL      -1.3002E-18   7.0277E-05
+         94  Fluid done  1.8800E+00  5.0502E-03
+       94  1.880000E+00  3.040211E-03  3.038219E-03 umax
+Step     95, t= 1.9000000E+00, DT= 2.0000000E-02, C=  0.002 8.0199E-01 6.7580E-03
+             Solving for Hmholtz scalars
+         95  Project TEMP           4.2247E-05   5.1606E-06   8.1864E+00   8   0
+         95  Hmholtz TEMP       1   1.9589E-05   2.2647E-05   2.2351E-03
+         95  Scalars done  1.9000E+00  8.1301E-04
+             Solving for fluid
+ Relax the pressure tolerance    1.4247867397424214E-004   6.2470786209906173E-007
+         95  Project PRES           7.4890E-03   4.0503E-04   1.8490E+01   8   0
+         95  PRES gmres         9   4.8944E-09   1.3501E-04   1.2494E-08   1.0850E-03   1.8382E-03    F
+         95  Project velx           2.5674E-04   1.2054E-05   2.1299E+01   8   0
+         95  Hmholtz velx       8   2.9097E-06   4.9823E-05   3.7118E-06
+         95  Project vely           1.3086E-03   3.1624E-05   4.1379E+01   8   0
+         95  Hmholtz vely      12   2.5707E-06   1.1058E-04   3.7118E-06
+             L1/L2 DIV(V)          -1.3400E-18   6.8151E-05
+             L1/L2 QTL              0.0000E+00   0.0000E+00
+             L1/L2 DIV(V)-QTL      -1.3400E-18   6.8151E-05
+         95  Fluid done  1.9000E+00  5.2059E-03
+       95  1.900000E+00  3.031436E-03  2.992818E-03 umax
+Step     96, t= 1.9200000E+00, DT= 2.0000000E-02, C=  0.002 8.0892E-01 6.9289E-03
+             Solving for Hmholtz scalars
+         96  Project TEMP           3.1143E-05   4.3990E-06   7.0797E+00   8   0
+         96  Hmholtz TEMP       1   1.6799E-05   1.9920E-05   2.2351E-03
+         96  Scalars done  1.9200E+00  7.7891E-04
+             Solving for fluid
+ Relax the pressure tolerance    1.4075291220972799E-004   6.2435086045724082E-007
+         96  Project PRES           7.3382E-03   5.1112E-04   1.4357E+01   8   0
+         96  PRES gmres         9   6.8543E-09   1.7037E-04   1.2487E-08   9.4509E-04   1.6952E-03    F
+         96  Project velx           4.8649E-04   1.3675E-05   3.5576E+01   8   0
+         96  Hmholtz velx       9   3.3034E-06   5.9682E-05   3.7097E-06
+         96  Project vely           1.5036E-03   3.3734E-05   4.4572E+01   8   0
+         96  Hmholtz vely      11   3.5989E-06   1.1718E-04   3.7097E-06
+             L1/L2 DIV(V)          -1.4184E-18   6.5738E-05
+             L1/L2 QTL              0.0000E+00   0.0000E+00
+             L1/L2 DIV(V)-QTL      -1.4184E-18   6.5738E-05
+         96  Fluid done  1.9200E+00  5.1260E-03
+       96  1.920000E+00  3.058543E-03  3.034592E-03 umax
+Step     97, t= 1.9400000E+00, DT= 2.0000000E-02, C=  0.002 8.1581E-01 6.8860E-03
+             Solving for Hmholtz scalars
+         97  Project TEMP           3.9477E-05   4.4815E-06   8.8090E+00   8   0
+         97  Hmholtz TEMP       1   2.0912E-05   1.8181E-05   2.2351E-03
+         97  Scalars done  1.9400E+00  7.6008E-04
+             Solving for fluid
+ Relax the pressure tolerance    1.4186871628917833E-004   6.2545458872904221E-007
+         97  Project PRES           7.0151E-03   5.9342E-04   1.1822E+01   8   0
+         97  PRES gmres         9   7.4845E-09   1.9781E-04   1.2509E-08   9.8157E-04   1.6990E-03    F
+         97  Project velx           2.3715E-04   1.3852E-05   1.7120E+01   8   0
+         97  Hmholtz velx       9   3.3578E-06   6.0994E-05   3.7162E-06
+         97  Project vely           1.2217E-03   2.7310E-05   4.4733E+01   8   0
+         97  Hmholtz vely      11   3.2525E-06   9.8399E-05   3.7162E-06
+             L1/L2 DIV(V)          -1.3906E-18   6.3554E-05
+             L1/L2 QTL              0.0000E+00   0.0000E+00
+             L1/L2 DIV(V)-QTL      -1.3906E-18   6.3554E-05
+         97  Fluid done  1.9400E+00  5.0700E-03
+       97  1.940000E+00  3.050789E-03  2.993316E-03 umax
+Step     98, t= 1.9600000E+00, DT= 2.0000000E-02, C=  0.002 8.2256E-01 6.7542E-03
+             Solving for Hmholtz scalars
+         98  Project TEMP           2.9169E-05   4.0734E-06   7.1609E+00   8   0
+         98  Hmholtz TEMP       1   1.5304E-05   1.7752E-05   2.2351E-03
+         98  Scalars done  1.9600E+00  7.6199E-04
+             Solving for fluid
+ Relax the pressure tolerance    1.4029121700906668E-004   6.2518997309329783E-007
+         98  Project PRES           6.8528E-03   5.8271E-04   1.1760E+01   8   0
+         98  PRES gmres         9   5.8110E-09   1.9424E-04   1.2504E-08   1.0319E-03   1.7638E-03    F
+         98  Project velx           4.5815E-04   1.4257E-05   3.2135E+01   8   0
+         98  Hmholtz velx       9   3.4223E-06   5.8456E-05   3.7146E-06
+         98  Project vely           1.4070E-03   3.7454E-05   3.7567E+01   8   0
+         98  Hmholtz vely      12   2.4059E-06   1.2380E-04   3.7146E-06
+             L1/L2 DIV(V)          -1.4374E-18   6.1393E-05
+             L1/L2 QTL              0.0000E+00   0.0000E+00
+             L1/L2 DIV(V)-QTL      -1.4374E-18   6.1393E-05
+         98  Fluid done  1.9600E+00  5.1529E-03
+       98  1.960000E+00  3.076454E-03  3.032203E-03 umax
+Step     99, t= 1.9800000E+00, DT= 2.0000000E-02, C=  0.002 8.2956E-01 6.9969E-03
+             Solving for Hmholtz scalars
+         99  Project TEMP           3.6981E-05   4.8901E-06   7.5624E+00   8   0
+         99  Hmholtz TEMP       1   1.8696E-05   2.1957E-05   2.2351E-03
+         99  Scalars done  1.9800E+00  8.4496E-04
+             Solving for fluid
+ Relax the pressure tolerance    1.4135814887525193E-004   6.2637343724677155E-007
+         99  Project PRES           6.5562E-03   5.0134E-04   1.3077E+01   8   0
+         99  PRES gmres         9   6.2017E-09   1.6711E-04   1.2527E-08   1.0059E-03   2.0299E-03    F
+         99  Project velx           2.1853E-04   1.3394E-05   1.6316E+01   8   0
+         99  Hmholtz velx       9   2.9169E-06   5.6366E-05   3.7217E-06
+         99  Project vely           1.1415E-03   2.8951E-05   3.9431E+01   8   0
+         99  Hmholtz vely      11   3.0239E-06   9.8759E-05   3.7217E-06
+             L1/L2 DIV(V)          -1.3651E-18   5.9478E-05
+             L1/L2 QTL              0.0000E+00   0.0000E+00
+             L1/L2 DIV(V)-QTL      -1.3651E-18   5.9478E-05
+         99  Fluid done  1.9800E+00  5.4460E-03
+       99  1.980000E+00  3.069335E-03  2.994422E-03 umax
+Step    100, t= 2.0000000E+00, DT= 2.0000000E-02, C=  0.002 8.3688E-01 7.3199E-03
+             Solving for Hmholtz scalars
+        100  Project TEMP           2.7113E-05   4.2650E-06   6.3571E+00   8   0
+        100  Hmholtz TEMP       1   1.5879E-05   1.9071E-05   2.2351E-03
+        100  Scalars done  2.0000E+00  8.1205E-04
+             Solving for fluid
+ Relax the pressure tolerance    1.3987907516969033E-004   6.2613201573328903E-007
+        100  Project PRES           6.3892E-03   5.4518E-04   1.1719E+01   8   0
+        100  PRES gmres         9   6.7836E-09   1.8173E-04   1.2523E-08   1.0164E-03   1.7250E-03    F
+        100  Project velx           4.3086E-04   1.2041E-05   3.5783E+01   8   0
+        100  Hmholtz velx       8   3.4937E-06   5.2592E-05   3.7202E-06
+        100  Project vely           1.3177E-03   2.8779E-05   4.5785E+01   8   0
+        100  Hmholtz vely      12   2.4405E-06   1.0465E-04   3.7202E-06
+             L1/L2 DIV(V)          -1.4410E-18   5.7314E-05
+             L1/L2 QTL              0.0000E+00   0.0000E+00
+             L1/L2 DIV(V)-QTL      -1.4410E-18   5.7314E-05
+        100  Fluid done  2.0000E+00  6.5849E-03
+      100  2.000000E+00  3.093552E-03  3.033304E-03 umax
+
+      100  2.0000E+00 Write checkpoint
+       FILE:ray10.f00003                                                                                                                        
+
+      100  2.0000E+00 done :: Write checkpoint
+                              file size =     331.E-04MB
+                              avg data-throughput =    39.7MB/s
+                              io-nodes =     1
+
+
+end of time-step loop
+
+runtime statistics:
+ init time   1.4717817306518555E-002   1.7396122387921778E-002
+ prep time           3   1.3499259948730469E-003   1.5955815548170790E-003
+ pres time         100  0.30486178398132324       0.36033963427378435     
+ crsl time        1144   6.4809322357177734E-003   7.6603132116906843E-003
+ crsl min    6.4809322357177734E-003
+ crsl max    7.1814060211181641E-003
+ crsl avg    6.8311691284179688E-003
+ hmhz time          12  0.49769687652587891       0.58826628947866721     
+ eslv time           0   0.0000000000000000        0.0000000000000000     
+ proj time           0  0.12553954124450684       0.14838485751863081     
+ usvp time         101   2.4342536926269531E-004   2.8772320160159619E-004
+ usfq time           0   1.0289907455444336E-002   1.2162434532735838E-002
+ usbc time         596   7.3940753936767578E-003   8.7396274743097961E-003
+ usbc min    7.3940753936767578E-003
+ usbc max    8.1262588500976562E-003
+ usb  avg    7.7601671218872070E-003
+ mltd time         200   7.1182250976562500E-003   8.4135787532000541E-003
+ cdtp time         200   7.2801113128662109E-003   8.6049245454502838E-003
+ axhm time        6942  0.28235816955566406       0.33374087831925953     
+ advc time         300   3.0841112136840820E-002   3.6453486963347381E-002
+ mxmf time  0.29691958427429199       0.35095213643661255     
+ adc3 time   2.1291732788085938E-002   2.5166339662907881E-002
+ col2 time   2.3961544036865234E-002   2.8321995305938902E-002
+ col3 time   2.3607969284057617E-002   2.7904078060125809E-002
+ a2s2 time   3.5123109817504883E-002   4.1514709980746661E-002
+ add2 time   1.6355514526367188E-002   1.9331842928373651E-002
+ invc time   1.6920566558837891E-003   1.9999721466861194E-003
+ tgop time       35019   8.2524299621582031E-002   9.7541828811717621E-002
+ dadd time           0   1.6372442245483398E-002   1.9351851103999229E-002
+ vdss time         301   2.5863647460937500E-003   3.0570237913556467E-003
+ vdss min    2.5863647460937500E-003
+ vdss max    2.6998519897460938E-003
+ vdss avg    2.6431083679199219E-003
+ dsum time        7398   3.9770126342773438E-002   4.7007376897903089E-002
+ dsum min    3.9770126342773438E-002
+ dsum max    6.4457893371582031E-002
+ dsum avg    5.2114009857177734E-002
+ ddsl time           0   0.0000000000000000        0.0000000000000000     
+
+#  nid       tusbc       tdadd       tcrsl       tvdss       tdsum        tgop    qqq    F
+           0  7.3941E-03  1.6372E-02  6.4809E-03  2.5864E-03  3.9770E-02  8.2524E-02 qqq
+           1  8.1263E-03  1.9000E-02  7.1814E-03  2.6999E-03  6.4458E-02  1.2219E-01 qqq
+  
+call exitt: dying ...
+  
+  
+total elapsed time             :   8.61564E-01 sec
+total solver time w/o IO       :   8.44690E-01 sec
+time/timestep                  :   8.44690E-03 sec
+avg throughput per timestep    :   7.81352E+04 gridpts/CPUs
+total max memory usage         :   2.31711E-02 GB
+

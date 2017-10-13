@@ -1,0 +1,480 @@
+/----------------------------------------------------------\\
+|      _   __ ______ __ __  ______  ____   ____   ____     |
+|     / | / // ____// //_/ / ____/ / __ \\/ __ \\/ __ \\   |
+|    /  |/ // __/  / ,<   /___ \\ / / / // / / // / / /    |
+|   / /|  // /___ / /| | ____/ / / /_/ // /_/ // /_/ /     |
+|  /_/ |_//_____//_/ |_|/_____/  \\___/ \\___/ \\___/      |
+|                                                          |
+|----------------------------------------------------------|
+|                                                          |
+| NEK5000:  Open Source Spectral Element Solver            |
+| COPYRIGHT (c) 2008-2017 UCHICAGO ARGONNE, LLC            |
+| Version:  17.0.0-dev                                     |
+| Web:      http://nek5000.mcs.anl.gov                     |
+|                                                          |
+\\----------------------------------------------------------/
+                                                              
+
+ Number of processors:           2
+ REAL    wdsize      :           8
+ INTEGER wdsize      :           4
+ Timer accuracy      : 3.10E-07
+  
+ Reading /Users/K10/NekExamples/rayleigh/ray1.rea                                                                                            
+ mapping elements to processors
+ Reading /Users/K10/NekExamples/rayleigh/ray1.map                                                                                            
+           0           5           5          10          10  NELV
+           1           5           5          10          10  NELV
+ RANK     0 IEG       6       7       8       9      10
+  
+ element load imbalance:            0           5           5
+ done :: mapping   0.36311E-03 sec
+
+  
+           0  objects found
+ 103   Parameters from file:
+   1          1.000000         p01 DENSITY
+   2          1.000000         p02 VISCOS
+   7          1.000000         p07 RHOCP
+   8          1.000000         p08 CONDUCT
+  11          100.00         p11 NSTEPS
+  12        -2.0000000E-02     p12 DT
+  15          1000.000         p15 IOSTEP
+  24         1.0000000E-03     p24 TOLREL
+  25         1.0000000E-03     p25 TOLABS
+  26          2.010000         p26 COURANT/NTAU
+  27          2.000000         p27 TORDER
+  59         0.0000000E+00     p59 !=0 --> use std axhelm for all elem
+  66          6.000000         p66 write fmt:ONLY postx uses rea value
+  67          6.000000         p67 read fmt: same modes as p66
+  76           1750.           p76 Rayleigh number (in .usr)
+  93          40.00000         p93 Numbr of prev pressure solns saved
+  94          5.000000         p94 start projecting vel. after p94 step
+  95          5.000000         p95 start projecting pr after p95 step
+  99          3.000000         p99    dealiasing:if <0 disable
+  
+ done :: read .rea file   0.24741E-02 sec
+
+ nelgt/nelgv/lelt:          10          10          54
+ lx1  /lx2  /lx3 :          12          12          12
+ Reset the target Courant number to .5
+ setup mesh topology
+   Right-handed check complete for      10 elements. OK.
+   setvert2d:  12         320        1320         320         320
+ call usrsetvert
+ done :: usrsetvert
+
+gs_setup: 24 unique labels shared
+   pairwise times (avg, min, max): 6.91414e-07 6.91414e-07 6.91414e-07
+   crystal router                : 5.96046e-07 5.96046e-07 5.96046e-07
+   all reduce                    : 1.09673e-06 1.09673e-06 1.09673e-06
+   used all_to_all method: crystal router
+   handle bytes (avg, min, max): 3260 3260 3260
+   buffer bytes (avg, min, max): 768 768 768
+   setupds time 8.1897E-04 seconds   0 12         320          10
+           2  max multiplicity
+ done :: setup mesh topology
+  
+ call usrdat
+ done :: usrdat
+
+ generate geometry data
+ NOTE: All elements deformed , param(59) ^=0
+ done :: generate geometry data
+  
+ call usrdat2
+ done :: usrdat2
+
+ regenerate geometry data           1
+ NOTE: All elements deformed , param(59) ^=0
+ done :: regenerate geometry data           1
+  
+ verify mesh topology
+   0.0000000000000000        9.0000000000000018       Xrange
+   0.0000000000000000        1.0000000000000000       Yrange
+   0.0000000000000000        0.0000000000000000       Zrange
+ done :: verify mesh topology
+  
+ IFTRAN   = T
+ IFFLOW   = T
+ IFHEAT   = T
+ IFSPLIT  = T
+ IFLOMACH = F
+ IFUSERVP = F
+ IFUSERMV = F
+ IFSTRS   = F
+ IFCHAR   = F
+ IFCYCLIC = F
+ IFAXIS   = F
+ IFMVBD   = F
+ IFMELT   = F
+ IFMODEL  = F
+ IFKEPS   = F
+ IFMOAB   = F
+ IFNEKNEK = F
+ IFSYNC   = T
+   
+ IFVCOR   = T
+ IFINTQ   = F
+ IFCWUZ   = F
+ IFSWALL  = F
+ IFGEOM   = F
+ IFSURT   = F
+ IFWCNO   = F
+   
+ IFTMSH for field           1    =  F
+ IFADVC for field           1    =  T
+ IFNONL for field           1    =  F
+   
+ IFTMSH for field           2    =  T
+ IFADVC for field           2    =  T
+ IFNONL for field           2    =  F
+   
+ Dealiasing enabled, lxd=          18
+  
+ Estimated eigenvalues
+ EIGAA =    4.9957256845020206     
+ EIGGA =    8861.2012037678323     
+ EIGAE =   0.12184696791468339     
+ EIGAS =    3.0487804878048769E-003
+ EIGGE =    8861.2012037678323     
+ EIGGS =    2.0000000000000000     
+  
+ verify mesh topology
+   0.0000000000000000        9.0000000000000018       Xrange
+   0.0000000000000000        1.0000000000000000       Yrange
+   0.0000000000000000        0.0000000000000000       Zrange
+ done :: verify mesh topology
+  
+  E-solver strategy:  0 itr
+ mg_nx:           1           7          11
+ mg_ny:           1           7          11
+ mg_nz:           0           0           0
+ call usrsetvert
+ done :: usrsetvert
+
+gs_setup: 4 unique labels shared
+   pairwise times (avg, min, max): 5.96046e-07 5.96046e-07 5.96046e-07
+   crystal router                : 5.96046e-07 5.96046e-07 5.96046e-07
+   all reduce                    : 1.12057e-06 1.12057e-06 1.12057e-06
+   used all_to_all method: pairwise
+   handle bytes (avg, min, max): 516 516 516
+   buffer bytes (avg, min, max): 64 64 64
+   setupds time 2.2721E-04 seconds   1  2          20          10
+   setvert2d:   4          80         120          80          80
+ call usrsetvert
+ done :: usrsetvert
+
+gs_setup: 8 unique labels shared
+   pairwise times (avg, min, max): 5.96046e-07 5.96046e-07 5.96046e-07
+   crystal router                : 5.96046e-07 5.96046e-07 5.96046e-07
+   all reduce                    : 1.00136e-06 1.00136e-06 1.00136e-06
+   used all_to_all method: pairwise
+   handle bytes (avg, min, max): 804 804 804
+   buffer bytes (avg, min, max): 128 128 128
+   setupds time 2.9206E-04 seconds   2  4          80          10
+   setvert2d:   8         200         560         200         200
+ call usrsetvert
+ done :: usrsetvert
+
+gs_setup: 16 unique labels shared
+   pairwise times (avg, min, max): 5.96046e-07 5.96046e-07 5.96046e-07
+   crystal router                : 5.96046e-07 5.96046e-07 5.96046e-07
+   all reduce                    : 1.00136e-06 1.00136e-06 1.00136e-06
+   used all_to_all method: pairwise
+   handle bytes (avg, min, max): 1380 1380 1380
+   buffer bytes (avg, min, max): 256 256 256
+   setupds time 4.0507E-04 seconds   3  8         200          10
+   setvert2d:  10         260         900         260         260
+ call usrsetvert
+ done :: usrsetvert
+
+gs_setup: 20 unique labels shared
+   pairwise times (avg, min, max): 6.4373e-07 5.96046e-07 6.91414e-07
+   crystal router                : 6.67572e-07 6.19888e-07 7.15256e-07
+   all reduce                    : 1.14441e-06 1.09673e-06 1.19209e-06
+   used all_to_all method: pairwise
+   handle bytes (avg, min, max): 1668 1668 1668
+   buffer bytes (avg, min, max): 320 320 320
+   setupds time 3.1900E-04 seconds   4 10         260          10
+ regenerate geometry data           1
+ NOTE: All elements deformed , param(59) ^=0
+ done :: regenerate geometry data           1
+  
+ h1_mg_nx:           1           3          11
+ h1_mg_ny:           1           3          11
+ h1_mg_nz:           0           0           0
+ call usrsetvert
+ done :: usrsetvert
+
+gs_setup: 4 unique labels shared
+   pairwise times (avg, min, max): 5.96046e-07 5.96046e-07 5.96046e-07
+   crystal router                : 5.00679e-07 5.00679e-07 5.00679e-07
+   all reduce                    : 9.05991e-07 9.05991e-07 9.05991e-07
+   used all_to_all method: crystal router
+   handle bytes (avg, min, max): 860 860 860
+   buffer bytes (avg, min, max): 128 128 128
+   setupds time 1.7691E-04 seconds   5  2          20          10
+   setvert2d:   4          80         120          80          80
+ call usrsetvert
+ done :: usrsetvert
+
+gs_setup: 8 unique labels shared
+   pairwise times (avg, min, max): 5.00679e-07 5.00679e-07 5.00679e-07
+   crystal router                : 5.00679e-07 5.00679e-07 5.00679e-07
+   all reduce                    : 9.05991e-07 9.05991e-07 9.05991e-07
+   used all_to_all method: pairwise
+   handle bytes (avg, min, max): 804 804 804
+   buffer bytes (avg, min, max): 128 128 128
+   setupds time 2.2984E-04 seconds   6  4          80          10
+   setvert2d:   4          80         120          80          80
+ call usrsetvert
+ done :: usrsetvert
+
+gs_setup: 8 unique labels shared
+   pairwise times (avg, min, max): 5.00679e-07 5.00679e-07 5.00679e-07
+   crystal router                : 5.00679e-07 5.00679e-07 5.00679e-07
+   all reduce                    : 9.05991e-07 9.05991e-07 9.05991e-07
+   used all_to_all method: pairwise
+   handle bytes (avg, min, max): 804 804 804
+   buffer bytes (avg, min, max): 128 128 128
+   setupds time 2.2507E-04 seconds   7  4          80          10
+   setvert2d:   6         140         300         140         140
+ call usrsetvert
+ done :: usrsetvert
+
+gs_setup: 12 unique labels shared
+   pairwise times (avg, min, max): 5.96046e-07 5.96046e-07 5.96046e-07
+   crystal router                : 5.00679e-07 5.00679e-07 5.00679e-07
+   all reduce                    : 9.05991e-07 9.05991e-07 9.05991e-07
+   used all_to_all method: crystal router
+   handle bytes (avg, min, max): 1820 1820 1820
+   buffer bytes (avg, min, max): 384 384 384
+   setupds time 2.4414E-04 seconds   8  6         140          10
+   setvert2d:  12         320        1320         320         320
+ call usrsetvert
+ done :: usrsetvert
+
+gs_setup: 24 unique labels shared
+   pairwise times (avg, min, max): 5.00679e-07 5.00679e-07 5.00679e-07
+   crystal router                : 5.96046e-07 5.96046e-07 5.96046e-07
+   all reduce                    : 1.00136e-06 1.00136e-06 1.00136e-06
+   used all_to_all method: pairwise
+   handle bytes (avg, min, max): 1956 1956 1956
+   buffer bytes (avg, min, max): 384 384 384
+   setupds time 3.2306E-04 seconds   9 12         320          10
+   setvert2d:  14         380        1820         380         380
+ call usrsetvert
+ done :: usrsetvert
+
+gs_setup: 28 unique labels shared
+   pairwise times (avg, min, max): 6.19888e-07 6.19888e-07 6.19888e-07
+   crystal router                : 5.00679e-07 5.00679e-07 5.00679e-07
+   all reduce                    : 1.00136e-06 1.00136e-06 1.00136e-06
+   used all_to_all method: crystal router
+   handle bytes (avg, min, max): 3740 3740 3740
+   buffer bytes (avg, min, max): 896 896 896
+   setupds time 3.5310E-04 seconds  10 14         380          10
+ setup h1 coarse grid, nx_crs=           2
+ call usrsetvert
+ done :: usrsetvert
+
+gs_setup: 4 unique labels shared
+   pairwise times (avg, min, max): 5.96046e-07 5.96046e-07 5.96046e-07
+   crystal router                : 5.48363e-07 5.00679e-07 5.96046e-07
+   all reduce                    : 9.77516e-07 9.77516e-07 9.77516e-07
+   used all_to_all method: pairwise
+   handle bytes (avg, min, max): 516 516 516
+   buffer bytes (avg, min, max): 64 64 64
+ done :: setup h1 coarse grid    7.2097778320312500E-004  sec
+  
+ call usrdat3
+ done :: usrdat3
+
+ set initial conditions
+ nekuic (1) for ifld            1
+ nekuic (1) for ifld            2
+ call nekuic for ifld            2
+ call nekuic for vel  
+ xyz min     0.0000       0.0000       0.0000    
+ uvwpt min   0.0000       0.0000       0.0000       0.0000       0.0000    
+ xyz max     9.0000       1.0000       0.0000    
+ uvwpt max   0.0000       0.0000       0.0000       0.0000       1.0000    
+ done :: set initial conditions
+  
+ call userchk
+
+        0  0.0000E+00 Write checkpoint
+       FILE:ray10.f00001                                                                                                                        
+
+        0  0.0000E+00 done :: Write checkpoint
+                              file size =     331.E-04MB
+                              avg data-throughput =     0.7MB/s
+                              io-nodes =     1
+
+        0  0.000000E+00  0.000000E+00  0.000000E+00 umax
+ done :: userchk
+
+gridpoints unique/tot:          1320         1440
+  dofs:                 1100                 1320
+  
+ Initialization successfully completed   0.65786E-01 sec
+
+Starting time loop ...
+
+     DT/DTCFL/DTFS/DTINIT   0.200E-01   0.218-313   0.216-313   0.200E-01
+Step      1, t= 2.0000000E-02, DT= 2.0000000E-02, C=  0.000 0.0000E+00 0.0000E+00
+             Solving for Hmholtz scalars
+  Temperature/Passive scalar solution
+          1  Hmholtz TEMP       1   2.7041E+00   1.0000E+00   2.2351E-03   5.0000E+01   F
+          1  Hmholtz TEMP       2   7.0133E-01   1.0000E+00   2.2351E-03   5.0000E+01   F
+          1  Hmholtz TEMP       3   2.8945E-01   1.0000E+00   2.2351E-03   5.0000E+01   F
+          1  Hmholtz TEMP       4   1.7730E-01   1.0000E+00   2.2351E-03   5.0000E+01   F
+          1  Hmholtz TEMP       5   1.0435E-01   1.0000E+00   2.2351E-03   5.0000E+01   F
+          1  Hmholtz TEMP       6   6.6413E-02   1.0000E+00   2.2351E-03   5.0000E+01   F
+          1  Hmholtz TEMP       7   4.8329E-02   1.0000E+00   2.2351E-03   5.0000E+01   F
+          1  Hmholtz TEMP       8   3.3491E-02   1.0000E+00   2.2351E-03   5.0000E+01   F
+          1  Hmholtz TEMP       9   2.3946E-02   1.0000E+00   2.2351E-03   5.0000E+01   F
+          1  Hmholtz TEMP      10   1.8187E-02   1.0000E+00   2.2351E-03   5.0000E+01   F
+          1  Hmholtz TEMP      11   1.4001E-02   1.0000E+00   2.2351E-03   5.0000E+01   F
+          1  Hmholtz TEMP      12   1.0651E-02   1.0000E+00   2.2351E-03   5.0000E+01   F
+          1  Hmholtz TEMP      13   8.1098E-03   1.0000E+00   2.2351E-03   5.0000E+01   F
+          1  Hmholtz TEMP      14   6.1130E-03   1.0000E+00   2.2351E-03   5.0000E+01   F
+          1  Hmholtz TEMP      15   5.0164E-03   1.0000E+00   2.2351E-03   5.0000E+01   F
+          1  Hmholtz TEMP      16   3.9362E-03   1.0000E+00   2.2351E-03   5.0000E+01   F
+          1  Hmholtz TEMP      17   3.0473E-03   1.0000E+00   2.2351E-03   5.0000E+01   F
+          1  Hmholtz TEMP      18   2.2574E-03   1.0000E+00   2.2351E-03   5.0000E+01   F
+          1  Hmholtz TEMP      19   1.6262E-03   1.0000E+00   2.2351E-03   5.0000E+01   F
+          1  Hmholtz TEMP      18   1.6262E-03   2.7041E+00   2.2351E-03
+          1  Scalars done  2.0000E-02  1.7040E-03
+             Solving for fluid
+ Relax the pressure tolerance    2.0030717918952119        6.2696419167618614E-008
+ New CG1-tolerance (RINIT*epsm) =    2.0030717918952119E-009   1.2539283833523724E-009
+ New CG1-tolerance (Neumann) =    2.0030717918952121E-008
+    1 2.00307E-08 2.59660E+02 5.70055E+02 4.55500E-01       1 Divergence
+    2 2.00307E-08 1.84532E+02 5.70055E+02 3.23709E-01       1 Divergence
+    3 2.00307E-08 2.14965E+01 5.70055E+02 3.77095E-02       1 Divergence
+    4 2.00307E-08 6.53061E+00 5.70055E+02 1.14561E-02       1 Divergence
+    5 2.00307E-08 1.74504E+00 5.70055E+02 3.06118E-03       1 Divergence
+    6 2.00307E-08 1.75793E-01 5.70055E+02 3.08380E-04       1 Divergence
+    7 2.00307E-08 1.09649E-02 5.70055E+02 1.92348E-05       1 Divergence
+    8 2.00307E-08 2.87047E-03 5.70055E+02 5.03542E-06       1 Divergence
+    9 2.00307E-08 1.09453E-03 5.70055E+02 1.92005E-06       1 Divergence
+   10 2.00307E-08 7.38872E-05 5.70055E+02 1.29614E-07       1 Divergence
+   11 2.00307E-08 2.45279E-05 5.70055E+02 4.30273E-08       1 Divergence
+   12 2.00307E-08 8.37318E-06 5.70055E+02 1.46884E-08       1 Divergence
+   13 2.00307E-08 9.41818E-07 5.70055E+02 1.65215E-09       1 Divergence
+   14 2.00307E-08 3.49684E-07 5.70055E+02 6.13421E-10       1 Divergence
+   15 2.00307E-08 7.63058E-08 5.70055E+02 1.33857E-10       1 Divergence
+   16 2.00307E-08 2.36075E-08 5.70055E+02 4.14127E-11       1 Divergence
+   17 2.00307E-08 3.23919E-09 5.70055E+02 5.68224E-12       1 Divergence
+          1  PRES gmres        17   3.2392E-09   5.7006E+02   2.0031E-08   1.9445E-03   3.7169E-03    F
+          1  Hmholtz velx       1   1.1327E+00   1.0000E+00   3.7252E-07   5.0000E+01   F
+          1  Hmholtz velx       2   8.1606E-01   1.0000E+00   3.7252E-07   5.0000E+01   F
+          1  Hmholtz velx       3   6.6393E-01   1.0000E+00   3.7252E-07   5.0000E+01   F
+          1  Hmholtz velx       4   4.8500E-01   1.0000E+00   3.7252E-07   5.0000E+01   F
+          1  Hmholtz velx       5   3.6581E-01   1.0000E+00   3.7252E-07   5.0000E+01   F
+          1  Hmholtz velx       6   2.7175E-01   1.0000E+00   3.7252E-07   5.0000E+01   F
+          1  Hmholtz velx       7   2.0710E-01   1.0000E+00   3.7252E-07   5.0000E+01   F
+          1  Hmholtz velx       8   1.6797E-01   1.0000E+00   3.7252E-07   5.0000E+01   F
+          1  Hmholtz velx       9   1.3602E-01   1.0000E+00   3.7252E-07   5.0000E+01   F
+          1  Hmholtz velx      10   9.6650E-02   1.0000E+00   3.7252E-07   5.0000E+01   F
+          1  Hmholtz velx      11   6.6349E-02   1.0000E+00   3.7252E-07   5.0000E+01   F
+          1  Hmholtz velx      12   4.7153E-02   1.0000E+00   3.7252E-07   5.0000E+01   F
+          1  Hmholtz velx      13   3.4549E-02   1.0000E+00   3.7252E-07   5.0000E+01   F
+          1  Hmholtz velx      14   2.5380E-02   1.0000E+00   3.7252E-07   5.0000E+01   F
+          1  Hmholtz velx      15   1.8895E-02   1.0000E+00   3.7252E-07   5.0000E+01   F
+          1  Hmholtz velx      16   1.4090E-02   1.0000E+00   3.7252E-07   5.0000E+01   F
+          1  Hmholtz velx      17   1.0546E-02   1.0000E+00   3.7252E-07   5.0000E+01   F
+          1  Hmholtz velx      18   8.1944E-03   1.0000E+00   3.7252E-07   5.0000E+01   F
+          1  Hmholtz velx      19   6.3605E-03   1.0000E+00   3.7252E-07   5.0000E+01   F
+          1  Hmholtz velx      20   4.6092E-03   1.0000E+00   3.7252E-07   5.0000E+01   F
+          1  Hmholtz velx      21   3.4721E-03   1.0000E+00   3.7252E-07   5.0000E+01   F
+          1  Hmholtz velx      22   2.5982E-03   1.0000E+00   3.7252E-07   5.0000E+01   F
+          1  Hmholtz velx      23   2.1121E-03   1.0000E+00   3.7252E-07   5.0000E+01   F
+          1  Hmholtz velx      24   1.7016E-03   1.0000E+00   3.7252E-07   5.0000E+01   F
+          1  Hmholtz velx      25   1.3171E-03   1.0000E+00   3.7252E-07   5.0000E+01   F
+          1  Hmholtz velx      26   1.0108E-03   1.0000E+00   3.7252E-07   5.0000E+01   F
+          1  Hmholtz velx      27   7.2670E-04   1.0000E+00   3.7252E-07   5.0000E+01   F
+          1  Hmholtz velx      28   5.8889E-04   1.0000E+00   3.7252E-07   5.0000E+01   F
+          1  Hmholtz velx      29   4.5224E-04   1.0000E+00   3.7252E-07   5.0000E+01   F
+          1  Hmholtz velx      30   3.4108E-04   1.0000E+00   3.7252E-07   5.0000E+01   F
+          1  Hmholtz velx      31   2.5813E-04   1.0000E+00   3.7252E-07   5.0000E+01   F
+          1  Hmholtz velx      32   1.8784E-04   1.0000E+00   3.7252E-07   5.0000E+01   F
+          1  Hmholtz velx      33   1.2839E-04   1.0000E+00   3.7252E-07   5.0000E+01   F
+          1  Hmholtz velx      34   8.9136E-05   1.0000E+00   3.7252E-07   5.0000E+01   F
+          1  Hmholtz velx      35   5.5281E-05   1.0000E+00   3.7252E-07   5.0000E+01   F
+          1  Hmholtz velx      36   3.6309E-05   1.0000E+00   3.7252E-07   5.0000E+01   F
+          1  Hmholtz velx      37   2.1557E-05   1.0000E+00   3.7252E-07   5.0000E+01   F
+          1  Hmholtz velx      38   1.4121E-05   1.0000E+00   3.7252E-07   5.0000E+01   F
+          1  Hmholtz velx      39   9.3627E-06   1.0000E+00   3.7252E-07   5.0000E+01   F
+          1  Hmholtz velx      40   6.7871E-06   1.0000E+00   3.7252E-07   5.0000E+01   F
+          1  Hmholtz velx      41   4.1417E-06   1.0000E+00   3.7252E-07   5.0000E+01   F
+          1  Hmholtz velx      42   2.7204E-06   1.0000E+00   3.7252E-07   5.0000E+01   F
+          1  Hmholtz velx      43   2.0966E-06   1.0000E+00   3.7252E-07   5.0000E+01   F
+          1  Hmholtz velx      44   1.6410E-06   1.0000E+00   3.7252E-07   5.0000E+01   F
+          1  Hmholtz velx      45   1.3140E-06   1.0000E+00   3.7252E-07   5.0000E+01   F
+          1  Hmholtz velx      46   1.0963E-06   1.0000E+00   3.7252E-07   5.0000E+01   F
+          1  Hmholtz velx      47   9.6971E-07   1.0000E+00   3.7252E-07   5.0000E+01   F
+          1  Hmholtz velx      48   7.5645E-07   1.0000E+00   3.7252E-07   5.0000E+01   F
+          1  Hmholtz velx      49   5.7994E-07   1.0000E+00   3.7252E-07   5.0000E+01   F
+          1  Hmholtz velx      50   4.1449E-07   1.0000E+00   3.7252E-07   5.0000E+01   F
+          1  Hmholtz velx      51   2.4513E-07   1.0000E+00   3.7252E-07   5.0000E+01   F
+          1  Hmholtz velx      50   2.4513E-07   1.1327E+00   3.7252E-07
+          1  Hmholtz vely       1   2.3597E+00   1.0000E+00   3.7252E-07   5.0000E+01   F
+          1  Hmholtz vely       2   1.5399E+00   1.0000E+00   3.7252E-07   5.0000E+01   F
+          1  Hmholtz vely       3   1.1946E+00   1.0000E+00   3.7252E-07   5.0000E+01   F
+          1  Hmholtz vely       4   8.3523E-01   1.0000E+00   3.7252E-07   5.0000E+01   F
+          1  Hmholtz vely       5   6.4450E-01   1.0000E+00   3.7252E-07   5.0000E+01   F
+          1  Hmholtz vely       6   5.0089E-01   1.0000E+00   3.7252E-07   5.0000E+01   F
+          1  Hmholtz vely       7   3.7451E-01   1.0000E+00   3.7252E-07   5.0000E+01   F
+          1  Hmholtz vely       8   2.8864E-01   1.0000E+00   3.7252E-07   5.0000E+01   F
+          1  Hmholtz vely       9   2.3718E-01   1.0000E+00   3.7252E-07   5.0000E+01   F
+          1  Hmholtz vely      10   2.0233E-01   1.0000E+00   3.7252E-07   5.0000E+01   F
+          1  Hmholtz vely      11   1.5091E-01   1.0000E+00   3.7252E-07   5.0000E+01   F
+          1  Hmholtz vely      12   1.1469E-01   1.0000E+00   3.7252E-07   5.0000E+01   F
+          1  Hmholtz vely      13   8.8384E-02   1.0000E+00   3.7252E-07   5.0000E+01   F
+          1  Hmholtz vely      14   5.8543E-02   1.0000E+00   3.7252E-07   5.0000E+01   F
+          1  Hmholtz vely      15   4.3416E-02   1.0000E+00   3.7252E-07   5.0000E+01   F
+          1  Hmholtz vely      16   3.0651E-02   1.0000E+00   3.7252E-07   5.0000E+01   F
+          1  Hmholtz vely      17   2.2560E-02   1.0000E+00   3.7252E-07   5.0000E+01   F
+          1  Hmholtz vely      18   1.6127E-02   1.0000E+00   3.7252E-07   5.0000E+01   F
+          1  Hmholtz vely      19   1.1560E-02   1.0000E+00   3.7252E-07   5.0000E+01   F
+          1  Hmholtz vely      20   8.4942E-03   1.0000E+00   3.7252E-07   5.0000E+01   F
+          1  Hmholtz vely      21   6.8822E-03   1.0000E+00   3.7252E-07   5.0000E+01   F
+          1  Hmholtz vely      22   5.6299E-03   1.0000E+00   3.7252E-07   5.0000E+01   F
+          1  Hmholtz vely      23   4.3647E-03   1.0000E+00   3.7252E-07   5.0000E+01   F
+          1  Hmholtz vely      24   3.0552E-03   1.0000E+00   3.7252E-07   5.0000E+01   F
+          1  Hmholtz vely      25   2.0462E-03   1.0000E+00   3.7252E-07   5.0000E+01   F
+          1  Hmholtz vely      26   1.3998E-03   1.0000E+00   3.7252E-07   5.0000E+01   F
+          1  Hmholtz vely      27   1.0252E-03   1.0000E+00   3.7252E-07   5.0000E+01   F
+          1  Hmholtz vely      28   7.8109E-04   1.0000E+00   3.7252E-07   5.0000E+01   F
+          1  Hmholtz vely      29   6.4865E-04   1.0000E+00   3.7252E-07   5.0000E+01   F
+          1  Hmholtz vely      30   4.9209E-04   1.0000E+00   3.7252E-07   5.0000E+01   F
+          1  Hmholtz vely      31   3.5783E-04   1.0000E+00   3.7252E-07   5.0000E+01   F
+          1  Hmholtz vely      32   2.5565E-04   1.0000E+00   3.7252E-07   5.0000E+01   F
+          1  Hmholtz vely      33   1.7244E-04   1.0000E+00   3.7252E-07   5.0000E+01   F
+          1  Hmholtz vely      34   1.1224E-04   1.0000E+00   3.7252E-07   5.0000E+01   F
+          1  Hmholtz vely      35   7.7450E-05   1.0000E+00   3.7252E-07   5.0000E+01   F
+          1  Hmholtz vely      36   5.5473E-05   1.0000E+00   3.7252E-07   5.0000E+01   F
+          1  Hmholtz vely      37   3.9977E-05   1.0000E+00   3.7252E-07   5.0000E+01   F
+          1  Hmholtz vely      38   2.7108E-05   1.0000E+00   3.7252E-07   5.0000E+01   F
+          1  Hmholtz vely      39   1.9891E-05   1.0000E+00   3.7252E-07   5.0000E+01   F
+          1  Hmholtz vely      40   1.6017E-05   1.0000E+00   3.7252E-07   5.0000E+01   F
+          1  Hmholtz vely      41   1.2553E-05   1.0000E+00   3.7252E-07   5.0000E+01   F
+          1  Hmholtz vely      42   9.2318E-06   1.0000E+00   3.7252E-07   5.0000E+01   F
+          1  Hmholtz vely      43   8.0735E-06   1.0000E+00   3.7252E-07   5.0000E+01   F
+          1  Hmholtz vely      44   7.2593E-06   1.0000E+00   3.7252E-07   5.0000E+01   F
+          1  Hmholtz vely      45   5.7170E-06   1.0000E+00   3.7252E-07   5.0000E+01   F
+          1  Hmholtz vely      46   4.5048E-06   1.0000E+00   3.7252E-07   5.0000E+01   F
+          1  Hmholtz vely      47   3.3093E-06   1.0000E+00   3.7252E-07   5.0000E+01   F
+          1  Hmholtz vely      48   2.2138E-06   1.0000E+00   3.7252E-07   5.0000E+01   F
+          1  Hmholtz vely      49   1.4258E-06   1.0000E+00   3.7252E-07   5.0000E+01   F
+          1  Hmholtz vely      50   9.1967E-07   1.0000E+00   3.7252E-07   5.0000E+01   F
+          1  Hmholtz vely      51   5.7176E-07   1.0000E+00   3.7252E-07   5.0000E+01   F
+          1  Hmholtz vely      52   3.7242E-07   1.0000E+00   3.7252E-07   5.0000E+01   F
+          1  Hmholtz vely      51   3.7242E-07   2.3597E+00   3.7252E-07
+             L1/L2 DIV(V)          -1.2824E-17   2.4322E-02
+             L1/L2 QTL              0.0000E+00   0.0000E+00
+             L1/L2 DIV(V)-QTL      -1.2824E-17   2.4322E-02
+          1  Fluid done  2.0000E-02  1.1033E-02
